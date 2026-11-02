@@ -54,7 +54,7 @@ function icon(c){return Lf.divIcon({className:"",html:`<div class="mk ${c}"></di
 function items(){
   const lg=getLang();const out=[];
   if(filter!=="tic")PLACES.filter(p=>filter==="all"||p.region===filter).forEach(p=>out.push({k:"place",id:p.id,lat:p.lat,lng:p.lng,n:L(p.n),s:L(REGIONS.find(r=>r.id===p.region).n),img:p.img,c:cls(p),d:L(p.d),addr:p.addr}));
-  if(filter==="all"||filter==="tic")TICS.forEach((x,i)=>out.push({k:"tic",id:"tic"+i,lat:x.lat,lng:x.lng,n:L(x.n),s:x.tel+" · "+x.h,img:"wolmi_street.jpg",c:"tic",d:x.h}));
+  if(filter==="all"||filter==="tic")TICS.forEach((x,i)=>out.push({k:"tic",id:"tic"+i,lat:x.lat,lng:x.lng,n:L(x.n),s:x.tel+" · "+x.h,img:"wolmi_street-hd.jpg",c:"tic",d:x.h}));
   return out;
 }
 function drawLive(){

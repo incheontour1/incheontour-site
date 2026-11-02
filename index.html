@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://www.incheontour.or.kr/">
 <meta property="og:title" content="인천광역시관광협의회 | Incheon Tourism Council">
 <meta property="og:description" content="사단법인 인천광역시관광협의회 공식 홈페이지. 인천여행·여행정보·관광지도·콜라보·알림마당. 한국어·영어·일본어·중국어·베트남어·러시아어·스페인어 지원.">
-<meta property="og:image" content="https://www.incheontour.or.kr/assets/img/hero_islands.jpg">
+<meta property="og:image" content="https://www.incheontour.or.kr/assets/img/hero_islands-hd.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="인천광역시관광협의회 | Incheon Tourism Council">
 <meta name="twitter:description" content="사단법인 인천광역시관광협의회 공식 홈페이지. 인천여행·여행정보·관광지도·콜라보·알림마당. 한국어·영어·일본어·중국어·베트남어·러시아어·스페인어 지원.">
-<meta name="twitter:image" content="https://www.incheontour.or.kr/assets/img/hero_islands.jpg">
+<meta name="twitter:image" content="https://www.incheontour.or.kr/assets/img/hero_islands-hd.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.incheontour.or.kr/#org","name":"인천광역시관광협의회","alternateName":["Incheon Tourism Council","사단법인 인천광역시관광협의회"],"url":"https://www.incheontour.or.kr/","logo":"https://www.incheontour.or.kr/assets/img/logo-symbol.png","email":"incheontour1@gmail.com","telephone":"+82-10-5238-5443","address":{"@type":"PostalAddress","streetAddress":"구월남로 118 YMCA회관 501호","addressLocality":"남동구","addressRegion":"인천광역시","postalCode":"21556","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@zoomincheon"],"foundingDate":"2019-04-12","areaServed":"Incheon, KR"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.incheontour.or.kr/","name":"인천광역시관광협의회","inLanguage":["ko","en","ja","zh","vi","ru","es"],"potentialAction":{"@type":"SearchAction","target":"https://www.incheontour.or.kr/travel?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css">
@@ -29,9 +29,9 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="slide active"><img src="assets/img/hero_islands.jpg" alt="백령도 두무진"></div>
-  <div class="slide"><img src="assets/img/songdo_hero.jpg" alt="송도국제도시"></div>
-  <div class="slide"><img src="assets/img/hero_local.jpg" alt="소래습지생태공원"></div>
+  <div class="slide active"><img src="assets/img/hero_islands-hd.jpg" alt="백령도 두무진"></div>
+  <div class="slide"><img src="assets/img/songdo_hero-hd.jpg" alt="송도국제도시"></div>
+  <div class="slide"><img src="assets/img/hero_local-hd.jpg" alt="소래습지생태공원"></div>
   <div class="content"><div class="container">
     <div class="eyebrow" data-i18n="hero.eyebrow">INCHEON TOURISM COUNCIL</div>
     <h1 id="hero-t" data-i18n="hero.s1.t"></h1>
@@ -126,7 +126,7 @@ function startHero(){clearInterval(timer);timer=setInterval(()=>showSlide(cur+1)
 document.getElementById("hero-dots").innerHTML=HERO.map((_,i)=>`<button aria-label="slide ${i+1}"></button>`).join("");
 document.querySelectorAll("#hero-dots button").forEach((b,i)=>b.onclick=()=>{showSlide(i);startHero();});
 
-const THEME_IMG={history:"gaehang_museum.jpg",nature:"dumujin.jpg",city:"tribowl_night.jpg",family:"wolmi_themepark.jpg",food:"sorae_market.jpg",mice:"songdo_convensia.jpg"};
+const THEME_IMG={history:"gaehang_museum-hd.jpg",nature:"dumujin-hd.jpg",city:"tribowl_night-hd.jpg",family:"wolmi_themepark-hd.jpg",food:"sorae_market-hd.jpg",mice:"songdo_convensia-hd.jpg"};
 window.onPageRender=function(){
   document.getElementById("quick").innerHTML=[["travel.html","compass","quick.travel"],["map.html","map","quick.map"],["info.html#books","book","quick.guide"],["info.html#tic","info","quick.tic"],["collab.html","handshake","quick.collab"],["news.html","bell","quick.notice"]].map(([h,i,k])=>`<a href="${h}">${ICON[i]}<span data-i18n="${k}"></span></a>`).join("");
   document.querySelectorAll(".more-arrow,#more-arrow").forEach(e=>e.innerHTML=ICON.arrow);
