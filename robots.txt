@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 Disallow: /admin.html
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Daum
+Allow: /
+
 Sitemap: https://www.incheontour.or.kr/sitemap.xml

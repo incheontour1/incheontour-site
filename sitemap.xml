@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://www.incheontour.or.kr/</loc><priority>1.0</priority></url>
-<url><loc>https://www.incheontour.or.kr/about</loc><priority>0.9</priority></url>
-<url><loc>https://www.incheontour.or.kr/travel</loc><priority>0.9</priority></url>
-<url><loc>https://www.incheontour.or.kr/info</loc><priority>0.8</priority></url>
-<url><loc>https://www.incheontour.or.kr/map</loc><priority>0.8</priority></url>
-<url><loc>https://www.incheontour.or.kr/collab</loc><priority>0.8</priority></url>
-<url><loc>https://www.incheontour.or.kr/news</loc><priority>0.7</priority></url>
-<url><loc>https://www.incheontour.or.kr/members</loc><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url><loc>https://www.incheontour.or.kr/</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority><image:image><image:loc>https://www.incheontour.or.kr/assets/img/hero_islands.jpg</image:loc><image:title>백령도 두무진</image:title></image:image></url>
+<url><loc>https://www.incheontour.or.kr/about</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.incheontour.or.kr/travel</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.incheontour.or.kr/info</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.incheontour.or.kr/map</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.incheontour.or.kr/collab</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.incheontour.or.kr/news</loc><lastmod>2026-11-02</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.incheontour.or.kr/members</loc><lastmod>2026-11-02</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
 </urlset>
