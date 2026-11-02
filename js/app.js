@@ -62,7 +62,7 @@
       <div class="lang-switch" role="group" aria-label="language">${LANGS.map(l=>`<button data-lang="${l[0]}" class="${l[0]===lang?"active":""}" title="${l[2]}">${l[1]}</button>`).join("")}</div>
     </div></div>
     <header class="header" id="hdr"><div class="container">
-      <a class="brand" href="index.html" aria-label="${t("org")}"><img src="assets/img/logo-horizontal.png" alt="${t("orgFull")}"></a>
+      <a class="brand" href="index.html" aria-label="${t("org")}"><img src="assets/img/logo-horizontal-v2.png" alt="${t("orgFull")}"></a>
       <nav><ul class="nav">${NAV.map(n=>`<li class="${page===n.id?"active":""}"><a href="${n.href}" data-i18n="nav.${n.id}">${t("nav."+n.id)}${n.soon?`<span class="badge" data-i18n="soon">${t("soon")}</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}</ul></nav>
       <div class="header-tools">
         <button class="icon-btn" id="btn-search" aria-label="${t("search.btn")}">${ICON.search}</button>
@@ -71,7 +71,7 @@
       </div>
     </div></header>
     <div class="drawer" id="drawer"><div class="dim"></div><div class="panel">
-      <div class="d-head"><img src="assets/img/logo-horizontal.png" alt=""><button class="icon-btn" id="btn-menu-close" aria-label="${t("common.close")}">${ICON.close}</button></div>
+      <div class="d-head"><img src="assets/img/logo-horizontal-v2.png" alt=""><button class="icon-btn" id="btn-menu-close" aria-label="${t("common.close")}">${ICON.close}</button></div>
       <div class="d-lang">${LANGS.map(l=>`<button data-lang="${l[0]}" class="${l[0]===lang?"active":""}">${l[2]}</button>`).join("")}</div>
       <ul class="d-nav">${NAV.map(n=>`<li><a href="${n.href}" data-i18n="nav.${n.id}" ${n.sub?`data-toggle`:""}>${t("nav."+n.id)}${n.sub?`<span>+</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}
       <li><a href="admin.html" data-i18n="nav.admin">${t("nav.admin")}</a></li></ul>
@@ -118,7 +118,7 @@
     const el=document.getElementById("site-footer"); if(!el) return;
     el.innerHTML=`<footer class="footer"><div class="container">
       <div class="top">
-        <div class="brand"><img src="assets/img/logo-white.png" alt="${t("orgFull")}">
+        <div class="brand"><img src="assets/img/logo-white-v2.png" alt="${t("orgFull")}">
           <ul><li data-i18n="footer.addr">${t("footer.addr")}</li><li data-i18n="footer.tel">${t("footer.tel")}</li><li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li data-i18n="footer.cpo">${t("footer.cpo")}</li></ul>
           <div class="sns" style="margin-top:16px">${snsHtml()}</div></div>
         <div><h4 data-i18n="footer.links">${t("footer.links")}</h4><ul>${NAV.map(n=>`<li><a href="${n.href}" data-i18n="nav.${n.id}">${t("nav."+n.id)}</a></li>`).join("")}</ul></div>
