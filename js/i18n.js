@@ -44,7 +44,7 @@ ko:{
         name:"이름 / 소속",email:"이메일",phone:"연락처",type:"문의 유형",subject:"제목",msg:"내용",
         types:["일반 문의","콜라보·협업 제안","회원 가입","언론·취재","자료 요청"],
         agree:"개인정보 수집·이용(문의 응대 목적, 보관 1년)에 동의합니다.",send:"문의 보내기",sent:"문의가 접수되었습니다. 감사합니다.",needAgree:"개인정보 수집·이용에 동의해 주세요."},
-  members:{title:"회원사",sub:"준비중",t:"회원사 페이지는 준비중입니다",p:"정회원·일반회원·특별회원·명예회원(정관 제6조) 안내와 회원사 디렉터리를 준비하고 있습니다. 가입 문의는 알림마당 › 문의사항을 이용해 주세요.",btn:"가입 문의하기"},
+  members:{title:"회원사",sub:"준비중",t:"회원사 페이지는 준비중입니다",p:"정회원(전문위원)·일반회원·특별회원·명예회원(정관 제6조) 안내와 회원사 디렉터리를 준비하고 있습니다. 가입 문의는 알림마당 › 문의사항을 이용해 주세요.",btn:"가입 문의하기"},
   footer:{addr:"인천광역시 남동구 구월남로 118 (YMCA회관 501호)",tel:"문의 +82-10-5238-5443",mail:"incheontour1@gmail.com",cpo:"정보관리책임자 : 김재오",
           family:"관련 사이트",links:"바로가기",contact:"연락처",privacy:"개인정보처리방침",terms:"이용약관",copy:"© 2026 Incheon Tourism Council. All rights reserved."},
   common:{close:"닫기",top:"맨 위로",menu:"메뉴",lang:"언어",readMore:"자세히",download:"다운로드",open:"열기"}
@@ -93,7 +93,7 @@ en:{
         name:"Name / Organization",email:"Email",phone:"Phone",type:"Type",subject:"Subject",msg:"Message",
         types:["General","Collaboration proposal","Membership","Press","Publication request"],
         agree:"I agree to the collection and use of personal data for responding to this inquiry (retained 1 year).",send:"Send inquiry",sent:"Your inquiry has been received. Thank you.",needAgree:"Please agree to the privacy terms."},
-  members:{title:"Members",sub:"Coming soon",t:"The Members page is being prepared",p:"We are preparing the member directory and membership guide (regular, general, special and honorary members under Article 6). For membership inquiries please use Newsroom › Inquiries.",btn:"Membership inquiry"},
+  members:{title:"Members",sub:"Coming soon",t:"The Members page is being prepared",p:"We are preparing the member directory and membership guide (regular/expert, general, special and honorary members under Article 6). For membership inquiries please use Newsroom › Inquiries.",btn:"Membership inquiry"},
   footer:{addr:"Rm 501, YMCA Bldg, 118 Guwolnam-ro, Namdong-gu, Incheon, Korea",tel:"Tel +82-10-5238-5443",mail:"incheontour1@gmail.com",cpo:"Information Manager: Kim Jae-oh",
           family:"Related sites",links:"Links",contact:"Contact",privacy:"Privacy Policy",terms:"Terms",copy:"© 2026 Incheon Tourism Council. All rights reserved."},
   common:{close:"Close",top:"Top",menu:"Menu",lang:"Language",readMore:"Read more",download:"Download",open:"Open"}
@@ -142,7 +142,7 @@ ja:{
         name:"お名前 / 所属",email:"メール",phone:"連絡先",type:"種類",subject:"件名",msg:"内容",
         types:["一般","コラボ・協業提案","会員加入","報道・取材","資料請求"],
         agree:"問い合わせ対応目的の個人情報収集・利用（保管1年）に同意します。",send:"送信する",sent:"お問い合わせを受け付けました。ありがとうございます。",needAgree:"個人情報の収集・利用に同意してください。"},
-  members:{title:"会員社",sub:"準備中",t:"会員社ページは準備中です",p:"正会員・一般会員・特別会員・名誉会員（定款第6条）の案内と会員社ディレクトリを準備しています。加入のお問い合わせは「お知らせ › お問い合わせ」をご利用ください。",btn:"加入について問い合わせる"},
+  members:{title:"会員社",sub:"準備中",t:"会員社ページは準備中です",p:"正会員（専門委員）・一般会員・特別会員・名誉会員（定款第6条）の案内と会員社ディレクトリを準備しています。加入のお問い合わせは「お知らせ › お問い合わせ」をご利用ください。",btn:"加入について問い合わせる"},
   footer:{addr:"仁川広域市南洞区九月南路118（YMCA会館501号）",tel:"Tel +82-10-5238-5443",mail:"incheontour1@gmail.com",cpo:"情報管理責任者：金在五（Kim Jae-oh）",
           family:"関連サイト",links:"リンク",contact:"連絡先",privacy:"個人情報処理方針",terms:"利用規約",copy:"© 2026 Incheon Tourism Council. All rights reserved."},
   common:{close:"閉じる",top:"トップへ",menu:"メニュー",lang:"言語",readMore:"詳細",download:"ダウンロード",open:"開く"}
@@ -191,7 +191,7 @@ zh:{
         name:"姓名 / 单位",email:"邮箱",phone:"电话",type:"类型",subject:"主题",msg:"内容",
         types:["一般咨询","合作提案","会员加入","媒体采访","资料申请"],
         agree:"同意为答复咨询收集与使用个人信息（保存1年）。",send:"发送咨询",sent:"已收到您的咨询，谢谢。",needAgree:"请同意个人信息收集与使用。"},
-  members:{title:"会员单位",sub:"筹备中",t:"会员单位页面筹备中",p:"正在准备正会员·一般会员·特别会员·名誉会员（章程第6条）说明及会员名录。加入咨询请使用“公告中心 › 咨询”。",btn:"咨询加入"},
+  members:{title:"会员单位",sub:"筹备中",t:"会员单位页面筹备中",p:"正在准备正会员（专门委员）·一般会员·特别会员·名誉会员（章程第6条）说明及会员名录。加入咨询请使用“公告中心 › 咨询”。",btn:"咨询加入"},
   footer:{addr:"仁川广域市南洞区九月南路118（YMCA会馆501号）",tel:"Tel +82-10-5238-5443",mail:"incheontour1@gmail.com",cpo:"信息管理负责人：金在五（Kim Jae-oh）",
           family:"相关网站",links:"快捷链接",contact:"联系方式",privacy:"个人信息处理方针",terms:"使用条款",copy:"© 2026 Incheon Tourism Council. All rights reserved."},
   common:{close:"关闭",top:"返回顶部",menu:"菜单",lang:"语言",readMore:"详情",download:"下载",open:"打开"}

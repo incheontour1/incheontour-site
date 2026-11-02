@@ -306,8 +306,8 @@ window.DEFAULT_POSTS = {
  notice:[
   {id:"n1",date:"2026-10-29",pinned:true,views:0,title:{ko:"인천광역시관광협의회 공식 홈페이지를 개설했습니다",en:"Incheon Tourism Council official website launched",ja:"公式ホームページを開設しました",zh:"官方网站正式上线"},
    body:{ko:"인천광역시관광협의회(www.incheontour.or.kr) 공식 홈페이지가 문을 열었습니다.\n\n• 협의회 소개(인사말·비전·연혁·윤리경영·조직·이사회·CI·오시는 길)\n• 인천여행(지역별·장소별 상세소개) / 여행정보(가이드북·지도·테마북) / 인천관광지도\n• 콜라보(8대 협업 트랙) / 알림마당(공지·언론보도·문의)\n\n한국어·영어·일본어·중국어(간체)로 이용하실 수 있습니다. 많은 관심 부탁드립니다.",en:"Our official website is now open with multilingual support (KO/EN/JA/ZH). Explore Incheon by area, download guidebooks, use the interactive map and propose collaborations.",ja:"公式ホームページを開設しました。4か国語でご利用いただけます。",zh:"官方网站上线，支持四种语言。"}},
-  {id:"n2",date:"2026-10-20",pinned:false,views:0,title:{ko:"2026년 하반기 회원 가입 안내 (정회원·일반회원·특별회원)",en:"Membership guide for H2 2026",ja:"2026年下半期 会員加入のご案内",zh:"2026年下半年会员加入指南"},
-   body:{ko:"정관 제6조에 따라 정회원·일반회원·특별회원·명예회원을 모집합니다. 회원은 협의회 자료·출판물을 제공받고 총회에 참여할 수 있습니다(정회원). 가입 신고서 제출 및 회비 등 세부사항은 문의사항을 통해 안내드립니다.",en:"Under Article 6 we welcome regular, general, special and honorary members. Please use the inquiry form for details.",ja:"定款第6条に基づき会員を募集します。詳細はお問い合わせください。",zh:"依据章程第6条招募会员，详情请咨询。"}},
+  {id:"n2",date:"2026-10-20",pinned:false,views:0,title:{ko:"2026년 하반기 회원 가입 안내 (정회원(전문위원)·일반회원·특별회원)",en:"Membership guide for H2 2026",ja:"2026年下半期 会員加入のご案内",zh:"2026年下半年会员加入指南"},
+   body:{ko:"정관 제6조에 따라 정회원(전문위원)·일반회원·특별회원·명예회원을 모집합니다. 회원은 협의회 자료·출판물을 제공받고 총회에 참여할 수 있습니다(정회원). 가입 신고서 제출 및 회비 등 세부사항은 문의사항을 통해 안내드립니다.",en:"Under Article 6 we welcome regular, general, special and honorary members. Please use the inquiry form for details.",ja:"定款第6条に基づき会員を募集します。詳細はお問い合わせください。",zh:"依据章程第6条招募会员，详情请咨询。"}},
   {id:"n3",date:"2026-09-15",pinned:false,views:0,title:{ko:"클린관광 캠페인 '여행은 인천이지' 시즌2 참여 안내",en:"Clean Tourism Campaign Season 2",ja:"クリーン観光キャンペーン シーズン2",zh:"清洁旅游活动第二季"},
    body:{ko:"스토리 기반 클린관광 캠페인 시즌2를 진행합니다. 인천 관광지 환경 보호와 지속가능한 관광 실천에 시민·여행자 여러분의 참여를 기다립니다. 참여 방법과 일정은 추후 공지합니다.",en:"Season 2 of our story-based clean tourism campaign is underway.",ja:"クリーン観光キャンペーン第2弾を実施します。",zh:"开展故事型清洁旅游活动第二季。"}}
  ],
