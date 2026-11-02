@@ -16,7 +16,7 @@
 | `news.html` | 알림마당 — 공지사항·언론보도 게시판, 문의 폼 |
 | `admin.html` | 관리자 모드 — 공지/언론보도 CRUD(4개 국어), 문의 관리, JSON 백업 |
 | `members.html` | 회원사 — '준비중' + 회원 종류(정관 제6조) |
-| `js/i18n.js` | 4개 국어 UI 사전 (ko / en / ja / zh-CN) |
+| `js/i18n.js` | 7개 국어 UI 사전 (ko / en / ja / zh-CN / vi / ru / es) — 장문 콘텐츠는 번역 없을 시 영어 폴백 |
 | `js/data.js` | 콘텐츠 데이터 (지역·관광지·안내소·발간물·콜라보·연혁·이사회·기본 게시물) |
 | `js/app.js` | 공통 헤더/푸터/언어/검색/애니메이션/게시물 저장소 |
 | `js/admin.js`, `js/admin-config.js` | 관리자 로직 / 관리자 계정(해시) |

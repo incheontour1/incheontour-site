@@ -3,7 +3,7 @@
    Design system: CI colors + Pretendard, KTO-inspired layout
    ============================================================ */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
 
 :root{
   --c-primary:#1d479c;      /* C92 M72 Y0 K0 */
@@ -26,6 +26,7 @@
 }
 html[lang="ja"] body{font-family:"Pretendard Variable",Pretendard,"Noto Sans JP",sans-serif}
 html[lang="zh-CN"] body{font-family:"Pretendard Variable",Pretendard,"Noto Sans SC",sans-serif}
+html[lang="vi"] body,html[lang="ru"] body,html[lang="es"] body{font-family:"Pretendard Variable",Pretendard,"Noto Sans",sans-serif}
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -79,8 +80,8 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .drawer.open{pointer-events:auto}.drawer.open .dim{opacity:1}.drawer.open .panel{transform:none}
 .drawer .d-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .drawer .d-head img{height:40px}
-.drawer .d-lang{display:flex;gap:6px;margin:8px 0 16px}
-.drawer .d-lang button{flex:1;padding:8px;border:1px solid var(--c-line);border-radius:8px;font-size:.85rem}
+.drawer .d-lang{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 16px}
+.drawer .d-lang button{flex:1 1 30%;padding:8px;border:1px solid var(--c-line);border-radius:8px;font-size:.85rem}
 .drawer .d-lang button.active{background:var(--c-primary);color:#fff;border-color:var(--c-primary)}
 .drawer .d-nav>li{border-bottom:1px solid var(--c-line)}
 .drawer .d-nav>li>a{display:flex;justify-content:space-between;padding:14px 4px;font-weight:700;font-size:1.05rem}
@@ -532,3 +533,8 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .search-box form>svg{width:24px;height:24px;color:var(--c-muted);flex:none}
 .modal .x svg,.drawer .d-head svg{width:20px;height:20px}
 .totop svg{width:20px;height:20px}
+
+/* long-label languages: tighter top nav */
+html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{padding:14px 10px;font-size:.9rem;white-space:nowrap}
+html[lang="ru"] .brand img,html[lang="vi"] .brand img,html[lang="es"] .brand img{height:42px}
+@media (max-width:1250px){html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{font-size:.82rem;padding:14px 7px}}

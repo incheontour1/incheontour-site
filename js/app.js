@@ -2,8 +2,8 @@
    app.js — shared chrome, i18n, search, animations, data store
    ============================================================ */
 (function(){
-  const LANGS=[["ko","KO","한국어"],["en","EN","English"],["ja","JA","日本語"],["zh","ZH","简体中文"]];
-  const htmlLang={ko:"ko",en:"en",ja:"ja",zh:"zh-CN"};
+  const LANGS=[["ko","KO","한국어"],["en","EN","English"],["ja","JA","日本語"],["zh","ZH","简体中文"],["vi","VI","Tiếng Việt"],["ru","RU","Русский"],["es","ES","Español"]];
+  const htmlLang={ko:"ko",en:"en",ja:"ja",zh:"zh-CN",vi:"vi",ru:"ru",es:"es"};
   let lang=localStorage.getItem("itc_lang");
   if(!lang){lang="ko";}
   if(!I18N[lang]) lang="ko";
