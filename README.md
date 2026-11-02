@@ -77,7 +77,7 @@ git push -u origin main
 - 관광지 사진·안내지도·가이드북·시티투어·섬 이야기·테마북: 인천광역시·인천관광공사 발간물 (비영리 홍보 목적 게시, 저작권은 해당 기관)
 - 인천대교 야경: 협의회 소개자료(2025)
 - 로고(CI): 협의회 제공 AI 원본(`assets/docs/itc_logo_master.pdf`)
-- 지도 타일: © OpenStreetMap contributors, © CARTO
+- 지도 타일: © OpenStreetMap contributors (API 키 불필요)
 
 ## 7. 기술 스택
 
