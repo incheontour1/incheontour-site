@@ -44,20 +44,14 @@
   <div class="org rv" id="orgchart"></div>
 </div></section>
 
-<!-- 이사회 -->
-<section class="section alt" id="board"><div class="container">
-  <div class="sec-head rv"><div><span class="kicker">BOARD OF DIRECTORS</span><h2 data-i18n="sub.board"></h2></div><p style="font-size:.85rem;color:var(--c-muted)" id="board-note"></p></div>
-  <div class="board-grid" id="board-grid"></div>
-</div></section>
-
 <!-- CI -->
-<section class="section" id="ci"><div class="container">
+<section class="section alt" id="ci"><div class="container">
   <div class="sec-head rv"><div><span class="kicker">CORPORATE IDENTITY</span><h2 data-i18n="sub.ci"></h2></div></div>
   <div id="ci-body"></div>
 </div></section>
 
 <!-- 오시는 길 -->
-<section class="section alt" id="way"><div class="container">
+<section class="section" id="way"><div class="container">
   <div class="sec-head rv"><div><span class="kicker">DIRECTIONS</span><h2 data-i18n="sub.way"></h2></div></div>
   <div id="way-body"></div>
 </div></section>
@@ -210,7 +204,7 @@ way:{
 
 window.onPageRender=function(){
   const lg=getLang();
-  document.getElementById("subtabs").innerHTML=["greet","vision","history","ethics","org","board","ci","way"].map(k=>`<a href="#${k}" data-tab="${k}">${t("sub."+k)}</a>`).join("");
+  document.getElementById("subtabs").innerHTML=["greet","vision","history","ethics","org","ci","way"].map(k=>`<a href="#${k}" data-tab="${k}">${t("sub."+k)}</a>`).join("");
   document.getElementById("greet-body").innerHTML=L(C.greet);
   document.getElementById("vision-body").innerHTML=L(C.vision);
   document.getElementById("timeline").innerHTML=HISTORY.map((h,i)=>`<div class="tl-item rv"><div class="y">${h.y}</div><div class="t">${h[lg]||h.en}</div>${lg!=="ko"?`<div class="d">${h.ko}</div>`:""}</div>`).join("");
@@ -221,8 +215,6 @@ window.onPageRender=function(){
     <div class="side"><div class="node sub">${o.adv}</div><div class="h" style="width:40px"></div><div class="node sub">${o.audit}</div></div><div class="v"></div>
     <div class="row" style="align-items:flex-start"><div class="col"><div class="node sub">${o.sub}</div><div class="v"></div><div class="row" style="max-width:460px">${o.subs.map(s=>`<div class="node leaf">${s}</div>`).join("")}</div></div>
     <div class="col"><div class="node sub">${o.sec}</div><div class="v"></div><div class="row"><div class="col"><div class="node leaf">${o.acc}</div></div><div class="col"><div class="node leaf" style="border-color:var(--c-sky)">${o.unit}</div>${o.units.map(u=>`<div class="node leaf">${u}</div>`).join("")}</div></div></div></div>`;
-  document.getElementById("board-note").textContent=lg==="ko"?"정관 서명부(2022.5.20 개정) 기준 · 임원 임기 3년, 명예직(정관 제12·13조)":"Per charter signatories (rev. 2022.5.20) · 3-year honorary terms (Art. 12–13)";
-  document.getElementById("board-grid").innerHTML=BOARD.map((b,i)=>`<div class="member ${b.chair?"chair":""} rv d${i%4}"><div class="av">${b.nm[0]}</div><div><div class="role">${L(b.role)}</div><div class="nm">${b.nm} <span style="font-weight:500;color:var(--c-muted);font-size:.9rem">${b.en}</span></div>${b.chair?`<p style="font-size:.9rem;color:var(--c-muted);margin-top:6px">${lg==="ko"?"총회 및 이사회 의장 · 협의회 대표 (정관 제18조)":"Chair of the General Assembly and the Board; represents the Council (Art. 18)"}</p>`:""}</div></div>`).join("");
   const c=C.ci[lg]||C.ci.en;
   document.getElementById("ci-body").innerHTML=`<div class="ci-sheet">
     <div class="ci-box rv"><h3>${c.sym}</h3><div class="ci-preview"><img src="assets/img/logo-symbol.png" alt="symbol"></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.symD}</p>

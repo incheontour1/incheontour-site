@@ -301,22 +301,6 @@ window.HISTORY = [
  {y:"2019",ko:"(사)인천광역시관광협의회 창립 (정관 제정 2019.4.12)",en:"Incheon Tourism Council founded (Articles enacted 2019.4.12)",ja:"仁川広域市観光協議会 創立",zh:"仁川广域市观光协议会成立"}
 ];
 
-/* Board — 정관 서명부(2022.5.20 개정) 기준. 직책은 공개 자료 범위 내 표기 */
-window.BOARD = [
- {nm:"김재오",en:"Kim Jae-oh",role:{ko:"회장",en:"Chairman",ja:"会長",zh:"会长"},chair:true},
- {nm:"김혜경",en:"Kim Hye-kyung",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"안홍국",en:"Ahn Hong-guk",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"황인근",en:"Hwang In-geun",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"김경석",en:"Kim Kyung-seok",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"함희경",en:"Ham Hee-kyung",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"이현준",en:"Lee Hyun-jun",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"진재윤",en:"Jin Jae-yun",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"이미란",en:"Lee Mi-ran",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"김창길",en:"Kim Chang-gil",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"김풍운",en:"Kim Pung-un",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}},
- {nm:"송정훈",en:"Song Jeong-hun",role:{ko:"이사",en:"Director",ja:"理事",zh:"理事"}}
-];
-
 /* Default posts — editable in admin (overrides stored in localStorage) */
 window.DEFAULT_POSTS = {
  notice:[
