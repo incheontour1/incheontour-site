@@ -291,7 +291,7 @@ window.COLLAB = [
 /* History (from 협의회 소개자료 2025) */
 window.HISTORY = [
  {y:"2023 · 2025",ko:"인천시 글로벌 K-POP(INK) 콘서트 홍보·모객 참여 지원",en:"Promotion and audience mobilization for Incheon K-POP (INK) Concert",ja:"INKコンサート広報・集客支援",zh:"INK演唱会宣传与集客支持"},
- {y:"2024–2025",ko:"인천관광지 전기자전거 클린관광 캠페인",en:"E-bike clean tourism campaign at Incheon attractions",ja:"電動自転車クリーン観光キャンペーン",zh:"电动自行车清洁旅游活动"},
+ {y:"2024–2025",ko:"인천관광지 전기자전거 클린관광 캠페인 (시즌1 영종도편 · 시즌2 부평편)",en:"E-bike clean tourism campaign at Incheon attractions (Season 1: Yeongjongdo · Season 2: Bupyeong)",ja:"電動自転車クリーン観光キャンペーン（シーズン1 永宗島編・シーズン2 富平編）",zh:"电动自行车清洁旅游活动（第一季 永宗岛篇·第二季 富平篇）"},
  {y:"2023–2024",ko:"인천시 여행업 리스타트 관광상품 지원사업 수탁운영 (39개 업체·1,706명 지원, 지역 내 소비 132,439천원)",en:"Travel-industry Restart product support program (39 agencies, 1,706 travelers)",ja:"旅行業リスタート観光商品支援事業 受託運営",zh:"旅行业重启旅游产品支持项目受托运营"},
  {y:"2022–2024",ko:"인천시 클린관광 활동사업 시행 주관 · 2021–2024 한중 문화예술 교류전",en:"Clean tourism program lead · Korea–China cultural exchange (2021–24)",ja:"クリーン観光事業主管・韓中文化芸術交流展",zh:"清洁旅游项目主办·韩中文化艺术交流展"},
  {y:"2022–2023",ko:"인천 관광활성화 낭독콘테스트 개최 · 민간위탁 종합성과평가 '우수' (16개 기관 중 5개)",en:"Tourism reading contest · Rated 'Excellent' in city's outsourcing evaluation",ja:"観光活性化朗読コンテスト・市評価「優秀」",zh:"旅游活化朗读大赛·市评价“优秀”"},
