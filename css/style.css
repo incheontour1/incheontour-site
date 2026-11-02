@@ -656,3 +656,14 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .book .b{padding:12px 12px 14px}
   .book h3{font-size:.92rem;word-break:keep-all}
 }
+/* 2026-11-02: flipbook controls on one line (mobile) */
+.flip .ctl .btn{white-space:nowrap;flex:none}
+.flip .ctl .pg{display:flex;align-items:center;gap:6px;white-space:nowrap;min-width:0}
+@media (max-width:600px){
+  .flip{padding:12px}
+  .flip .ctl{gap:6px}
+  .flip .ctl .btn{font-size:.82rem;padding:7px 12px;min-height:0}
+  .flip .ctl .pg{font-size:.88rem;gap:4px}
+  .flip .ctl .pg input{width:46px!important;padding:5px 2px!important;font-size:.9rem}
+  .flip .ctl .pg-word{display:none}
+}
