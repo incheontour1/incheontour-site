@@ -57,8 +57,8 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--c-line);transition:box-shadow .3s,height .3s}
 .header.scrolled{box-shadow:0 6px 24px rgba(15,42,98,.08)}
 .header .container{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);gap:20px}
-.header .brand{display:flex;align-items:center;height:var(--header-h)}
-.header .brand img{height:56px;width:auto;display:block}
+.header .brand{display:flex;align-items:center;height:var(--header-h);min-width:0;flex:0 1 auto}
+.header .brand img{height:56px;width:auto;display:block;object-fit:contain;object-position:left center}
 .nav{display:flex;align-items:center;gap:6px}
 .nav>li{position:relative}
 .nav>li>a{display:block;padding:14px 16px;font-weight:700;font-size:1.08rem;color:var(--c-ink);border-radius:10px;transition:color .2s,background .2s}
@@ -594,4 +594,17 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .orgsvg{display:none}
   .orgmob{display:block}
 }
+}
+
+/* 2026-11-02 fixes: logo aspect ratio, CI sub logos, mobile hero search */
+.drawer .d-head img,.footer .brand img{object-fit:contain;object-position:left center}
+.sw .c img{max-width:88%;object-fit:contain}
+.ci-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.ci-sub .ci-preview{min-height:150px;padding:16px}
+.ci-sub .ci-preview img{max-height:120px;height:auto;object-fit:contain}
+@media (max-width:760px){
+  .hero-search{display:none}
+  .ci-sub{grid-template-columns:1fr}
+  .ci-sub .ci-preview{min-height:0;padding:22px 16px}
+  .ci-sub .ci-preview img{max-height:150px;max-width:78%}
 }
