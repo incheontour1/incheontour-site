@@ -667,3 +667,6 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .flip .ctl .pg input{width:46px!important;padding:5px 2px!important;font-size:.9rem}
   .flip .ctl .pg-word{display:none}
 }
+/* 2026-11-03: chairman photo keeps natural ratio */
+.greet .chair-ph img{aspect-ratio:auto;height:auto;object-fit:contain;background:#f3f3f3}
+@media (max-width:860px){.greet .chair-ph{max-width:420px;margin:0 auto}}
