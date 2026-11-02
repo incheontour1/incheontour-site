@@ -15,6 +15,8 @@
   window.setLang=(l)=>{if(!I18N[l])return;lang=l;localStorage.setItem("itc_lang",l);document.documentElement.lang=htmlLang[l];applyI18n();document.dispatchEvent(new CustomEvent("langchange",{detail:l}));};
 
   const ICON={
+    globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>',
+    caret:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="13" height="13"><path d="m6 9 6 6 6-6"/></svg>',
     search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
     menu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
@@ -59,20 +61,20 @@
         <a href="https://korean.visitkorea.or.kr" target="_blank" rel="noopener">한국관광공사</a>
         <a href="https://www.mcst.go.kr" target="_blank" rel="noopener">문화체육관광부</a>
       </div>
-      <div class="lang-switch" role="group" aria-label="language">${LANGS.map(l=>`<button data-lang="${l[0]}" class="${l[0]===lang?"active":""}" title="${l[2]}">${l[1]}</button>`).join("")}</div>
+      <div class="lang-dd" id="lang-dd"><button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">${ICON.globe}<span class="lang-cur">${(LANGS.find(l=>l[0]===lang)||LANGS[0])[2]}</span>${ICON.caret}</button><ul class="lang-menu" role="listbox">${LANGS.map(l=>`<li><button type="button" role="option" data-lang="${l[0]}" lang="${htmlLang[l[0]]}" class="${l[0]===lang?"active":""}">${l[2]}</button></li>`).join("")}</ul></div>
     </div></div>
     <header class="header" id="hdr"><div class="container">
       <a class="brand" href="index.html" aria-label="${t("org")}"><img src="assets/img/logo-horizontal-v3.png" alt="${t("orgFull")}"></a>
       <nav><ul class="nav">${NAV.map(n=>`<li class="${page===n.id?"active":""}"><a href="${n.href}" data-i18n="nav.${n.id}">${t("nav."+n.id)}${n.soon?`<span class="badge" data-i18n="soon">${t("soon")}</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}</ul></nav>
       <div class="header-tools">
         <button class="icon-btn" id="btn-search" aria-label="${t("search.btn")}">${ICON.search}</button>
-        <a class="icon-btn desktop-only" href="admin.html" title="${t("nav.admin")}" aria-label="${t("nav.admin")}" style="font-size:.7rem;font-weight:800;letter-spacing:.05em">ADM</a>
+        <a class="icon-btn desktop-only" href="admin.html" title="${t("nav.admin")}" aria-label="${t("nav.admin")}" style="width:auto;padding:0 10px;font-size:.72rem;font-weight:800;letter-spacing:.06em">ADMIN</a>
         <button class="icon-btn burger" id="btn-menu" aria-label="${t("common.menu")}">${ICON.menu}</button>
       </div>
     </div></header>
     <div class="drawer" id="drawer"><div class="dim"></div><div class="panel">
       <div class="d-head"><img src="assets/img/logo-horizontal-v3.png" alt=""><button class="icon-btn" id="btn-menu-close" aria-label="${t("common.close")}">${ICON.close}</button></div>
-      <div class="d-lang">${LANGS.map(l=>`<button data-lang="${l[0]}" class="${l[0]===lang?"active":""}">${l[2]}</button>`).join("")}</div>
+      <label class="d-lang">${ICON.globe}<select id="d-lang-sel" aria-label="Language">${LANGS.map(l=>`<option value="${l[0]}" ${l[0]===lang?"selected":""}>${l[2]}</option>`).join("")}</select>${ICON.caret}</label>
       <ul class="d-nav">${NAV.map(n=>`<li><a href="${n.href}" data-i18n="nav.${n.id}" ${n.sub?`data-toggle`:""}>${t("nav."+n.id)}${n.sub?`<span>+</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}
       <li><a href="admin.html" data-i18n="nav.admin">${t("nav.admin")}</a></li></ul>
       <div class="d-sns">${snsHtml()}</div>
@@ -84,7 +86,13 @@
     <button class="totop" id="totop" aria-label="${t("common.top")}">${ICON.up}</button>
     <div class="toast" id="toast"></div>`;
 
-    el.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+    const dd=el.querySelector("#lang-dd"),ddb=el.querySelector("#lang-btn");
+    const ddClose=()=>{dd.classList.remove("open");ddb.setAttribute("aria-expanded","false");};
+    ddb.onclick=(e)=>{e.stopPropagation();const o=dd.classList.toggle("open");ddb.setAttribute("aria-expanded",o?"true":"false");};
+    document.addEventListener("click",(e)=>{if(!dd.contains(e.target))ddClose();});
+    document.addEventListener("keydown",(e)=>{if(e.key==="Escape")ddClose();});
+    el.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{ddClose();setLang(b.dataset.lang);}));
+    el.querySelector("#d-lang-sel").addEventListener("change",(e)=>setLang(e.target.value));
     const drawer=el.querySelector("#drawer");
     el.querySelector("#btn-menu").onclick=()=>drawer.classList.add("open");
     el.querySelector("#btn-menu-close").onclick=()=>drawer.classList.remove("open");
@@ -153,6 +161,7 @@
     document.querySelectorAll("[data-i18n]").forEach(el=>{el.innerHTML=t(el.dataset.i18n);});
     document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
     document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+    const cur=(LANGS.find(l=>l[0]===lang)||LANGS[0])[2];document.querySelectorAll(".lang-cur").forEach(x=>x.textContent=cur);const ds=document.getElementById("d-lang-sel");if(ds)ds.value=lang;
     document.querySelectorAll("[data-l]").forEach(el=>{try{el.innerHTML=L(JSON.parse(el.dataset.l));}catch(e){}});
   };
 

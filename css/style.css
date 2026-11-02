@@ -48,10 +48,16 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .topbar a{opacity:.85}.topbar a:hover{opacity:1;color:#fff}
 .topbar .family{display:flex;gap:16px}
-.lang-switch{display:flex;gap:4px}
-.lang-switch button{padding:2px 8px;border-radius:999px;font-size:.78rem;color:#cfe0ff;border:1px solid transparent}
-.lang-switch button.active{background:#fff;color:var(--c-primary);font-weight:700}
-.lang-switch button:hover{border-color:#8fb3ff}
+.lang-dd{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;height:26px;padding:0 10px 0 9px;border-radius:999px;border:1px solid rgba(207,224,255,.45);color:#fff;font-size:.8rem;font-weight:600}
+.lang-btn:hover,.lang-dd.open .lang-btn{background:rgba(255,255,255,.12);border-color:#cfe0ff}
+.lang-btn svg:last-child{transition:transform .2s}
+.lang-dd.open .lang-btn svg:last-child{transform:rotate(180deg)}
+.lang-menu{position:absolute;right:0;top:calc(100% + 6px);min-width:160px;background:#fff;border-radius:12px;box-shadow:var(--shadow-lg);padding:6px;list-style:none;margin:0;z-index:1001;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,transform .15s,visibility .15s}
+.lang-dd.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:block;width:100%;text-align:left;padding:8px 12px;border-radius:8px;font-size:.88rem;color:var(--c-ink)}
+.lang-menu button:hover{background:#eef3fb;color:var(--c-primary)}
+.lang-menu button.active{background:var(--c-primary);color:#fff;font-weight:700}
 
 /* ---------- Header ---------- */
 .header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--c-line);transition:box-shadow .3s,height .3s}
@@ -81,9 +87,9 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .drawer.open{pointer-events:auto}.drawer.open .dim{opacity:1}.drawer.open .panel{transform:none}
 .drawer .d-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .drawer .d-head img{height:40px}
-.drawer .d-lang{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 16px}
-.drawer .d-lang button{flex:1 1 30%;padding:8px;border:1px solid var(--c-line);border-radius:8px;font-size:.85rem}
-.drawer .d-lang button.active{background:var(--c-primary);color:#fff;border-color:var(--c-primary)}
+.drawer .d-lang{position:relative;display:flex;align-items:center;gap:8px;margin:8px 0 16px;border:1px solid var(--c-line);border-radius:10px;padding:0 12px;color:var(--c-primary)}
+.drawer .d-lang select{flex:1;appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:12px 22px 12px 0;font-size:.95rem;font-weight:600;color:var(--c-ink);font-family:inherit;outline:0}
+.drawer .d-lang svg:last-child{position:absolute;right:12px;pointer-events:none;color:var(--c-muted)}
 .drawer .d-nav>li{border-bottom:1px solid var(--c-line)}
 .drawer .d-nav>li>a{display:flex;justify-content:space-between;padding:14px 4px;font-weight:700;font-size:1.05rem}
 .drawer .d-nav .sub{padding:0 4px 10px 14px;display:none}
