@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인천광역시관광협의회 | Incheon Tourism Council</title>
+<meta name="description" content="사단법인 인천광역시관광협의회 공식 홈페이지. 인천여행·여행정보·관광지도·콜라보·알림마당. 한국어·영어·일본어·중국어 지원.">
+<meta property="og:title" content="인천광역시관광협의회 Incheon Tourism Council">
+<meta property="og:description" content="관문에서 머무는 도시로 — 인천 여행의 모든 것">
+<meta property="og:image" content="assets/img/hero_islands.jpg">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="slide active"><img src="assets/img/hero_islands.jpg" alt="백령도 두무진"></div>
+  <div class="slide"><img src="assets/img/songdo_hero.jpg" alt="송도국제도시"></div>
+  <div class="slide"><img src="assets/img/hero_local.jpg" alt="소래습지생태공원"></div>
+  <div class="content"><div class="container">
+    <div class="eyebrow" data-i18n="hero.eyebrow">INCHEON TOURISM COUNCIL</div>
+    <h1 id="hero-t" data-i18n="hero.s1.t"></h1>
+    <p id="hero-d" data-i18n="hero.s1.d"></p>
+    <form class="hero-search" onsubmit="openSearch(this.q.value);return false"><input name="q" data-i18n-ph="search.ph" placeholder=""><button type="submit"><span data-i18n="search.btn"></span></button></form>
+    <div class="cta"><a class="btn btn-sky" href="travel.html" data-i18n="hero.c1"></a><a class="btn btn-ghost" href="about.html" data-i18n="hero.c2"></a></div>
+  </div></div>
+  <div class="dots" id="hero-dots"></div>
+  <div class="scroll-hint">SCROLL</div>
+  <div class="caption" id="hero-cap">백령도 두무진 · 옹진군</div>
+</section>
+
+<!-- QUICK MENU -->
+<section class="quick"><div class="container"><div class="grid" id="quick"></div></div></section>
+
+<!-- REGIONS -->
+<section class="section" id="regions">
+  <div class="container">
+    <div class="sec-head rv"><div><span class="kicker" data-i18n="home.regionK"></span><h2 data-i18n="home.regionT"></h2><p data-i18n="home.regionP"></p></div><a class="more" href="travel.html"><span data-i18n="home.all"></span> <span id="more-arrow"></span></a></div>
+    <div class="grid-4" id="region-grid"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="track" id="marquee"></div></div>
+
+<!-- THEMES -->
+<section class="section alt" id="themes">
+  <div class="container">
+    <div class="sec-head rv"><div><span class="kicker" data-i18n="home.themeK"></span><h2 data-i18n="home.themeT"></h2></div></div>
+    <div class="grid-3" id="theme-grid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="feature">
+      <div class="ph rv"><img src="assets/img/incheon_bridge_night.jpg" alt="인천대교"></div>
+      <div class="rv d1"><span class="kicker" style="display:block;color:var(--c-primary);font-size:.82rem;letter-spacing:.14em;font-weight:700;margin-bottom:8px" data-i18n="home.aboutK"></span>
+        <h2 data-i18n="home.aboutT"></h2>
+        <p data-i18n="home.aboutP1"></p><p data-i18n="home.aboutP2"></p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn btn-primary" href="about.html#greet" data-i18n="sub.greet"></a><a class="btn btn-outline" href="about.html#vision" data-i18n="sub.vision"></a><a class="btn btn-outline" href="collab.html" data-i18n="nav.collab"></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section alt tight" id="stats">
+  <div class="container">
+    <div class="sec-head rv"><div><span class="kicker" data-i18n="home.statK"></span><h2 data-i18n="home.statT"></h2></div><p style="font-size:.82rem;color:var(--c-muted)">출처: 한국관광공사·인천국제공항공사·ICCA·협의회 소개자료 (2025–2026)</p></div>
+    <div class="stats">
+      <div class="stat rv"><div class="n"><span data-count="1894" data-dec="0">0</span><small>만 명</small></div><div class="l" data-i18n="home.st1"></div><div class="s" data-i18n="home.st1s"></div></div>
+      <div class="stat rv d1"><div class="n"><span data-count="804.6" data-dec="1">0</span><small>만 명</small></div><div class="l" data-i18n="home.st2"></div><div class="s" data-i18n="home.st2s"></div></div>
+      <div class="stat rv d2"><div class="n"><span data-count="24" data-dec="0">0</span><small>건</small></div><div class="l" data-i18n="home.st3"></div><div class="s" data-i18n="home.st3s"></div></div>
+      <div class="stat rv d3"><div class="n"><span data-count="10" data-dec="0">0</span><small>개소</small></div><div class="l" data-i18n="home.st4"></div><div class="s" data-i18n="home.st4s"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="section" id="info">
+  <div class="container">
+    <div class="sec-head rv"><div><span class="kicker" data-i18n="home.infoK"></span><h2 data-i18n="home.infoT"></h2></div><a class="more" href="info.html"><span data-i18n="home.all"></span> <span class="more-arrow"></span></a></div>
+    <div class="book-grid" id="book-grid"></div>
+  </div>
+</section>
+
+<!-- NEWS + CTA -->
+<section class="section alt" id="news">
+  <div class="container">
+    <div class="sec-head rv"><div><span class="kicker" data-i18n="home.newsK"></span><h2 data-i18n="home.newsT"></h2></div><a class="more" href="news.html"><span data-i18n="home.all"></span> <span class="more-arrow"></span></a></div>
+    <div class="notice-grid">
+      <ul class="notice-list rv" id="notice-list"></ul>
+      <div class="cta-box rv d1"><div><h3 data-i18n="home.ctaT"></h3><p data-i18n="home.ctaP"></p></div><div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><a class="btn btn-light" href="collab.html" data-i18n="home.ctaB"></a><div class="sns" id="home-sns"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+const HERO=[{k:"s1",cap:"백령도 두무진 · 옹진군"},{k:"s2",cap:"송도국제도시 · 연수구"},{k:"s3",cap:"소래습지생태공원 · 남동구"}];
+let cur=0,timer;
+function showSlide(i){cur=(i+HERO.length)%HERO.length;document.querySelectorAll("#hero .slide").forEach((s,j)=>s.classList.toggle("active",j===cur));document.querySelectorAll("#hero-dots button").forEach((b,j)=>b.classList.toggle("active",j===cur));
+  const h=document.getElementById("hero-t"),d=document.getElementById("hero-d");h.dataset.i18n=`hero.${HERO[cur].k}.t`;d.dataset.i18n=`hero.${HERO[cur].k}.d`;h.innerHTML=t(h.dataset.i18n);d.innerHTML=t(d.dataset.i18n);document.getElementById("hero-cap").textContent=HERO[cur].cap;
+  h.style.animation="none";h.offsetHeight;h.style.animation="fade .8s";}
+function startHero(){clearInterval(timer);timer=setInterval(()=>showSlide(cur+1),6500);}
+document.getElementById("hero-dots").innerHTML=HERO.map((_,i)=>`<button aria-label="slide ${i+1}"></button>`).join("");
+document.querySelectorAll("#hero-dots button").forEach((b,i)=>b.onclick=()=>{showSlide(i);startHero();});
+
+const THEME_IMG={history:"gaehang_museum.jpg",nature:"dumujin.jpg",city:"tribowl_night.jpg",family:"wolmi_themepark.jpg",food:"sorae_market.jpg",mice:"songdo_convensia.jpg"};
+window.onPageRender=function(){
+  document.getElementById("quick").innerHTML=[["travel.html","compass","quick.travel"],["map.html","map","quick.map"],["info.html#books","book","quick.guide"],["info.html#tic","info","quick.tic"],["collab.html","handshake","quick.collab"],["news.html","bell","quick.notice"]].map(([h,i,k])=>`<a href="${h}">${ICON[i]}<span data-i18n="${k}"></span></a>`).join("");
+  document.querySelectorAll(".more-arrow,#more-arrow").forEach(e=>e.innerHTML=ICON.arrow);
+  document.getElementById("region-grid").innerHTML=REGIONS.slice(0,8).map((r,i)=>{const n=PLACES.filter(p=>p.region===r.id).length;return `<a class="card rv d${i%4}" href="travel.html?region=${r.id}"><div class="ph"><img src="assets/img/${r.img}" alt="${L(r.n)}" loading="lazy"><span class="chip">${n} ${t("travel.count")}</span></div><div class="body"><h3>${L(r.n)}</h3><p>${L(r.s)}</p></div></a>`;}).join("");
+  const mq=I18N[getLang()].home.marquee;document.getElementById("marquee").innerHTML=[...mq,...mq,...mq].map(s=>`<span>${s}</span>`).join("");
+  document.getElementById("theme-grid").innerHTML=Object.entries(THEME_IMG).map(([k,img],i)=>{const n=PLACES.filter(p=>p.themes.includes(k)).length;return `<a class="card rv d${i%3}" href="travel.html?theme=${k}"><div class="ph"><img src="assets/img/${img}" alt="" loading="lazy"><span class="chip">${n} ${t("travel.count")}</span></div><div class="body"><h3>${t("travel.themes."+k)}</h3><p>${PLACES.filter(p=>p.themes.includes(k)).slice(0,4).map(p=>L(p.n)).join(" · ")}</p></div></a>`;}).join("");
+  document.getElementById("book-grid").innerHTML=BOOKS.slice(0,5).map((b,i)=>`<a class="book rv d${i%4}" href="assets/docs/${b.file}" target="_blank" rel="noopener"><div class="cv"><img src="assets/img/${b.cover}" alt="${L(b.n)}" loading="lazy"></div><div class="b"><h3>${L(b.n)}</h3><p>${L(b.d)}</p></div></a>`).join("");
+  const posts=[...getPosts("notice").slice(0,4).map(p=>({...p,_c:"notice"})),...getPosts("press").slice(0,2).map(p=>({...p,_c:"press"}))];
+  document.getElementById("notice-list").innerHTML=posts.map(p=>`<li><a href="news.html?tab=${p._c}&id=${p.id}"><span class="cat ${p._c}">${t("sub."+p._c)}</span><span class="ttl">${postTitle(p)}</span><span class="dt">${p.date}</span></a></li>`).join("");
+  document.getElementById("home-sns").innerHTML=snsHtml();
+  showSlide(cur);
+};
+window.onPageInit=function(){onPageRender();startHero();};
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>여행정보 | 인천광역시관광협의회</title>
+<meta name="description" content="인천관광가이드북·관광안내지도·테마여행북·관광안내소·교통 정보">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero"><img src="assets/img/ganghwa_hero.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.info"></span></div><h1 data-i18n="info.title"></h1><p style="color:#cfe0ff;margin-top:6px" data-i18n="info.sub"></p></div></section>
+<nav class="subtabs"><div class="container" id="subtabs"></div></nav>
+
+<section class="section" id="books"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">PUBLICATIONS</span><h2 data-i18n="info.booksT"></h2><p data-i18n="info.booksP"></p></div></div>
+  <div class="book-grid" id="book-grid"></div>
+</div></section>
+
+<section class="section alt" id="flip"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">WEB EDITION</span><h2 data-i18n="info.flipT"></h2></div><a class="btn btn-primary btn-sm" href="assets/docs/incheon_guidebook_2026.pdf" target="_blank" rel="noopener" data-i18n="info.dl"></a></div>
+  <div class="flip rv"><div class="stage"><img id="flip-img" src="assets/img/gb/p-01.jpg" alt="guidebook page"></div>
+    <div class="ctl"><button class="btn btn-outline btn-sm" id="flip-prev">‹ <span data-i18n="info.prev"></span></button><div class="pg"><input id="flip-no" type="number" min="1" max="43" value="1" style="width:60px;padding:6px;border:1px solid var(--c-line);border-radius:8px;text-align:center"> / 43 <span data-i18n="info.page"></span></div><button class="btn btn-outline btn-sm" id="flip-next"><span data-i18n="info.next"></span> ›</button></div>
+    <div id="flip-thumbs" style="display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:6px"></div></div>
+</div></section>
+
+<section class="section" id="citytour"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">CITY TOUR</span><h2 data-i18n="info.cityT"></h2><p data-i18n="info.cityP"></p></div><a class="btn btn-outline btn-sm" href="assets/docs/incheon_citytour_2026.pdf" target="_blank" rel="noopener" data-i18n="info.dl"></a></div>
+  <div class="grid-2"><a class="card rv" href="assets/img/citytour_page1.jpg" target="_blank"><div class="ph" style="aspect-ratio:1733/1603"><img src="assets/img/citytour_page1.jpg" alt="city tour route" loading="lazy"></div></a><a class="card rv d1" href="assets/img/citytour_page2.jpg" target="_blank"><div class="ph" style="aspect-ratio:1733/1603"><img src="assets/img/citytour_page2.jpg" alt="city tour info" loading="lazy"></div></a></div>
+</div></section>
+
+<section class="section alt" id="tic"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">TOURIST INFORMATION</span><h2 data-i18n="info.ticT"></h2><p data-i18n="info.ticP"></p></div><a class="more" href="map.html?layer=tic"><span data-i18n="nav.map"></span></a></div>
+  <div class="grid-2" style="grid-template-columns:1.4fr 1fr">
+    <table class="tic-table rv"><thead><tr><th data-i18n="info.ticName"></th><th data-i18n="info.ticTel"></th><th data-i18n="info.ticHours"></th></tr></thead><tbody id="tic-body"></tbody></table>
+    <div class="rv d1"><div class="ci-box"><h3 data-i18n="info.hotT"></h3><ul class="prose" style="font-size:.95rem;max-width:100%" id="hotline"></ul></div></div>
+  </div>
+</div></section>
+
+<section class="section" id="transport"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">TRANSPORT</span><h2 data-i18n="info.transT"></h2><p data-i18n="info.transP"></p></div></div>
+  <div class="dir-grid" id="trans"></div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const HOT={ko:["한국관광안내 대표전화 <b>☎ 1330</b> — 관광안내·통역·관광불편신고 (한·영·일·중·러 24시간 / 베·태 08:00~19:00) · 국내 1330 / 해외 +82-2-1330","24시간 무료 전화통역(bbb코리아) <b>☎ +82-1588-5644</b>","여행불편처리센터 <b>☎ +82-1588-8692</b>","응급의료 <b>119</b> · 경찰 <b>112</b> · 미추홀콜센터 <b>+82-32-120</b>","협의회 문의 <b>+82-10-5238-5443</b> · incheontour1@gmail.com"],
+ en:["Korea Travel Hotline <b>☎ 1330</b> — info, interpretation, complaints (KO/EN/JA/ZH/RU 24h) · from abroad +82-2-1330","Free phone interpretation (bbb Korea) <b>☎ +82-1588-5644</b>","Tourist Complaint Center <b>☎ +82-1588-8692</b>","Emergency <b>119</b> · Police <b>112</b> · Incheon call center <b>+82-32-120</b>","Council <b>+82-10-5238-5443</b> · incheontour1@gmail.com"],
+ ja:["韓国観光案内電話 <b>☎ 1330</b> — 案内・通訳・観光不便申告（韓英日中露24時間）・海外から +82-2-1330","24時間無料電話通訳（bbb Korea）<b>☎ +82-1588-5644</b>","旅行不便処理センター <b>☎ +82-1588-8692</b>","救急 <b>119</b> ・警察 <b>112</b> ・仁川コールセンター <b>+82-32-120</b>","協議会 <b>+82-10-5238-5443</b>"],
+ zh:["韩国旅游咨询热线 <b>☎ 1330</b> — 咨询、翻译、投诉（韩英日中俄24小时）· 海外 +82-2-1330","24小时免费电话翻译（bbb Korea）<b>☎ +82-1588-5644</b>","旅游投诉中心 <b>☎ +82-1588-8692</b>","急救 <b>119</b> · 警察 <b>112</b> · 仁川呼叫中心 <b>+82-32-120</b>","协议会 <b>+82-10-5238-5443</b>"]};
+const TR={ko:[{i:"train",t:"철도·지하철",l:["<b>공항철도(AREX)</b> 인천공항 T1·T2 ↔ 서울역 직통 약 43~51분, 일반열차 약 60분","<b>인천 1호선</b> 계양(공항철도 환승) — 부평 — 인천시청 — 송도(국제업무지구) / <b>2호선</b> 검단오류 — 인천시청 — 운연","<b>수인분당선·경인선(1호선)</b> 인천역(개항장·차이나타운) — 부평 — 서울","<b>GTX-B</b> 송도 ↔ 서울역 추진 중 [확인 필요]"]},{i:"car",t:"버스·시티투어·택시",l:["<b>인천시티투어</b> 순환형 노선(인천역 출발) · 바다노선 — 위 노선도 참조","<b>공항리무진</b> 인천공항 ↔ 송도·부평·구월동 주요 호텔","<b>광역·시내버스</b> 인천종합버스터미널(인천1호선 터미널역) 기점","<b>택시</b> 인천공항 → 송도 약 30~40분 / → 개항장 약 50분"]},{i:"map",t:"항만·섬·공항",l:["<b>인천항 연안여객터미널</b> — 덕적·자월·승봉·백령·대청·연평 항로","<b>영종 삼목선착장</b> — 신·시·모도, 장봉도 (약 10~40분)","<b>강화 외포리·석모도</b> — 다리 연결(석모대교·교동대교)","<b>인천국제공항</b> 환승 4시간 이상 시 무료 환승투어(영종·개항장·강화 등) 운영 — 공항 관광안내소 문의"]}],
+ en:[{i:"train",t:"Rail & Metro",l:["<b>AREX</b> Incheon Airport T1/T2 ↔ Seoul Station, express 43–51 min","<b>Incheon Line 1</b> Gyeyang (AREX transfer) — Bupyeong — City Hall — Songdo / <b>Line 2</b> Geomdan — City Hall","<b>Suin-Bundang / Line 1</b> Incheon Stn (Open Port, Chinatown) — Bupyeong — Seoul","<b>GTX-B</b> Songdo ↔ Seoul under construction [to be confirmed]"]},{i:"car",t:"Bus · City Tour · Taxi",l:["<b>Incheon City Tour</b> loop routes from Incheon Station, plus a sea route","<b>Airport limousine</b> to Songdo, Bupyeong and Guwol-dong hotels","<b>Intercity buses</b> from Incheon Bus Terminal (Line 1)","<b>Taxi</b> Airport → Songdo 30–40 min / → Open Port ~50 min"]},{i:"map",t:"Port · Islands · Airport",l:["<b>Incheon Port Coastal Terminal</b> — ferries to Deokjeok, Jawol, Seungbong, Baengnyeong, Daecheong, Yeonpyeong","<b>Sammok Wharf (Yeongjong)</b> — Sin/Si/Modo and Jangbongdo (10–40 min)","<b>Ganghwa</b> — Seongmodo and Gyodongdo by bridge","<b>Incheon Airport</b> free transit tours for layovers of 4h+ (Yeongjong, Open Port, Ganghwa) — ask at the airport TIC"]}],
+ ja:[{i:"train",t:"鉄道・地下鉄",l:["<b>空港鉄道(AREX)</b> 仁川空港 ↔ ソウル駅 直通約43〜51分","<b>仁川1号線</b> 桂陽（空港鉄道乗換）— 富平 — 市庁 — 松島 / <b>2号線</b> 黔丹 — 市庁","<b>水仁盆唐線・1号線</b> 仁川駅（開港場・チャイナタウン）— 富平 — ソウル","<b>GTX-B</b> 松島 ↔ ソウル駅 建設中 [確認必要]"]},{i:"car",t:"バス・シティツアー・タクシー",l:["<b>仁川シティツアー</b> 仁川駅発の循環コース、海コース","<b>空港リムジン</b> 松島・富平・九月洞のホテルへ","<b>市外バス</b> 仁川総合バスターミナル発","<b>タクシー</b> 空港→松島 30〜40分 / →開港場 約50分"]},{i:"map",t:"港・島・空港",l:["<b>仁川港 沿岸旅客ターミナル</b> — 徳積・紫月・昇鳳・白翎・大青・延坪","<b>永宗 三木船着場</b> — 信・矢・茅島、長峰島（10〜40分）","<b>江華</b> — 席毛島・喬桐島は橋で連結","<b>仁川空港</b> 乗継4時間以上で無料乗継ツアー（永宗・開港場・江華）— 空港観光案内所へ"]}],
+ zh:[{i:"train",t:"铁路·地铁",l:["<b>机场铁路(AREX)</b> 仁川机场 ↔ 首尔站 直达约43–51分钟","<b>仁川1号线</b> 桂阳（换乘机场铁路）— 富平 — 市厅 — 松岛 / <b>2号线</b> 黔丹 — 市厅","<b>水仁盆唐线·1号线</b> 仁川站（开港场·唐人街）— 富平 — 首尔","<b>GTX-B</b> 松岛 ↔ 首尔站 建设中 [待确认]"]},{i:"car",t:"巴士·观光巴士·出租车",l:["<b>仁川城市观光巴士</b> 自仁川站出发的环线及海洋线","<b>机场大巴</b> 至松岛、富平、九月洞主要酒店","<b>长途巴士</b> 自仁川综合巴士客运站出发","<b>出租车</b> 机场→松岛 30–40分钟 / →开港场 约50分钟"]},{i:"map",t:"港口·海岛·机场",l:["<b>仁川港沿岸客运站</b> — 德积、紫月、升凤、白翎、大青、延坪航线","<b>永宗三木码头</b> — 信·矢·茅岛、长峰岛（10–40分钟）","<b>江华</b> — 席毛岛、乔桐岛有桥相连","<b>仁川机场</b> 中转4小时以上可参加免费中转游（永宗、开港场、江华）— 咨询机场旅游咨询处"]}]};
+let pg=1;const N=43;
+function showPg(n){pg=Math.min(N,Math.max(1,n));const im=document.getElementById("flip-img");im.style.opacity=0;setTimeout(()=>{im.src=`assets/img/gb/p-${String(pg).padStart(2,"0")}.jpg`;im.onload=()=>im.style.opacity=1;},150);document.getElementById("flip-no").value=pg;document.querySelectorAll("#flip-thumbs img").forEach((t,i)=>t.style.outline=i+1===pg?"3px solid var(--c-sky)":"none");}
+window.onPageRender=function(){
+  const lg=getLang();
+  document.getElementById("subtabs").innerHTML=[["books","info.booksT"],["flip","info.flipT"],["citytour","info.cityT"],["tic","info.ticT"],["transport","info.transT"]].map(([k,i])=>`<a href="#${k}">${t(i)}</a>`).join("");
+  document.getElementById("book-grid").innerHTML=BOOKS.map((b,i)=>`<div class="book rv d${i%4}"><a class="cv" href="assets/docs/${b.file}" target="_blank" rel="noopener"><img src="assets/img/${b.cover}" alt="${L(b.n)}" loading="lazy"></a><div class="b"><h3>${L(b.n)}</h3><p>${L(b.d)}</p><div class="dl"><a class="btn btn-primary btn-sm" href="assets/docs/${b.file}" target="_blank" rel="noopener">${t("info.view")}</a><a class="btn btn-outline btn-sm" href="assets/docs/${b.file}" download>${t("common.download")}</a></div></div></div>`).join("");
+  document.getElementById("tic-body").innerHTML=TICS.map(x=>`<tr><td><b>${L(x.n)}</b></td><td>${x.tel?`<a href="tel:${x.tel}">${x.tel}</a>`:"—"}</td><td>${x.h}</td></tr>`).join("");
+  document.getElementById("hotline").innerHTML=(HOT[lg]||HOT.en).map(x=>`<li>${x}</li>`).join("");
+  document.getElementById("trans").innerHTML=(TR[lg]||TR.en).map((s,i)=>`<div class="dir rv d${i}"><h3>${ICON[s.i]}${s.t}</h3><ul>${s.l.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+  document.getElementById("flip-thumbs").innerHTML=Array.from({length:N},(_,i)=>`<img src="assets/img/gb/p-${String(i+1).padStart(2,"0")}.jpg" loading="lazy" style="height:48px;border-radius:4px;cursor:pointer;flex:none" data-p="${i+1}">`).join("");
+  document.querySelectorAll("#flip-thumbs img").forEach(im=>im.onclick=()=>showPg(+im.dataset.p));
+  showPg(pg);
+};
+window.onPageInit=function(){onPageRender();document.getElementById("flip-prev").onclick=()=>showPg(pg-1);document.getElementById("flip-next").onclick=()=>showPg(pg+1);document.getElementById("flip-no").onchange=e=>showPg(+e.target.value);document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")showPg(pg+1);if(e.key==="ArrowLeft")showPg(pg-1);});
+  let sx=0;const st=document.querySelector(".flip .stage");st.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});st.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)showPg(dx<0?pg+1:pg-1);});};
+</script>
+</body>
+</html>

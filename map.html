@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인천관광지도 | 인천광역시관광협의회</title>
+<meta name="description" content="인천관광지도 — 인터랙티브 지도와 공식 안내지도(2026)">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="js/vendor/leaflet.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero" style="height:260px"><img src="assets/img/incheon9.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.map"></span></div><h1 data-i18n="map.title"></h1><p style="color:#cfe0ff;margin-top:6px" data-i18n="map.sub"></p></div></section>
+
+<section class="section tight"><div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div class="map-tabs"><button class="active" data-tab="live" data-i18n="map.tab1"></button><button data-tab="paper" data-i18n="map.tab2"></button><button data-tab="back" data-i18n="map.tab3"></button></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span style="font-size:.85rem;color:var(--c-muted)" data-i18n="map.hint"></span><a class="btn btn-primary btn-sm" href="assets/docs/incheon_tourist_map.pdf" target="_blank" rel="noopener" data-i18n="map.dlMap"></a></div>
+  </div>
+  <div id="tab-live">
+    <div class="filters" id="map-filters" style="margin-bottom:12px"></div>
+    <div class="map-wrap"><aside class="map-side" id="map-side"></aside><div id="leafmap"></div></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:.82rem;color:var(--c-muted)"><span><i class="mk" style="display:inline-block;vertical-align:middle;margin-right:6px"></i><span data-i18n="map.lg1"></span></span><span><i class="mk island" style="display:inline-block;vertical-align:middle;margin-right:6px"></i><span data-i18n="map.lg2"></span></span><span><i class="mk hist" style="display:inline-block;vertical-align:middle;margin-right:6px"></i><span data-i18n="map.lg3"></span></span><span><i class="mk mice" style="display:inline-block;vertical-align:middle;margin-right:6px"></i><span data-i18n="map.lg4"></span></span><span><i class="mk tic" style="display:inline-block;vertical-align:middle;margin-right:6px"></i><span data-i18n="map.lg5"></span></span></div>
+  </div>
+  <div id="tab-paper" style="display:none"><div id="papermap" style="height:min(78vh,760px)"></div><p style="font-size:.82rem;color:var(--c-muted);margin-top:10px">© 인천광역시·인천관광공사 「인천관광안내지도」. 휠·핀치로 확대, 드래그로 이동.</p></div>
+  <div id="tab-back" style="display:none"><div id="backmap" style="height:min(78vh,760px)"></div><p style="font-size:.82rem;color:var(--c-muted);margin-top:10px">안내지도 뒷면 — 권역별 명소 소개(상단)와 관광안내·긴급연락처(하단, 접이면을 바로 세운 이미지).</p></div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/vendor/leaflet.js"></script>
+<script>window.Lf=window.L;</script>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const q=new URLSearchParams(location.search);
+let filter=q.get("layer")==="tic"?"tic":(q.get("region")||"all");
+let live,paper,back,markers=[],group;
+function cls(p){if(p.themes.includes("mice"))return"mice";if(p.themes.includes("history"))return"hist";if(p.region==="ongjin"||p.themes.includes("nature"))return"island";return"";}
+function icon(c){return Lf.divIcon({className:"",html:`<div class="mk ${c}"></div>`,iconSize:[14,14],iconAnchor:[7,7],popupAnchor:[0,-8]});}
+function items(){
+  const lg=getLang();const out=[];
+  if(filter!=="tic")PLACES.filter(p=>filter==="all"||p.region===filter).forEach(p=>out.push({k:"place",id:p.id,lat:p.lat,lng:p.lng,n:L(p.n),s:L(REGIONS.find(r=>r.id===p.region).n),img:p.img,c:cls(p),d:L(p.d),addr:p.addr}));
+  if(filter==="all"||filter==="tic")TICS.forEach((x,i)=>out.push({k:"tic",id:"tic"+i,lat:x.lat,lng:x.lng,n:L(x.n),s:x.tel+" · "+x.h,img:"wolmi_street.jpg",c:"tic",d:x.h}));
+  return out;
+}
+function drawLive(){
+  if(group)group.clearLayers();group=Lf.layerGroup().addTo(live);markers={};
+  const list=items();
+  list.forEach(it=>{const m=Lf.marker([it.lat,it.lng],{icon:icon(it.c)}).addTo(group);
+    m.bindPopup(`<img src="assets/img/${it.img}" alt=""><b>${it.n}</b><div class="pp">${it.s}</div>${it.k==="place"?`<a href="#" onclick="openPlace('${it.id}');return false">${t("home.detail")}</a> · `:""}<a href="https://www.google.com/maps/dir/?api=1&destination=${it.lat},${it.lng}" target="_blank" rel="noopener">${t("travel.route")} ↗</a>`);
+    markers[it.id]=m;});
+  const side=document.getElementById("map-side");
+  const groups={};list.forEach(it=>{(groups[it.k==="tic"?"__tic":it.s]=groups[it.k==="tic"?"__tic":it.s]||[]).push(it);});
+  side.innerHTML=Object.entries(groups).map(([g,arr])=>`<div class="g">${g==="__tic"?t("map.tics"):g}</div>`+arr.map(it=>`<button class="pl" data-id="${it.id}"><img src="assets/img/${it.img}" alt="" loading="lazy"><span>${it.n}</span></button>`).join("")).join("");
+  side.querySelectorAll(".pl").forEach(b=>b.onclick=()=>{side.querySelectorAll(".pl").forEach(x=>x.classList.remove("active"));b.classList.add("active");const m=markers[b.dataset.id];live.flyTo(m.getLatLng(),13,{duration:.8});m.openPopup();});
+  if(list.length)live.fitBounds(Lf.latLngBounds(list.map(i=>[i.lat,i.lng])).pad(.15));
+  document.getElementById("map-filters").innerHTML=`<button class="${filter==="all"?"active":""}" data-v="all">${t("map.all")}</button>`+REGIONS.map(r=>`<button class="${filter===r.id?"active":""}" data-v="${r.id}">${L(r.n)}</button>`).join("")+`<button class="${filter==="tic"?"active":""}" data-v="tic" style="border-color:#1b8a4a;${filter==="tic"?"background:#1b8a4a":""}">${t("map.tics")}</button>`;
+  document.querySelectorAll("#map-filters button").forEach(b=>b.onclick=()=>{filter=b.dataset.v;drawLive();});
+}
+function imageMap(id,src,w,h){
+  const m=Lf.map(id,{crs:Lf.CRS.Simple,minZoom:-3,maxZoom:2,zoomSnap:.25,attributionControl:false});
+  const b=[[0,0],[h,w]];Lf.imageOverlay(src,b).addTo(m);m.fitBounds(b);m.setMaxBounds(Lf.latLngBounds(b).pad(.3));return m;
+}
+window.onPageRender=function(){drawLive();};
+window.onPageInit=function(){
+  if(!window.Lf){document.getElementById("leafmap").innerHTML='<div style="padding:40px;color:#6b7684">지도 라이브러리(Leaflet)를 불러오지 못했습니다. 네트워크 연결을 확인해 주세요.</div>';return;}
+  live=Lf.map("leafmap",{scrollWheelZoom:true}).setView([37.46,126.55],10);
+  Lf.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',subdomains:"abcd",maxZoom:19}).on("tileerror",()=>{if(!window._tileWarned){window._tileWarned=1;const d=document.createElement("div");d.style.cssText="position:absolute;left:12px;right:12px;bottom:12px;z-index:900;background:rgba(255,255,255,.95);border:1px solid #e3e8f0;border-radius:12px;padding:10px 14px;font-size:.85rem;color:#1f2733";d.innerHTML="지도 타일을 불러오지 못했습니다(미리보기 환경의 외부 이미지 차단). 실제 배포 도메인에서는 정상 표시됩니다. 지금은 <b>공식 안내지도(2026)</b> 탭을 이용하세요.";document.getElementById("leafmap").appendChild(d);}}).addTo(live);
+  drawLive();
+  const pl=q.get("place");if(pl&&markers[pl]){setTimeout(()=>{live.flyTo(markers[pl].getLatLng(),14);markers[pl].openPopup();},400);}
+  document.querySelectorAll(".map-tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".map-tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");["live","paper","back"].forEach(k=>document.getElementById("tab-"+k).style.display=k===b.dataset.tab?"":"none");
+    if(b.dataset.tab==="paper"&&!paper){paper=imageMap("papermap","assets/img/map_page1.jpg",5386,2977);}
+    if(b.dataset.tab==="back"&&!back){back=Lf.map("backmap",{crs:Lf.CRS.Simple,minZoom:-3,maxZoom:2,zoomSnap:.25,attributionControl:false});const b1=[[1489,0],[2977,5386]],b2=[[0,0],[1488,5386]];Lf.imageOverlay("assets/img/map_page2_top.jpg",b1).addTo(back);Lf.imageOverlay("assets/img/map_page2_bottom.jpg",b2).addTo(back);back.fitBounds([[0,0],[2977,5386]]);}
+    setTimeout(()=>{(paper&&paper.invalidateSize());(back&&back.invalidateSize());live.invalidateSize();},50);});
+};
+</script>
+</body>
+</html>

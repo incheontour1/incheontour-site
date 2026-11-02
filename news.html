@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>알림마당 | 인천광역시관광협의회</title>
+<meta name="description" content="인천광역시관광협의회 공지사항·언론보도·문의사항">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero" style="height:260px"><img src="assets/img/tribowl_night.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.news"></span></div><h1 data-i18n="news.title"></h1><p style="color:#cfe0ff;margin-top:6px" data-i18n="news.sub"></p></div></section>
+<nav class="subtabs"><div class="container" id="subtabs"></div></nav>
+
+<section class="section tight"><div class="container">
+  <div id="view-list">
+    <div class="board-tools"><input id="q" data-i18n-ph="news.searchPh"><span id="cnt" style="color:var(--c-muted);font-size:.9rem;align-self:center"></span></div>
+    <div class="board"><table><thead><tr><th style="width:70px" data-i18n="news.no"></th><th data-i18n="news.ttl"></th><th style="width:120px" id="th3" data-i18n="news.date"></th><th style="width:80px" data-i18n="news.views"></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="pager" id="pager"></div>
+  </div>
+  <div id="view-post" style="display:none"><div class="post" id="post"></div><div style="margin-top:14px"><a class="btn btn-outline btn-sm" href="#" id="back-btn" data-i18n="news.back"></a></div></div>
+  <div id="view-inquiry" style="display:none">
+    <div class="grid-2" style="grid-template-columns:1.3fr .7fr">
+      <form class="form rv" id="inq-form">
+        <h2 style="font-size:1.4rem" data-i18n="news.inqT"></h2><p style="color:var(--c-muted);font-size:.95rem" data-i18n="news.inqP"></p>
+        <div class="row"><div><label data-i18n="news.name"></label><input name="name" required></div><div><label data-i18n="news.email"></label><input name="email" type="email" required></div></div>
+        <div class="row"><div><label data-i18n="news.phone"></label><input name="phone"></div><div><label data-i18n="news.type"></label><select name="type" id="inq-type"></select></div></div>
+        <div><label data-i18n="news.subject"></label><input name="subject" required id="inq-subject"></div>
+        <div><label data-i18n="news.msg"></label><textarea name="msg" required id="inq-msg"></textarea></div>
+        <label class="agree"><input type="checkbox" name="agree"> <span data-i18n="news.agree"></span></label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" type="submit" data-i18n="news.send"></button><a class="btn btn-outline" id="mailto" href="mailto:incheontour1@gmail.com">✉ incheontour1@gmail.com</a></div>
+      </form>
+      <div class="rv d1"><div class="ci-box"><h3 data-i18n="footer.contact"></h3><ul class="prose" style="font-size:.95rem;max-width:100%"><li data-i18n="footer.addr"></li><li data-i18n="footer.tel"></li><li>incheontour1@gmail.com</li><li>Fax —</li><li data-i18n="footer.cpo"></li></ul></div>
+      <div class="ci-box" style="margin-top:18px"><h3 data-i18n="sub.way"></h3><p style="font-size:.9rem;color:var(--c-muted);margin-bottom:12px" data-i18n="footer.addr"></p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%82%A8%EB%8F%99%EA%B5%AC%20%EA%B5%AC%EC%9B%94%EB%82%A8%EB%A1%9C%20118%20YMCA%ED%9A%8C%EA%B4%80">Google Maps ↗</a><a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20YMCA%ED%9A%8C%EA%B4%80">Naver ↗</a><a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://map.kakao.com/?q=%EC%9D%B8%EC%B2%9C%20YMCA%ED%9A%8C%EA%B4%80">Kakao ↗</a><a class="btn btn-outline btn-sm" href="about.html#way" data-i18n="home.detail"></a></div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const q=new URLSearchParams(location.search);
+let tab=q.get("tab")||"notice",pageNo=1,query="";const PER=10;
+function setTab(tb){tab=tb;pageNo=1;const u=new URL(location);u.searchParams.set("tab",tb);u.searchParams.delete("id");history.replaceState(null,"",u);render();}
+function render(){
+  const lg=getLang();
+  document.getElementById("subtabs").innerHTML=["notice","press","inquiry"].map(k=>`<a href="#" class="${tab===k?"active":""}" data-tab="${k}">${t("sub."+k)}</a>`).join("");
+  document.querySelectorAll("#subtabs a").forEach(a=>a.onclick=e=>{e.preventDefault();setTab(a.dataset.tab);});
+  const vl=document.getElementById("view-list"),vp=document.getElementById("view-post"),vi=document.getElementById("view-inquiry");
+  vl.style.display=vp.style.display=vi.style.display="none";
+  if(tab==="inquiry"){vi.style.display="";const sel=document.getElementById("inq-type");sel.innerHTML=I18N[lg].news.types.map((x,i)=>`<option value="${i}">${x}</option>`).join("");if(q.get("type"))sel.value=q.get("type");if(q.get("track")&&!document.getElementById("inq-subject").value){document.getElementById("inq-subject").value=`[${q.get("track")}] `;}return;}
+  const id=q.get("id");const posts=getPosts(tab);
+  if(id){const p=posts.find(x=>x.id===id);if(p){p.views=(p.views||0);vp.style.display="";document.getElementById("post").innerHTML=`<span class="cat ${tab}" style="font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#e8f0ff;color:var(--c-primary)">${t("sub."+tab)}</span><h2 style="margin-top:10px">${postTitle(p)}</h2><div class="pm"><span>${p.date}</span>${p.src?`<span>${t("news.src")}: ${p.src}</span>`:""}${p.url?`<a href="${p.url}" target="_blank" rel="noopener" style="color:var(--c-primary);font-weight:700">${t("common.open")} ↗</a>`:""}</div><div class="cont">${postBody(p)}</div>`;document.getElementById("back-btn").onclick=e=>{e.preventDefault();q.delete("id");const u=new URL(location);u.searchParams.delete("id");history.replaceState(null,"",u);render();};return;}}
+  vl.style.display="";
+  document.getElementById("th3").textContent=tab==="press"?t("news.src"):t("news.date");
+  const list=posts.filter(p=>!query||(postTitle(p)+" "+postBody(p)+" "+(p.src||"")).toLowerCase().includes(query.toLowerCase()));
+  document.getElementById("cnt").textContent=`${list.length} ${t("search.count")}`;
+  const pages=Math.max(1,Math.ceil(list.length/PER));pageNo=Math.min(pageNo,pages);
+  const slice=list.slice((pageNo-1)*PER,pageNo*PER);
+  document.getElementById("rows").innerHTML=slice.map((p,i)=>`<tr><td>${p.pinned?`<span class="pin">NOTICE</span>`:list.length-((pageNo-1)*PER)-i}</td><td class="t"><a href="?tab=${tab}&id=${p.id}">${postTitle(p)}</a>${tab==="press"?`<div style="font-size:.8rem;color:var(--c-muted)">${p.date}</div>`:""}</td><td>${tab==="press"?(p.src||"—"):p.date}</td><td>${p.views||0}</td></tr>`).join("")||`<tr><td colspan="4" class="empty">${t("news.empty")}</td></tr>`;
+  document.getElementById("pager").innerHTML=Array.from({length:pages},(_,i)=>`<button class="${i+1===pageNo?"active":""}" data-p="${i+1}">${i+1}</button>`).join("");
+  document.querySelectorAll("#pager button").forEach(b=>b.onclick=()=>{pageNo=+b.dataset.p;render();});
+}
+window.onPageRender=render;
+window.onPageInit=function(){render();
+  document.getElementById("q").addEventListener("input",e=>{query=e.target.value;pageNo=1;render();});
+  document.getElementById("inq-form").addEventListener("submit",e=>{e.preventDefault();const f=e.target;if(!f.agree.checked){toast(t("news.needAgree"));return;}
+    const lg=getLang();const post={id:"q"+Date.now(),date:new Date().toISOString().slice(0,10),name:f.name.value,email:f.email.value,phone:f.phone.value,type:I18N[lg].news.types[+f.type.value],subject:f.subject.value,msg:f.msg.value,status:"new",lang:lg};
+    addPost("inquiry",post);
+    const text=`[${post.type}] ${post.subject}\n\n${post.msg}\n\n— ${post.name} / ${post.email} / ${post.phone}`;
+    const mailto=`mailto:incheontour1@gmail.com?subject=${encodeURIComponent("[ITC 문의] "+post.subject)}&body=${encodeURIComponent(text)}`;
+    const DONE={ko:{t:"문의가 접수되었습니다",p:"접수 내용은 협의회 관리자에게 전달됩니다. 더 빠른 회신을 원하시면 아래 버튼으로 같은 내용을 이메일로도 보내주세요.",m:"메일 앱으로 보내기",c:"내용 복사",n:"새 문의 작성"},en:{t:"Your inquiry has been received",p:"It will be forwarded to the Council. For a faster reply, you can also send the same message by email below.",m:"Open in mail app",c:"Copy text",n:"New inquiry"},ja:{t:"お問い合わせを受け付けました",p:"内容は協議会へ転送されます。より早い返信をご希望の場合は下のボタンからメールでもお送りください。",m:"メールアプリで送る",c:"内容をコピー",n:"新しいお問い合わせ"},zh:{t:"已收到您的咨询",p:"内容将转交协议会。如需更快回复，也可通过下方按钮以邮件发送相同内容。",m:"用邮件应用发送",c:"复制内容",n:"新咨询"}};
+    const d=DONE[lg]||DONE.en;
+    const box=document.createElement("div");box.className="ci-box";box.style.cssText="border:2px solid var(--c-sky);margin-bottom:16px";
+    box.innerHTML=`<h3>✅ ${d.t}</h3><p style="font-size:.95rem;color:var(--c-muted);line-height:1.7">${d.p}</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><a class="btn btn-primary btn-sm" href="${mailto}">✉ ${d.m}</a><button type="button" class="btn btn-outline btn-sm" id="copy-inq">${d.c}</button><button type="button" class="btn btn-outline btn-sm" id="new-inq">${d.n}</button></div><pre style="margin-top:12px;background:#f4f7fb;padding:12px;border-radius:10px;white-space:pre-wrap;font-size:.85rem;font-family:inherit">${text.replace(/</g,"&lt;")}</pre>`;
+    f.style.display="none";f.parentNode.insertBefore(box,f);window.scrollTo({top:box.getBoundingClientRect().top+scrollY-160,behavior:"smooth"});
+    box.querySelector("#copy-inq").onclick=()=>{navigator.clipboard?.writeText(text).then(()=>toast("OK")).catch(()=>toast("Copy failed"));};
+    box.querySelector("#new-inq").onclick=()=>{box.remove();f.reset();f.style.display="";};
+    toast(t("news.sent"));
+  });
+};
+</script>
+</body>
+</html>

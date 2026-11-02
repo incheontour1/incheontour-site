@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>협의회소개 | 인천광역시관광협의회</title>
+<meta name="description" content="인천광역시관광협의회 인사말·비전·연혁·윤리경영·조직도·이사회·CI·오시는 길">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero"><img src="assets/img/songdo_hero.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.about"></span></div><h1 data-i18n="nav.about"></h1></div></section>
+<nav class="subtabs"><div class="container" id="subtabs"></div></nav>
+
+<!-- 인사말 -->
+<section class="section" id="greet"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">GREETINGS</span><h2 data-i18n="sub.greet"></h2></div></div>
+  <div class="greet">
+    <div class="ph rv"><img src="assets/img/incheon_bridge_night.jpg" alt="인천대교"><p style="font-size:.78rem;color:var(--c-muted);padding:10px 14px">※ 회장 사진으로 교체 예정 (assets/img/chairman.jpg)</p></div>
+    <div class="rv d1" id="greet-body"></div>
+  </div>
+</div></section>
+
+<!-- 비전 -->
+<section class="section alt" id="vision"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">MISSION · VISION</span><h2 data-i18n="sub.vision"></h2></div></div>
+  <div id="vision-body"></div>
+</div></section>
+
+<!-- 연혁 -->
+<section class="section" id="history"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">HISTORY</span><h2 data-i18n="sub.history"></h2></div></div>
+  <div class="timeline" id="timeline"></div>
+</div></section>
+
+<!-- 윤리경영 -->
+<section class="section alt" id="ethics"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">ETHICAL MANAGEMENT</span><h2 data-i18n="sub.ethics"></h2></div></div>
+  <div id="ethics-body"></div>
+</div></section>
+
+<!-- 조직도 -->
+<section class="section" id="org"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">ORGANIZATION</span><h2 data-i18n="sub.org"></h2></div><p style="font-size:.85rem;color:var(--c-muted)" id="org-note"></p></div>
+  <div class="org rv" id="orgchart"></div>
+</div></section>
+
+<!-- 이사회 -->
+<section class="section alt" id="board"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">BOARD OF DIRECTORS</span><h2 data-i18n="sub.board"></h2></div><p style="font-size:.85rem;color:var(--c-muted)" id="board-note"></p></div>
+  <div class="board-grid" id="board-grid"></div>
+</div></section>
+
+<!-- CI -->
+<section class="section" id="ci"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">CORPORATE IDENTITY</span><h2 data-i18n="sub.ci"></h2></div></div>
+  <div id="ci-body"></div>
+</div></section>
+
+<!-- 오시는 길 -->
+<section class="section alt" id="way"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">DIRECTIONS</span><h2 data-i18n="sub.way"></h2></div></div>
+  <div id="way-body"></div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const C={
+greet:{
+ ko:`<div class="quote">"관문의 도시 인천을, 머물고 싶은 여행지로."</div>
+<div class="prose">
+<p>안녕하십니까. 사단법인 인천광역시관광협의회 회장 김재오입니다.</p>
+<p>인천광역시관광협의회는 관광진흥법 제48조의9와 인천광역시 관광진흥 조례에 근거해 2019년 설립된 지역관광협의회로, 관광객 유치와 홍보, 관광사업의 진흥, 회원의 공제와 복리 증진, 그리고 지역 관광산업의 성장과 발전에 기여하는 것을 목적으로 합니다(정관 제2조).</p>
+<p>협의회는 창립 이래 인천시 관광안내소 10개소의 수탁 운영(2020~2023, 민간위탁 종합성과평가 '우수'), 여행업 리스타트 관광상품 지원사업(39개 업체·1,706명), 관광기념품 공모전, 클린관광 캠페인, 한중 문화예술 교류전, 인천 글로벌 K-POP 콘서트 홍보·모객 지원 등 현장에서 검증된 사업을 수행해 왔습니다.</p>
+<p>인천은 연간 7천만 명이 넘는 국제여객이 오가는 대한민국의 관문이자, 개항의 역사와 168개 섬, 송도의 미래 도시를 한 곳에 품은 도시입니다. 그러나 많은 이들이 인천을 '지나가기만' 합니다. 협의회는 공항·항만의 통과 수요를 체류 수요로 바꾸고, 서울과 경쟁이 아닌 보완의 관계 속에서 "서울 오는 김에, 가기 전에 인천"을 설계하겠습니다.</p>
+<p>관광은 콘텐츠만으로 완성되지 않습니다. 수요를 데이터로 검증하고, 지역에 수익이 환류되는 구조를 만들며, 주민의 삶과 상생하는 거버넌스를 세우는 일 — 민·관·학이 함께하는 협의회가 그 역할을 하겠습니다. 회원사와 시민, 그리고 인천을 찾는 모든 여행자 여러분의 관심과 참여를 부탁드립니다.</p>
+</div>
+<div class="signature"><span>사단법인 인천광역시관광협의회 회장</span><span class="name">김 재 오</span></div>`,
+ en:`<div class="quote">"From Korea's gateway city to a destination worth staying in."</div>
+<div class="prose">
+<p>Greetings. I am Kim Jae-oh, Chairman of the Incheon Tourism Council.</p>
+<p>Established in 2019 under Article 48-9 of the Tourism Promotion Act and the Incheon Tourism Promotion Ordinance, the Council exists to attract and promote visitors, advance the tourism industry, serve the mutual benefit and welfare of our members, and contribute to the growth of regional tourism (Article 2 of our Articles of Association).</p>
+<p>Since our founding we have operated all ten of Incheon's tourist information centers (2020–2023, rated "Excellent" in the city's outsourcing evaluation), run the travel-industry Restart program (39 agencies, 1,706 travelers), the Incheon souvenir design competition, clean tourism campaigns, Korea–China cultural exchanges, and audience mobilization for the Incheon global K-POP concerts.</p>
+<p>Incheon is Korea's gateway, welcoming over 70 million international passengers a year, with the history of the 1883 port opening, 168 islands and the future city of Songdo in one place. Yet many only pass through. The Council will turn transit demand into stays — not in competition with Seoul but as its complement: "Incheon, before or after Seoul."</p>
+<p>Tourism is not made of content alone. It needs demand verified by data, revenue that flows back to the region, and governance that shares benefits with residents. As a public–private–academic council, that is our role. I ask for the interest and participation of our members, citizens and every traveler who visits Incheon.</p>
+</div>
+<div class="signature"><span>Chairman, Incheon Tourism Council</span><span class="name">Kim Jae-oh</span></div>`,
+ ja:`<div class="quote">「玄関口の都市・仁川を、滞在したい旅先へ。」</div>
+<div class="prose">
+<p>社団法人仁川広域市観光協議会 会長の金在五（キム・ジェオ）です。</p>
+<p>当協議会は観光振興法第48条の9と仁川広域市観光振興条例に基づき2019年に設立された地域観光協議会で、観光客の誘致・広報、観光事業の振興、会員の共済・福利増進、地域観光産業の成長と発展への貢献を目的としています（定款第2条）。</p>
+<p>設立以来、仁川市観光案内所10か所の受託運営（2020〜2023、市評価「優秀」）、旅行業リスタート支援事業、観光記念品公募展、クリーン観光キャンペーン、韓中文化芸術交流展、仁川グローバルK-POPコンサートの広報・集客支援など、現場で実証された事業を行ってきました。</p>
+<p>仁川は年間7千万人を超える国際旅客が行き交う韓国の玄関口であり、開港の歴史、168の島、松島の未来都市をひとつに抱く都市です。協議会は空港・港湾の通過需要を滞在需要へ変え、ソウルと競争ではなく補完の関係の中で「ソウルの前に、後に、仁川」を設計します。</p>
+<p>会員社、市民、そして仁川を訪れるすべての旅行者の皆様のご関心とご参加をお願い申し上げます。</p>
+</div>
+<div class="signature"><span>仁川広域市観光協議会 会長</span><span class="name">金 在 五</span></div>`,
+ zh:`<div class="quote">“让门户之城仁川，成为值得驻留的旅行目的地。”</div>
+<div class="prose">
+<p>您好，我是社团法人仁川广域市观光协议会会长金在五。</p>
+<p>协议会依据《观光振兴法》第48条之9及仁川广域市观光振兴条例于2019年设立，以吸引与宣传游客、振兴旅游产业、增进会员互助福利、促进地区旅游产业成长发展为宗旨（章程第2条）。</p>
+<p>成立以来，我们受托运营仁川市全部10处旅游咨询处（2020—2023年，市评价“优秀”），运营旅行业重启支持项目、旅游纪念品征集大赛、清洁旅游活动、韩中文化艺术交流展，并为仁川全球K-POP演唱会提供宣传与集客支持。</p>
+<p>仁川是每年逾七千万国际旅客往来的韩国门户，集开港历史、168座岛屿与松岛未来之城于一身。协议会将把机场、港口的过境需求转化为驻留需求，与首尔形成互补而非竞争——“去首尔之前、之后，先到仁川”。</p>
+<p>恳请各会员单位、市民以及每一位到访仁川的旅行者给予关注与参与。</p>
+</div>
+<div class="signature"><span>仁川广域市观光协议会 会长</span><span class="name">金 在 五</span></div>`
+},
+vision:{
+ ko:`<div class="vision-top rv"><div class="big">"인천 외국인 300만 관광시대"를 여는<br>민·관·학 협력 DMO</div><p class="lead" style="margin-top:12px">정관 제2조(목적) — 관광객의 유치 및 홍보활동, 관광사업의 진흥과 회원의 공제사업 및 복리증진, 그리고 지역 관광사업의 성장과 발전에 기여</p></div>
+<div class="mv rv"><div class="box m"><small>MISSION</small><strong>인천광역시 관광 활성화, 관광 자원개발 및 지역경제 발전</strong></div><div class="box v"><small>VISION</small><strong>관문(Gateway)에서 체류(Destination)로 — 인천 관광의 민·관 협력 플랫폼</strong></div></div>
+<div class="pillars">
+<div class="pillar rv"><div class="no">STRATEGY 01</div><h3>유치 — 관문·환승 순증</h3><p>인천공항 환승객(2025년 804.6만 명)과 인바운드를 인천 거점으로 잇는 환승·테마관광. 서울과 제로섬이 아닌 순증 수요를 만듭니다.</p></div>
+<div class="pillar rv d1"><div class="no">STRATEGY 02</div><h3>체류 — 원도심·거점 콘텐츠</h3><p>개항장·월미도(제물포), 송도 MICE, 영종 리조트, 강화·섬의 테마를 묶어 체류시간과 객단가를 높이는 코스와 상품을 기획합니다.</p></div>
+<div class="pillar rv d2"><div class="no">STRATEGY 03</div><h3>환류 — 지역 귀속 수익구조</h3><p>관광 소비가 지역 사업자에게 환류되도록 회원사 중심의 상품·서비스 공급망을 구축하고, 자체 수익사업과 위탁사업으로 재정을 건전하게 유지합니다.</p></div>
+<div class="pillar rv d3"><div class="no">STRATEGY 04</div><h3>상생 — 주민·회원 거버넌스</h3><p>주민 만족도와 클린관광을 성과지표에 포함하고, 분과위원회·군구 지회를 통해 민·관·학이 함께 결정하는 거버넌스를 운영합니다.</p></div>
+</div>
+<div class="prose rv" style="margin-top:36px;max-width:100%"><h3>핵심 가치</h3><table><tr><th>가치</th><th>의미</th><th>정관 근거</th></tr>
+<tr><td><b>공익성</b></td><td>비영리 사단법인으로서 지역 관광 진흥이라는 공공 목적에 복무</td><td>제1조·제2조</td></tr>
+<tr><td><b>협력</b></td><td>회원·군구 지회·분과위원회·유관기관과의 개방형 협업</td><td>제4조·제41조</td></tr>
+<tr><td><b>투명성</b></td><td>예산·결산 공개, 기부금 모금·활용 실적 매년 3월 홈페이지 공개</td><td>제36조의2</td></tr>
+<tr><td><b>전문성</b></td><td>관광종사원 교육·사후관리, 데이터 기반 기획</td><td>제5조 6호</td></tr></table>
+<h3>정관 제5조(사업) — 11대 사업</h3><ul><li>지역의 관광수용태세 개선 / 지역관광 홍보 및 마케팅 지원</li><li>관광사업자·관광 관련 사업자·단체 지원 / 관광산업의 건전한 발전</li><li>관광객 유치를 위한 홍보와 관광상품 및 관광콘텐츠 개발·제공</li><li>관광종사원의 교육 및 사후관리 / 지역 국내외간 관광 교류 및 친선 사업</li><li>회원의 공제사업 / 수익사업 / 정부·지자체·유관기관 위탁 업무 / 기타 목적달성에 필요한 사업</li></ul></div>`,
+ en:`<div class="vision-top rv"><div class="big">A public–private–academic DMO opening the era of<br>"3 million foreign visitors to Incheon"</div><p class="lead" style="margin-top:12px">Article 2 (Purpose): attract and promote visitors, advance the tourism industry and members' mutual benefit, and contribute to the growth of regional tourism.</p></div>
+<div class="mv rv"><div class="box m"><small>MISSION</small><strong>Revitalize Incheon tourism, develop tourism resources and grow the regional economy</strong></div><div class="box v"><small>VISION</small><strong>From Gateway to Destination — Incheon's public–private platform for tourism</strong></div></div>
+<div class="pillars">
+<div class="pillar rv"><div class="no">STRATEGY 01</div><h3>Attract — net-new transit demand</h3><p>Link Incheon Airport's 8.05 million transit passengers (2025) and inbound travelers to Incheon's hubs — demand that is additional to Seoul, not zero-sum.</p></div>
+<div class="pillar rv d1"><div class="no">STRATEGY 02</div><h3>Stay — hub content</h3><p>Bundle Open Port & Wolmido, Songdo MICE, Yeongjong resorts, Ganghwa and the islands into routes that raise length of stay and spend.</p></div>
+<div class="pillar rv d2"><div class="no">STRATEGY 03</div><h3>Return — local revenue</h3><p>Build a member-based supply chain so tourism spending flows to local businesses, while own-revenue and entrusted projects keep finances sound.</p></div>
+<div class="pillar rv d3"><div class="no">STRATEGY 04</div><h3>Share — governance</h3><p>Include resident satisfaction and clean tourism in KPIs; decide together through subcommittees and district chapters.</p></div>
+</div>`,
+ ja:`<div class="vision-top rv"><div class="big">「仁川 外国人300万観光時代」を開く<br>官民学協力DMO</div><p class="lead" style="margin-top:12px">定款第2条（目的）— 観光客の誘致・広報、観光事業の振興と会員の共済・福利増進、地域観光産業の成長と発展への貢献</p></div>
+<div class="mv rv"><div class="box m"><small>MISSION</small><strong>仁川観光の活性化、観光資源開発、地域経済の発展</strong></div><div class="box v"><small>VISION</small><strong>玄関口（Gateway）から滞在地（Destination）へ — 仁川観光の官民協力プラットフォーム</strong></div></div>
+<div class="pillars">
+<div class="pillar rv"><div class="no">STRATEGY 01</div><h3>誘致 — 乗継需要の純増</h3><p>仁川空港乗継客（2025年804.6万人）とインバウンドを仁川の拠点へ。ソウルとゼロサムでない純増需要を創出。</p></div>
+<div class="pillar rv d1"><div class="no">STRATEGY 02</div><h3>滞在 — 拠点コンテンツ</h3><p>開港場・月尾島、松島MICE、永宗リゾート、江華・島のテーマを束ね、滞在時間と客単価を高める。</p></div>
+<div class="pillar rv d2"><div class="no">STRATEGY 03</div><h3>還流 — 地域帰属の収益構造</h3><p>観光消費が地域事業者に還流する会員中心のサプライチェーンを構築。</p></div>
+<div class="pillar rv d3"><div class="no">STRATEGY 04</div><h3>共生 — 住民・会員ガバナンス</h3><p>住民満足度とクリーン観光をKPIに含め、分科委員会・郡区支会で共に決定。</p></div>
+</div>`,
+ zh:`<div class="vision-top rv"><div class="big">开启“仁川外国游客300万时代”的<br>官民学合作DMO</div><p class="lead" style="margin-top:12px">章程第2条（宗旨）— 吸引与宣传游客、振兴旅游产业与会员互助福利、促进地区旅游产业成长发展</p></div>
+<div class="mv rv"><div class="box m"><small>MISSION</small><strong>振兴仁川旅游、开发旅游资源、发展地区经济</strong></div><div class="box v"><small>VISION</small><strong>从门户（Gateway）到目的地（Destination）— 仁川旅游的官民合作平台</strong></div></div>
+<div class="pillars">
+<div class="pillar rv"><div class="no">STRATEGY 01</div><h3>吸引 — 中转需求净增</h3><p>将仁川机场中转旅客（2025年804.6万人）与入境游客引至仁川各据点，创造与首尔非零和的净增需求。</p></div>
+<div class="pillar rv d1"><div class="no">STRATEGY 02</div><h3>驻留 — 据点内容</h3><p>整合开港场·月尾岛、松岛MICE、永宗度假村、江华与海岛主题，提升停留时间与客单价。</p></div>
+<div class="pillar rv d2"><div class="no">STRATEGY 03</div><h3>回流 — 地区收益结构</h3><p>构建以会员为中心的供应链，使旅游消费回流至地区经营者。</p></div>
+<div class="pillar rv d3"><div class="no">STRATEGY 04</div><h3>共生 — 居民·会员治理</h3><p>将居民满意度与清洁旅游纳入KPI，通过分科委员会与郡区支会共同决策。</p></div>
+</div>`
+},
+ethics:{
+ ko:`<div class="grid-2">
+<div class="prose rv" style="max-width:100%"><h3>윤리헌장</h3><p>사단법인 인천광역시관광협의회는 인천광역시로부터 인가받은 비영리 사단법인으로서, 지역관광 진흥이라는 공공의 목적을 수행함에 있어 다음과 같이 윤리경영을 실천할 것을 다짐합니다.</p>
+<ul><li><b>공정과 투명</b> — 모든 사업과 예산 집행을 공정하게 수행하고 예산·결산 및 기부금 실적을 공개한다(정관 제36조의2).</li>
+<li><b>이해충돌 방지</b> — 임원은 자신과 협의회의 이해가 상반되는 의결에 참여하지 않는다(정관 제24조·제30조).</li>
+<li><b>청렴</b> — 임직원은 직무와 관련하여 금품·향응을 수수하지 않으며, 임원은 명예직으로 보수를 받지 않는다(정관 제12조·제37조).</li>
+<li><b>회원 존중</b> — 회원의 권리를 보장하고 회원 간 분쟁을 공정하게 조정한다(정관 제8조·제40조).</li>
+<li><b>지역 상생</b> — 관광 활성화가 주민의 삶의 질과 환경을 해치지 않도록 클린관광을 실천한다.</li></ul>
+<h3>임직원 행동강령</h3><table><tr><th>영역</th><th>원칙</th></tr>
+<tr><td>직무 수행</td><td>법령·정관·규정 준수, 총회·이사회 결의 성실 이행(정관 제9조)</td></tr>
+<tr><td>재산·회계</td><td>기본재산 처분은 이사회·총회 의결, 서면결의 금지, 회계감사 연 1회(제29조·제32조·제36조)</td></tr>
+<tr><td>위탁사업</td><td>정부·지자체 위탁사업의 목적 외 사용 금지, 성과 보고 의무(제44조)</td></tr>
+<tr><td>정보 보호</td><td>회원·이용자 개인정보의 목적 외 이용 금지</td></tr>
+<tr><td>징계</td><td>목적 위배·회계부정·현저한 부당행위 시 이사회 의결로 해임(제16조)</td></tr></table></div>
+<div class="rv d1"><div class="ci-box"><h3>청렴 신고 · 상담 채널</h3><p style="font-size:.95rem;color:var(--c-muted);line-height:1.7">임직원의 부당행위, 이해충돌, 회계 부정 등을 알고 계시다면 아래 채널로 신고해 주십시오. 신고자의 신원은 보호되며 불이익을 받지 않습니다.</p>
+<ul class="prose" style="margin-top:12px;font-size:.95rem"><li>이메일 : <a href="mailto:incheontour1@gmail.com" style="color:var(--c-primary)">incheontour1@gmail.com</a></li><li>전화 : +82-10-5238-5443</li><li>우편 : 인천광역시 남동구 구월남로 118 YMCA회관 501호 (감사 앞)</li></ul>
+<p style="font-size:.85rem;color:var(--c-muted);margin-top:12px">신고 사항은 감사(정관 제18조 제4항)가 조사하여 이사회 또는 총회에 보고하고 필요 시 주무관청에 보고합니다.</p></div>
+<div class="ci-box" style="margin-top:18px"><h3>윤리경영 추진 체계</h3><table class="prose" style="font-size:.9rem;width:100%"><tr><th>주체</th><th>역할</th></tr><tr><td>이사회</td><td>윤리 규정 제·개정, 징계 의결</td></tr><tr><td>감사 (2인)</td><td>재산·업무 감사, 시정 요구, 주무관청 보고</td></tr><tr><td>사무국</td><td>행동강령 교육, 신고 접수·처리</td></tr><tr><td>회원</td><td>정관·규약 준수, 공익 제보</td></tr></table></div>
+<div class="ci-box" style="margin-top:18px"><h3>재정 투명성</h3><p style="font-size:.92rem;color:var(--c-muted)">2025년 3월 기준 부채 ZERO. 회계연도 종료 후 2개월 이내 사업실적·수지결산·감사결과를 주무관청에 보고하며(정관 제44조), 연간 기부금 모금·활용 실적을 매년 3월 홈페이지에 공개합니다.</p></div></div></div>`,
+ en:`<div class="grid-2"><div class="prose rv" style="max-width:100%"><h3>Ethics Charter</h3><p>As a non-profit association authorized by Incheon Metropolitan City, the Council commits to ethical management in serving the public purpose of regional tourism promotion.</p>
+<ul><li><b>Fairness & transparency</b> — fair execution of all projects and budgets; disclosure of budgets, settlements and donations (Art. 36-2).</li><li><b>Conflict of interest</b> — directors abstain from resolutions where their interests conflict with the Council's (Art. 24, 30).</li><li><b>Integrity</b> — no gifts or entertainment related to duties; officers serve honorarily without pay (Art. 12, 37).</li><li><b>Respect for members</b> — members' rights guaranteed; disputes mediated fairly (Art. 8, 40).</li><li><b>Community</b> — clean tourism so that growth never harms residents' quality of life.</li></ul>
+<h3>Code of Conduct</h3><table><tr><th>Area</th><th>Principle</th></tr><tr><td>Duties</td><td>Comply with laws, charter and rules; implement resolutions (Art. 9)</td></tr><tr><td>Assets & accounts</td><td>Board and assembly approval for basic assets; no written-only resolutions; annual audit (Art. 29, 32, 36)</td></tr><tr><td>Entrusted projects</td><td>No off-purpose use; reporting duty (Art. 44)</td></tr><tr><td>Privacy</td><td>No off-purpose use of personal data</td></tr><tr><td>Discipline</td><td>Removal by board resolution for misconduct (Art. 16)</td></tr></table></div>
+<div class="rv d1"><div class="ci-box"><h3>Integrity reporting channel</h3><p style="font-size:.95rem;color:var(--c-muted)">Report misconduct, conflicts of interest or accounting irregularities. Reporters are protected.</p><ul class="prose" style="margin-top:12px;font-size:.95rem"><li>Email: incheontour1@gmail.com</li><li>Tel: +82-10-5238-5443</li><li>Mail: Rm 501, YMCA Bldg, 118 Guwolnam-ro, Namdong-gu, Incheon (Attn: Auditor)</li></ul></div>
+<div class="ci-box" style="margin-top:18px"><h3>Financial transparency</h3><p style="font-size:.92rem;color:var(--c-muted)">Zero debt as of March 2025. Results, settlement and audit reported to the supervising authority within two months of fiscal year-end (Art. 44); donation records published every March.</p></div></div></div>`,
+ ja:`<div class="grid-2"><div class="prose rv" style="max-width:100%"><h3>倫理憲章</h3><p>仁川広域市の認可を受けた非営利社団法人として、地域観光振興という公共目的の遂行において倫理経営を実践します。</p><ul><li><b>公正と透明</b> — 予算・決算および寄付金実績の公開（定款第36条の2）</li><li><b>利害衝突の防止</b> — 役員は自身と協議会の利害が相反する議決に参加しない（第24条・第30条）</li><li><b>清廉</b> — 職務に関連する金品・接待の授受禁止、役員は名誉職（第12条・第37条）</li><li><b>会員の尊重</b> — 会員の権利保障と公正な紛争調整（第8条・第40条）</li><li><b>地域共生</b> — クリーン観光の実践</li></ul></div>
+<div class="rv d1"><div class="ci-box"><h3>清廉通報チャンネル</h3><ul class="prose" style="font-size:.95rem"><li>メール：incheontour1@gmail.com</li><li>電話：+82-10-5238-5443</li><li>郵便：仁川広域市南洞区九月南路118 YMCA会館501号（監事宛）</li></ul></div><div class="ci-box" style="margin-top:18px"><h3>財政透明性</h3><p style="font-size:.92rem;color:var(--c-muted)">2025年3月現在、負債ゼロ。会計年度終了後2か月以内に事業実績・決算・監査結果を主務官庁に報告（第44条）。</p></div></div></div>`,
+ zh:`<div class="grid-2"><div class="prose rv" style="max-width:100%"><h3>伦理宪章</h3><p>作为获仁川广域市批准的非营利社团法人，协议会在履行地区旅游振兴公共职能时践行伦理经营。</p><ul><li><b>公正与透明</b> — 公开预算、决算及捐款实绩（章程第36条之2）</li><li><b>防止利益冲突</b> — 理事不参与与自身利益相冲突的表决（第24条·第30条）</li><li><b>廉洁</b> — 禁止收受与职务相关的财物与招待，理事为名誉职（第12条·第37条）</li><li><b>尊重会员</b> — 保障会员权利，公正调解纠纷（第8条·第40条）</li><li><b>地区共生</b> — 践行清洁旅游</li></ul></div>
+<div class="rv d1"><div class="ci-box"><h3>廉政举报渠道</h3><ul class="prose" style="font-size:.95rem"><li>邮箱：incheontour1@gmail.com</li><li>电话：+82-10-5238-5443</li><li>邮寄：仁川广域市南洞区九月南路118 YMCA会馆501号（监事收）</li></ul></div><div class="ci-box" style="margin-top:18px"><h3>财务透明</h3><p style="font-size:.92rem;color:var(--c-muted)">截至2025年3月负债为零。会计年度结束后2个月内向主管机关报告事业实绩、决算与审计结果（第44条）。</p></div></div></div>`
+},
+org:{
+ ko:{chair:"회장",board:"이사회",adv:"고문 / 자문위원",audit:"감사",sub:"분과위원회",sec:"사무국장",subs:["관광사업분과","문화예술분과","의료관광분과","디지털홍보분과","교육복지분과","여행숙박분과"],acc:"총무회계",unit:"사업단",units:["관광안내소","콘텐츠개발","축제 및 행사"],note:"출처: 협의회 소개자료(2025). 정관 제39조(사무국)·제41조(분과위원회, 위원 15인 이내)"},
+ en:{chair:"Chairman",board:"Board of Directors",adv:"Advisors / Advisory Committee",audit:"Auditors",sub:"Subcommittees",sec:"Secretary General",subs:["Tourism Business","Culture & Arts","Medical Tourism","Digital Promotion","Education & Welfare","Travel & Lodging"],acc:"General Affairs & Accounting",unit:"Project Units",units:["Tourist Info Centers","Content Development","Festivals & Events"],note:"Source: Council profile (2025). Art. 39 (Secretariat), Art. 41 (Subcommittees, up to 15 members each)"},
+ ja:{chair:"会長",board:"理事会",adv:"顧問 / 諮問委員",audit:"監事",sub:"分科委員会",sec:"事務局長",subs:["観光事業分科","文化芸術分科","医療観光分科","デジタル広報分科","教育福祉分科","旅行宿泊分科"],acc:"総務会計",unit:"事業団",units:["観光案内所","コンテンツ開発","祭り・行事"],note:"出典：協議会紹介資料（2025）。定款第39条・第41条"},
+ zh:{chair:"会长",board:"理事会",adv:"顾问 / 咨询委员",audit:"监事",sub:"分科委员会",sec:"事务局长",subs:["旅游事业分科","文化艺术分科","医疗旅游分科","数字宣传分科","教育福利分科","旅行住宿分科"],acc:"总务会计",unit:"事业团",units:["旅游咨询处","内容开发","节庆与活动"],note:"来源：协议会介绍资料（2025）。章程第39条·第41条"}
+},
+ci:{
+ ko:{sym:"심볼마크",symD:"파란 원 위에 흰 초승달이 인천의 바다를 감싸고, 그 안에 인천대교의 주탑·돛(개항의 바다)과 날아오르는 비행기(관문 인천공항)를 담았습니다. 원은 포용과 협력, 블루 그라데이션은 바다·하늘·미래 도시를 상징합니다.",sig:"시그니처 (가로·세로형)",sigD:"심볼과 로고타입의 조합. 가로형을 기본으로 하며, 세로형은 좁은 공간이나 세로 매체에 사용합니다. '사단법인' 표기는 공식 문서와 대외 서명에 반드시 포함합니다.",col:"전용 색상",colD:"협의회 로고의 색상은 아래 네 가지로 규정하며, 임의로 변경하거나 다른 색을 사용하지 않습니다.",font:"전용 서체",fontD:"로고타입 국문은 '이순신 돋음 B', 영문은 'Noto Sans Korean Bold'를 사용합니다. 본문 및 웹에서는 Pretendard를 기본 서체로 사용합니다.",rule:"사용 규정",rules:["심볼의 비례·색상·구성 요소를 변형하지 않습니다.","최소 여백: 심볼 높이의 1/4 이상, 최소 크기: 가로형 시그니처 가로 30mm(인쇄) / 120px(웹).","배경이 어두운 경우 반전형(흰색) 시그니처를, 단색 인쇄는 Black 또는 Gray 버전을 사용합니다.","사진 위 배치 시 가독성 확보를 위해 밝은 영역 또는 반투명 바탕 위에 사용합니다.","영문 표기: 정관상 공식 영문명은 Incheon Tourism Council(약칭 I.T.C). 로고타입의 'INCHEON TOURISM ASSOCIATION'은 정관 개정 또는 로고 개정으로 통일할 예정입니다. [확인 필요]"],dl:"CI 다운로드",symA:"컬러",symB:"그레이",symC:"블랙",symR:"반전형",member:"회원사 엠블럼"},
+ en:{sym:"Symbol",symD:"A white crescent on a blue circle embraces Incheon's sea, holding the Incheon Bridge pylons and sails (the sea of the open port) and a rising airplane (Incheon Airport, the gateway). The circle stands for inclusion and cooperation; the blue gradient for sea, sky and the future city.",sig:"Signature (horizontal / vertical)",sigD:"Symbol combined with logotype. The horizontal signature is the default; use the vertical version in narrow spaces. The '사단법인' (incorporated association) mark must appear on official documents.",col:"Primary colors",colD:"Only the four colors below are permitted for the logo.",font:"Typefaces",fontD:"Logotype: 'Yi Sun-sin Dotum B' (Korean) and 'Noto Sans Korean Bold' (English). Body and web: Pretendard.",rule:"Usage rules",rules:["Do not alter proportions, colors or elements of the symbol.","Clear space: at least 1/4 of symbol height. Minimum size: 30 mm (print) / 120 px (web) for the horizontal signature.","Use the reversed (white) signature on dark backgrounds; Black or Gray versions for single-color printing.","On photographs, place on bright areas or a translucent panel for legibility.","Official English name per charter: Incheon Tourism Council (I.T.C). The logotype's 'INCHEON TOURISM ASSOCIATION' is to be unified by charter or logo revision. [to be confirmed]"],dl:"Download CI",symA:"Color",symB:"Gray",symC:"Black",symR:"Reversed",member:"Member emblem"},
+ ja:{sym:"シンボルマーク",symD:"青い円の上の白い三日月が仁川の海を包み、仁川大橋の主塔・帆（開港の海）と飛び立つ飛行機（玄関口・仁川空港）を表現。円は包容と協力、ブルーのグラデーションは海・空・未来都市を象徴します。",sig:"シグネチャー（横・縦）",sigD:"シンボルとロゴタイプの組合せ。横型を基本とし、縦型は狭いスペースに使用します。",col:"専用色",colD:"ロゴの色は下記4色に規定します。",font:"専用書体",fontD:"ロゴタイプ：イ・スンシン ドトゥム B（韓国語）、Noto Sans Korean Bold（英語）。本文・ウェブ：Pretendard。",rule:"使用規定",rules:["シンボルの比率・色・構成要素を変形しない。","最小余白：シンボル高さの1/4以上。最小サイズ：横型30mm（印刷）/120px（ウェブ）。","暗い背景では反転型（白）、単色印刷はBlackまたはGray版を使用。","写真上では明るい領域または半透明の下地の上に配置。","定款上の公式英文名は Incheon Tourism Council（I.T.C）。ロゴタイプの表記は統一予定。[確認必要]"],dl:"CIダウンロード",symA:"カラー",symB:"グレー",symC:"ブラック",symR:"反転",member:"会員社エンブレム"},
+ zh:{sym:"标志符号",symD:"蓝色圆形上的白色新月环抱仁川之海，内含仁川大桥主塔与帆（开港之海）及腾飞的飞机（门户仁川机场）。圆形象征包容与合作，蓝色渐变象征海洋、天空与未来之城。",sig:"标准组合（横向·纵向）",sigD:"符号与字标的组合。以横向为基本，狭窄空间使用纵向版本。",col:"专用色",colD:"标志颜色规定为以下四种。",font:"专用字体",fontD:"字标：韩文“李舜臣 Dotum B”，英文“Noto Sans Korean Bold”。正文及网页：Pretendard。",rule:"使用规范",rules:["不得改变符号的比例、颜色与构成要素。","最小留白：符号高度的1/4以上。最小尺寸：横向组合30mm（印刷）/120px（网页）。","深色背景使用反白版；单色印刷使用黑色或灰色版。","置于照片上时放在明亮区域或半透明底板上。","章程规定的官方英文名为 Incheon Tourism Council（I.T.C）。字标中的英文表述将统一。[待确认]"],dl:"下载CI",symA:"彩色",symB:"灰色",symC:"黑色",symR:"反白",member:"会员单位徽章"}
+},
+way:{
+ ko:{addr:"주소",tel:"문의",hours:"운영시간",hv:"평일 09:00~18:00 (토·일·공휴일 휴무)",car:"자가용",pub:"대중교통",walk:"도보·주변",
+     carL:["<b>경인고속도로</b> 종점(인천IC) → 인천시청 방면 약 10분","<b>제2경인고속도로</b> 문학IC → 인천시청·구월동 방면 약 8분","<b>인천공항</b>에서 약 40~50분 (인천대교 또는 영종대교 경유)","주차: YMCA회관 주차장 또는 인근 공영주차장 이용 [확인 필요]"],
+     pubL:["<b>인천1호선</b> 인천시청역 또는 예술회관역 하차 후 도보 약 10분 [확인 필요]","<b>인천2호선</b> 인천시청역 환승 가능","<b>버스</b> 인천시청·구월동 정류장 하차 (간선 8·14·33·36 등) [확인 필요]","<b>공항철도+환승</b> 인천공항 → 계양역(인천1호선 환승) → 인천시청역"],
+     walkL:["구월동 로데오거리·인천시청·인천종합문화예술회관 인접","인천버스터미널(인천1호선 터미널역)에서 차로 약 10분","인천버스터미널 관광안내소 +82-32-435-7257 (09:00~18:00)"],
+     navi:"내비게이션 검색어: 'YMCA회관' 또는 '구월남로 118'"},
+ en:{addr:"Address",tel:"Tel",hours:"Hours",hv:"Weekdays 09:00–18:00 (closed weekends & holidays)",car:"By car",pub:"Public transport",walk:"On foot · nearby",
+     carL:["<b>Gyeongin Expressway</b> → Incheon IC → toward City Hall, ~10 min","<b>2nd Gyeongin Expressway</b> Munhak IC → Guwol-dong, ~8 min","From <b>Incheon Airport</b> ~40–50 min via Incheon Bridge or Yeongjong Bridge","Parking: YMCA building or nearby public lots [to be confirmed]"],
+     pubL:["<b>Incheon Line 1</b> — Incheon City Hall or Arts Center Stn, ~10 min walk [to be confirmed]","<b>Incheon Line 2</b> — transfer at Incheon City Hall Stn","<b>Bus</b> — Incheon City Hall / Guwol-dong stops [to be confirmed]","<b>AREX</b> Incheon Airport → Gyeyang (transfer Line 1) → Incheon City Hall"],
+     walkL:["Near Guwol-dong Rodeo Street, City Hall and the Arts Center","~10 min by car from Incheon Bus Terminal (Line 1 Terminal Stn)","Bus Terminal TIC +82-32-435-7257 (09:00–18:00)"],
+     navi:"Navigation keyword: 'YMCA Building' or '118 Guwolnam-ro'"},
+ ja:{addr:"住所",tel:"問合せ",hours:"営業時間",hv:"平日 09:00〜18:00（土日祝休）",car:"自家用車",pub:"公共交通",walk:"徒歩・周辺",
+     carL:["<b>京仁高速道路</b> 仁川IC → 市庁方面 約10分","<b>第2京仁高速道路</b> 文鶴IC → 九月洞方面 約8分","<b>仁川空港</b>から約40〜50分","駐車：YMCA会館または近隣公営駐車場 [確認必要]"],
+     pubL:["<b>仁川1号線</b> 仁川市庁駅または芸術会館駅 徒歩約10分 [確認必要]","<b>仁川2号線</b> 仁川市庁駅で乗換可","<b>バス</b> 仁川市庁・九月洞停留所 [確認必要]","<b>空港鉄道</b> 仁川空港 → 桂陽駅（1号線乗換）→ 仁川市庁駅"],
+     walkL:["九月洞ロデオ通り・仁川市庁・総合文化芸術会館に隣接","仁川バスターミナルから車で約10分","バスターミナル観光案内所 +82-32-435-7257"],
+     navi:"ナビ検索：「YMCA会館」または「九月南路118」"},
+ zh:{addr:"地址",tel:"咨询",hours:"办公时间",hv:"工作日 09:00–18:00（周末及节假日休息）",car:"自驾",pub:"公共交通",walk:"步行·周边",
+     carL:["<b>京仁高速</b> 仁川IC → 市厅方向 约10分钟","<b>第二京仁高速</b> 文鹤IC → 九月洞方向 约8分钟","自<b>仁川机场</b>约40–50分钟","停车：YMCA会馆或附近公共停车场 [待确认]"],
+     pubL:["<b>仁川1号线</b> 仁川市厅站或艺术会馆站 步行约10分钟 [待确认]","<b>仁川2号线</b> 仁川市厅站可换乘","<b>公交</b> 仁川市厅·九月洞站 [待确认]","<b>机场铁路</b> 仁川机场 → 桂阳站（换乘1号线）→ 仁川市厅站"],
+     walkL:["邻近九月洞Rodeo街、仁川市厅、综合文化艺术会馆","距仁川巴士客运站车程约10分钟","客运站旅游咨询处 +82-32-435-7257"],
+     navi:"导航关键词：“YMCA会馆”或“九月南路118”"}
+}};
+
+window.onPageRender=function(){
+  const lg=getLang();
+  document.getElementById("subtabs").innerHTML=["greet","vision","history","ethics","org","board","ci","way"].map(k=>`<a href="#${k}" data-tab="${k}">${t("sub."+k)}</a>`).join("");
+  document.getElementById("greet-body").innerHTML=L(C.greet);
+  document.getElementById("vision-body").innerHTML=L(C.vision);
+  document.getElementById("timeline").innerHTML=HISTORY.map((h,i)=>`<div class="tl-item rv"><div class="y">${h.y}</div><div class="t">${h[lg]||h.en}</div>${lg!=="ko"?`<div class="d">${h.ko}</div>`:""}</div>`).join("");
+  document.getElementById("ethics-body").innerHTML=L(C.ethics);
+  const o=C.org[lg]||C.org.en;
+  document.getElementById("org-note").textContent=o.note;
+  document.getElementById("orgchart").innerHTML=`<div class="side"><div class="node top">${o.chair}</div><div class="h" style="width:40px"></div><div class="node sub">${o.board}</div></div><div class="v"></div>
+    <div class="side"><div class="node sub">${o.adv}</div><div class="h" style="width:40px"></div><div class="node sub">${o.audit}</div></div><div class="v"></div>
+    <div class="row" style="align-items:flex-start"><div class="col"><div class="node sub">${o.sub}</div><div class="v"></div><div class="row" style="max-width:460px">${o.subs.map(s=>`<div class="node leaf">${s}</div>`).join("")}</div></div>
+    <div class="col"><div class="node sub">${o.sec}</div><div class="v"></div><div class="row"><div class="col"><div class="node leaf">${o.acc}</div></div><div class="col"><div class="node leaf" style="border-color:var(--c-sky)">${o.unit}</div>${o.units.map(u=>`<div class="node leaf">${u}</div>`).join("")}</div></div></div></div>`;
+  document.getElementById("board-note").textContent=lg==="ko"?"정관 서명부(2022.5.20 개정) 기준 · 임원 임기 3년, 명예직(정관 제12·13조)":"Per charter signatories (rev. 2022.5.20) · 3-year honorary terms (Art. 12–13)";
+  document.getElementById("board-grid").innerHTML=BOARD.map((b,i)=>`<div class="member ${b.chair?"chair":""} rv d${i%4}"><div class="av">${b.nm[0]}</div><div><div class="role">${L(b.role)}</div><div class="nm">${b.nm} <span style="font-weight:500;color:var(--c-muted);font-size:.9rem">${b.en}</span></div>${b.chair?`<p style="font-size:.9rem;color:var(--c-muted);margin-top:6px">${lg==="ko"?"총회 및 이사회 의장 · 협의회 대표 (정관 제18조)":"Chair of the General Assembly and the Board; represents the Council (Art. 18)"}</p>`:""}</div></div>`).join("");
+  const c=C.ci[lg]||C.ci.en;
+  document.getElementById("ci-body").innerHTML=`<div class="ci-sheet">
+    <div class="ci-box rv"><h3>${c.sym}</h3><div class="ci-preview"><img src="assets/img/logo-symbol.png" alt="symbol"></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.symD}</p>
+      <div class="swatches" style="margin-top:14px"><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol.png" style="height:60px"></div><div class="i"><b>${c.symA}</b></div></div><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol-gray.png" style="height:60px"></div><div class="i"><b>${c.symB}</b></div></div><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol-black.png" style="height:60px"></div><div class="i"><b>${c.symC}</b></div></div><div class="sw"><div class="c" style="background:#231916;display:grid;place-items:center"><img src="assets/img/logo-reverse.png" style="height:44px"></div><div class="i"><b>${c.symR}</b></div></div></div></div>
+    <div class="ci-box rv d1"><h3>${c.sig}</h3><div class="ci-preview"><img src="assets/img/logo-horizontal.png" alt="signature" style="max-height:90px"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px"><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical.png"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical-short.png"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-emblem-member.png" title="${c.member}"></div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.sigD}</p></div>
+    <div class="ci-box rv"><h3>${c.col}</h3><div class="swatches">
+      <div class="sw"><div class="c" style="background:#1d479c"></div><div class="i"><b>ITC Blue</b>#1D479C<br>C92 M72 Y0 K0<br>R29 G71 B156</div></div>
+      <div class="sw"><div class="c" style="background:#3067b2"></div><div class="i"><b>ITC Blue 2</b>#3067B2<br>C82 M52 Y0 K0<br>R48 G103 B178</div></div>
+      <div class="sw"><div class="c" style="background:#42bfe9"></div><div class="i"><b>ITC Sky</b>#42BFE9<br>C64 M0 Y5 K0<br>R66 G191 B233</div></div>
+      <div class="sw"><div class="c" style="background:#231916"></div><div class="i"><b>ITC Black</b>#231916<br>C0 M0 Y0 K100<br>R35 G25 B22</div></div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted)">${c.colD}</p></div>
+    <div class="ci-box rv d1"><h3>${c.font}</h3><div style="padding:18px;background:#f4f7fb;border-radius:12px"><div style="font-size:1.8rem;font-weight:900;letter-spacing:-.03em">인천광역시관광협의회</div><div style="font-size:.8rem;color:var(--c-muted)">한글 : 이순신 돋음 B</div><div style="font-size:1.4rem;font-weight:800;margin-top:10px;letter-spacing:-.01em">INCHEON TOURISM COUNCIL</div><div style="font-size:.8rem;color:var(--c-muted)">English : Noto Sans Korean Bold</div><div style="font-size:1.1rem;font-weight:500;margin-top:10px">Pretendard — 본문·웹 기본 서체 Aa 가나다 123</div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted)">${c.fontD}</p></div>
+    <div class="ci-box rv" style="grid-column:1/-1"><h3>${c.rule}</h3><ul class="prose" style="max-width:100%;font-size:.95rem">${c.rules.map(r=>`<li>${r}</li>`).join("")}</ul>
+      <div class="dl-row"><a class="btn btn-primary btn-sm" href="assets/img/logo-symbol.png" download>${c.dl} · PNG (Symbol)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-horizontal.png" download>PNG (Horizontal)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-vertical.png" download>PNG (Vertical)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-reverse.png" download>PNG (Reversed)</a><a class="btn btn-outline btn-sm" href="assets/docs/itc_logo_master.pdf" download>AI/PDF (Master)</a></div></div>
+  </div>`;
+  const w=C.way[lg]||C.way.en;
+  document.getElementById("way-body").innerHTML=`<div class="addr-card rv"><div><small>${w.addr}</small><b>${L(SITE.address)}</b></div><div><small>${w.tel}</small><b>${SITE.tel} · ${SITE.email}</b></div><div><small>${w.hours}</small><b>${w.hv}</b></div></div>
+    <div class="map-embed rv" id="gmap-wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&z=16&hl=${lg==="zh"?"zh-CN":lg}&output=embed" title="map"></iframe></div><p style="font-size:.8rem;color:var(--c-muted);margin-top:8px">※ 지도가 표시되지 않는 환경(미리보기·사내망)에서는 아래 Google·Naver·Kakao 버튼으로 열어 주세요.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.mapQuery)}">Google Maps ↗</a><a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(SITE.mapQuery)}">Naver Map ↗</a><a class="btn btn-outline btn-sm" target="_blank" rel="noopener" href="https://map.kakao.com/?q=${encodeURIComponent(SITE.mapQuery)}">Kakao Map ↗</a><span style="font-size:.85rem;color:var(--c-muted);align-self:center">${w.navi}</span></div>
+    <div class="dir-grid"><div class="dir rv"><h3>${ICON.car}${w.car}</h3><ul>${w.carL.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="dir rv d1"><h3>${ICON.train}${w.pub}</h3><ul>${w.pubL.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="dir rv d2"><h3>${ICON.walk}${w.walk}</h3><ul>${w.walkL.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`;
+};
+window.onPageInit=function(){onPageRender();
+  const tabs=document.querySelectorAll("#subtabs a");const secs=[...document.querySelectorAll("section[id]")];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){tabs.forEach(a=>a.classList.toggle("active",a.dataset.tab===e.target.id));}}),{rootMargin:"-40% 0px -55% 0px"});
+  secs.forEach(s=>io.observe(s));
+};
+</script>
+</body>
+</html>

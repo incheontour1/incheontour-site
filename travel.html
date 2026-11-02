@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인천여행 | 인천광역시관광협의회</title>
+<meta name="description" content="인천의 지역별·장소별 여행 상세소개 — 개항장·월미도·송도·영종·강화·옹진 섬까지">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero"><img src="assets/img/hero_local.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.travel"></span></div><h1 data-i18n="travel.title"></h1><p style="color:#cfe0ff;margin-top:6px" data-i18n="travel.sub"></p></div></section>
+
+<section class="section tight"><div class="container">
+  <div class="grid-4" id="region-strip" style="margin-bottom:34px"></div>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:.85rem;color:var(--c-muted)" data-i18n="travel.region"></b></div>
+  <div class="filters" id="f-region"></div>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:.85rem;color:var(--c-muted)" data-i18n="travel.theme"></b></div>
+  <div class="filters theme" id="f-theme"></div>
+  <p id="count" style="color:var(--c-muted);font-size:.9rem;margin-bottom:16px"></p>
+  <div class="grid-3" id="place-grid"></div>
+</div></section>
+
+<section class="section alt"><div class="container">
+  <div class="feature rev">
+    <div class="ph rv"><img src="assets/img/incheon9.jpg" alt="인천 9경"></div>
+    <div class="rv d1"><span style="display:block;color:var(--c-primary);font-size:.82rem;letter-spacing:.14em;font-weight:700;margin-bottom:8px">INCHEON 9 SCENIC SPOTS</span>
+      <h2 id="nine-t"></h2><p id="nine-p" style="color:var(--c-muted)"></p>
+      <ol id="nine-list" style="margin-top:14px;padding-left:20px;line-height:2;font-weight:600"></ol>
+      <a class="btn btn-primary" href="assets/docs/incheon_guidebook_2026.pdf" target="_blank" rel="noopener" style="margin-top:14px" data-i18n="quick.guide"></a>
+    </div>
+  </div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const q=new URLSearchParams(location.search);
+let fr=q.get("region")||"all",ft=q.get("theme")||"all";
+const NINE={ko:{t:"오늘 문득, 인천 9경",p:"2026 인천관광가이드북(인천관광공사)이 제안하는 '놓칠 수 없는 공간들' 9곳. 가이드북에서 추천코스를 확인하세요.",l:["개항장 — 1883년 개항장 과거로 시간여행","월미도 — 월미바다열차 타고 낭만 가득","소래포구 — 도심 속 포구, 생태자연 즐기기","계양아라온 — 야경 명소 빛의 거리","송도센트럴파크 — 미래도시 산책","영종 씨사이드파크 — 바닷길 레일바이크","강화읍 원도심 — 도보 탐방","신·시·모도 — 인천 삼형제 섬 일주","백령도 — 최북단 천연기념물 물범"]},en:{t:"Incheon's 9 Must-See Spots",p:"Nine 'unmissable places' proposed by the 2026 Incheon Travel Guidebook (Incheon Tourism Organization).",l:["Open Port — time travel to 1883","Wolmido — romance on the Sea Train","Soraepogu — a fishing port in the city","Gyeyang Ara-on — street of lights","Songdo Central Park — a future-city walk","Yeongjong Seaside Park — rail bike by the sea","Ganghwa old town — on foot","Sin·Si·Modo — three-island loop","Baengnyeongdo — spotted seals at the northern edge"]},ja:{t:"ふと今日、仁川9景",p:"2026仁川観光ガイドブックが提案する「見逃せない場所」9か所。",l:["開港場 — 1883年への時間旅行","月尾島 — 海列車でロマンを","蘇萊浦口 — 都心の漁港","桂陽アラオン — 光の街の夜景","松島セントラルパーク — 未来都市散策","永宗シーサイドパーク — レールバイク","江華邑旧市街 — 徒歩探訪","信・矢・茅島 — 三兄弟の島一周","白翎島 — 最北端のアザラシ"]},zh:{t:"今日仁川9景",p:"2026仁川旅游指南推荐的9处“不容错过之地”。",l:["开港场 — 穿越回1883年","月尾岛 — 乘海洋列车看浪漫","苏莱浦口 — 城中渔港","桂阳阿拉温 — 灯光之街夜景","松岛中央公园 — 漫步未来之城","永宗海滨公园 — 海岸轨道自行车","江华邑旧城 — 徒步探访","信·矢·茅岛 — 三兄弟岛环游","白翎岛 — 最北端的斑海豹"]}};
+function render(){
+  const lg=getLang();
+  document.getElementById("region-strip").innerHTML=REGIONS.map((r,i)=>`<a class="card rv d${i%4}" href="#" data-r="${r.id}" style="${fr===r.id?"outline:3px solid var(--c-sky)":""}"><div class="ph" style="aspect-ratio:16/9"><img src="assets/img/${r.img}" alt="${L(r.n)}" loading="lazy"></div><div class="body" style="padding:12px 16px"><h3 style="font-size:1rem">${L(r.n)}</h3><p style="font-size:.82rem;-webkit-line-clamp:2">${L(r.s)}</p></div></a>`).join("");
+  document.querySelectorAll("#region-strip a").forEach(a=>a.onclick=e=>{e.preventDefault();fr=(fr===a.dataset.r)?"all":a.dataset.r;render();document.getElementById("f-region").scrollIntoView({behavior:"smooth",block:"start"});});
+  document.getElementById("f-region").innerHTML=`<button class="${fr==="all"?"active":""}" data-v="all">${t("travel.all")}</button>`+REGIONS.map(r=>`<button class="${fr===r.id?"active":""}" data-v="${r.id}">${L(r.n)}</button>`).join("");
+  const themes=["history","nature","city","family","food","mice","wellness"];
+  document.getElementById("f-theme").innerHTML=`<button class="${ft==="all"?"active":""}" data-v="all">${t("travel.all")}</button>`+themes.map(k=>`<button class="${ft===k?"active":""}" data-v="${k}">${t("travel.themes."+k)}</button>`).join("");
+  document.querySelectorAll("#f-region button").forEach(b=>b.onclick=()=>{fr=b.dataset.v;render();});
+  document.querySelectorAll("#f-theme button").forEach(b=>b.onclick=()=>{ft=b.dataset.v;render();});
+  const list=PLACES.filter(p=>(fr==="all"||p.region===fr)&&(ft==="all"||p.themes.includes(ft)));
+  document.getElementById("count").textContent=`${list.length} ${t("travel.count")}`;
+  document.getElementById("place-grid").innerHTML=list.map((p,i)=>{const r=REGIONS.find(x=>x.id===p.region);return `<a class="card rv d${i%3}" href="#" data-p="${p.id}"><div class="ph"><img src="assets/img/${p.img}" alt="${L(p.n)}" loading="lazy"><span class="chip">${L(r.n)}</span></div><div class="body"><h3>${L(p.n)}</h3><p>${L(p.d)}</p><div class="meta">${p.themes.map(th=>`<span>#${t("travel.themes."+th)}</span>`).join("")}</div></div></a>`;}).join("")||`<p style="color:var(--c-muted)">${t("search.none")}</p>`;
+  document.querySelectorAll("#place-grid a").forEach(a=>a.onclick=e=>{e.preventDefault();openPlace(a.dataset.p);});
+  const n=NINE[lg]||NINE.en;document.getElementById("nine-t").textContent=n.t;document.getElementById("nine-p").textContent=n.p;document.getElementById("nine-list").innerHTML=n.l.map(x=>`<li>${x}</li>`).join("");
+  const url=new URL(location);url.searchParams.set("region",fr);url.searchParams.set("theme",ft);history.replaceState(null,"",url);
+  initReveal();
+}
+window.onPageRender=render;
+window.onPageInit=function(){render();const pl=q.get("place");if(pl)setTimeout(()=>openPlace(pl),300);};
+</script>
+</body>
+</html>

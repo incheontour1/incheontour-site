@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>콜라보 | 인천광역시관광협의회</title>
+<meta name="description" content="관광상품·자원 기획, 관광정보 및 서비스, 페스티벌·이벤트, MICE, 관광전문가 육성, 해외 교류, 산업관광, 테마관광 인바운드 — 협의회 8대 협업 트랙">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<section class="page-hero"><img src="assets/img/songdo_convensia.jpg" alt=""><div class="container"><div class="crumb"><span>HOME</span><span data-i18n="nav.collab"></span></div><h1 data-i18n="collab.title"></h1><p style="color:#cfe0ff;margin-top:6px" data-i18n="collab.sub"></p></div></section>
+<nav class="subtabs"><div class="container" id="subtabs"></div></nav>
+
+<section class="section"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">8 TRACKS</span><h2 data-i18n="collab.title"></h2><p data-i18n="collab.intro"></p></div></div>
+  <div class="collab-grid" id="collab-grid"></div>
+</div></section>
+
+<section class="section alt"><div class="container">
+  <div class="sec-head rv"><div><span class="kicker">DETAILS</span><h2 id="detail-h"></h2></div></div>
+  <div id="collab-details"></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="cta-box rv" style="flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px"><div><h3 data-i18n="home.ctaT"></h3><p data-i18n="home.ctaP"></p></div><a class="btn btn-light" href="news.html?tab=inquiry&type=1" data-i18n="home.ctaB"></a></div>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const CI_ICONS=["compass","info","bell","handshake","book","map","car","train"];
+const HOWTO={ko:"제안 방법 — ① 문의사항에서 '콜라보·협업 제안' 유형 선택 ② 트랙명 + 수요 근거(관심·이동·소비 데이터) + 수익구조(CAC 대비 지역 귀속액) + 운영주체를 기재 ③ 영업일 3일 내 1차 검토 회신 → 분과위원회 검토(정관 제41조) → 이사회 심의",en:"How to propose — ① choose 'Collaboration proposal' in the inquiry form ② state the track, demand evidence (search·mobility·spend data), revenue structure (local retention vs. CAC) and operating body ③ first reply within 3 business days → subcommittee review (Art. 41) → board deliberation",ja:"提案方法 — ① お問い合わせで「コラボ・協業提案」を選択 ② トラック名＋需要根拠＋収益構造＋運営主体を記載 ③ 営業日3日以内に一次回答 → 分科委員会検討 → 理事会審議",zh:"提案方式 — ① 在咨询表选择“合作提案” ② 填写方向、需求依据、收益结构与运营主体 ③ 3个工作日内初步回复 → 分科委员会审议 → 理事会审议"};
+window.onPageRender=function(){
+  const lg=getLang();
+  document.getElementById("subtabs").innerHTML=COLLAB.map((c,i)=>`<a href="#${c.id}">${i+1}. ${L(c.n)}</a>`).join("");
+  document.getElementById("collab-grid").innerHTML=COLLAB.map((c,i)=>`<a class="collab rv d${i%4}" href="#d-${c.id}" id="${c.id}"><div class="ic">${ICON[CI_ICONS[i]]}</div><h3>${String(i+1).padStart(2,"0")} · ${L(c.n)}</h3><p>${L(c.d)}</p><span class="law">${c.law}</span></a>`).join("");
+  document.getElementById("detail-h").textContent=t("collab.sub");
+  document.getElementById("collab-details").innerHTML=`<div class="ci-box rv" style="margin-bottom:6px;font-size:.92rem;color:var(--c-muted)">${HOWTO[lg]||HOWTO.en}</div>`+COLLAB.map((c,i)=>`<div class="collab-detail rv" id="d-${c.id}"><div class="ph"><img src="assets/img/${c.img}" alt="" loading="lazy"></div><div class="bd"><span class="law" style="font-size:.74rem;color:var(--c-primary-2);background:#eef3fb;padding:3px 8px;border-radius:6px">${c.law}</span><h3 style="margin-top:8px">${String(i+1).padStart(2,"0")} · ${L(c.n)}</h3><p style="color:var(--c-muted);line-height:1.75">${L(c.d)}</p>
+    <dl><dt>${t("collab.role")}</dt><dd>${lg==="ko"?c.role.ko:c.role.en}</dd><dt>${t("collab.partner")}</dt><dd>${lg==="ko"?c.partner.ko:c.partner.en}</dd><dt>${t("collab.output")}</dt><dd>${lg==="ko"?c.out.ko:c.out.en}</dd></dl>
+    <a class="btn btn-primary btn-sm" style="margin-top:16px" href="news.html?tab=inquiry&type=1&track=${encodeURIComponent(L(c.n))}">${t("collab.propose")}</a></div></div>`).join("");
+};
+window.onPageInit=function(){onPageRender();};
+</script>
+</body>
+</html>
