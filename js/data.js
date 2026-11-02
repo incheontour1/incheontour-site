@@ -204,7 +204,7 @@ window.TICS = [
 
 /* Publications (web-view editions in /assets/docs) */
 window.BOOKS = [
- {id:"guidebook",file:"incheon_guidebook_2026.pdf",cover:"cover_incheon_guidebook_2026.jpg",pages:43,
+ {id:"guidebook",file:"incheon_guidebook_2026.pdf",cover:"cover_incheon_guidebook_2026-front.jpg",pages:43,
   n:{ko:"인천관광가이드북 2026",en:"Incheon Travel Guidebook 2026",ja:"仁川観光ガイドブック2026",zh:"仁川旅游指南2026"},
   d:{ko:"인천 9경, 지역별 명소, 섬 여행, 교통·숙박·안내소까지 한 권에 (2026.07)",en:"9 scenic spots, areas, islands, transport and info centers in one volume (2026.07)",ja:"仁川9景・地域別名所・島旅行・交通情報（2026.07）",zh:"仁川9景、各区景点、海岛、交通信息（2026.07）"}},
  {id:"map",file:"incheon_tourist_map.pdf",cover:"cover_incheon_tourist_map.jpg",
@@ -228,10 +228,10 @@ window.BOOKS = [
  {id:"isl_winter",file:"incheon_islands_winter_2026.pdf",cover:"cover_incheon_islands_winter_2026.jpg",
   n:{ko:"인천섬 이야기 — 겨울 (문갑도 특집)",en:"Incheon Island Stories — Winter (Mungapdo)",ja:"仁川島物語 — 冬（文甲島特集）",zh:"仁川海岛故事 — 冬（文甲岛特辑）"},
   d:{ko:"내 마음 지켜주는 고요한 방패 문갑도. 섬 가을 꽃 기행 BEST 4 (2026.01)",en:"Mungapdo, the quiet shield (2026.01)",ja:"静かな盾・文甲島",zh:"宁静之盾文甲岛"}},
- {id:"season",file:"themebook_seasonroad_2024.pdf",cover:"cover_themebook_seasonroad_2024.jpg",
+ {id:"season",file:"themebook_seasonroad_2024.pdf",cover:"cover_themebook_seasonroad_2024-front.jpg",
   n:{ko:"테마북 — 계절로드",en:"Theme Book — Season Road",ja:"テーマブック — 季節ロード",zh:"主题手册 — 季节之路"},
   d:{ko:"사계절 인천을 걷는 테마 여행 코스 (2024.10)",en:"Four-season themed routes across Incheon (2024.10)",ja:"四季の仁川テーマコース（2024.10）",zh:"四季仁川主题路线（2024.10）"}},
- {id:"dog",file:"themebook_dogroad_2024.pdf",cover:"cover_themebook_dogroad_2024.jpg",
+ {id:"dog",file:"themebook_dogroad_2024.pdf",cover:"cover_themebook_dogroad_2024-front.jpg",
   n:{ko:"테마북 — 댕댕로드",en:"Theme Book — Dog Road",ja:"テーマブック — わんこロード",zh:"主题手册 — 宠物之路"},
   d:{ko:"반려견과 함께하는 인천 여행 코스 (2024.10)",en:"Dog-friendly travel routes in Incheon (2024.10)",ja:"愛犬と行く仁川旅行コース（2024.10）",zh:"携宠游仁川路线（2024.10）"}}
 ];

@@ -636,3 +636,23 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .notice-list .ttl{order:3;flex:1 1 100%;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.45;word-break:keep-all}
   .notice-list li+li a{border-top:1px solid var(--c-line);border-radius:0}
 }
+/* 2026-11-02: info page — book covers, TIC table layout */
+.book .cv{position:relative;display:block}
+.book .cv img{position:absolute;inset:0;object-position:center top}
+.tic-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.tic-table td.tt{white-space:nowrap}
+@media (max-width:860px){
+  .tic-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .tic-table,.tic-table tbody{display:block}
+  .tic-table thead{display:none}
+  .tic-table tr{display:grid;grid-template-columns:auto auto;justify-content:space-between;gap:4px 10px;padding:14px 16px;border-bottom:1px solid var(--c-line)}
+  .tic-table td{padding:0;border:0;font-size:.9rem}
+  .tic-table td.tn{grid-column:1/-1;font-size:.98rem;word-break:keep-all}
+  .tic-table td.tt,.tic-table td.th{font-size:.84rem}
+  .tic-table td.th{color:var(--c-muted);text-align:right;white-space:nowrap}
+  .tic-table tr:hover td{background:none}
+  .book .b{padding:12px 12px 14px}
+  .book h3{font-size:.92rem;word-break:keep-all}
+}

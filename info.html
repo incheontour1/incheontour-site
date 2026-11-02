@@ -46,7 +46,7 @@
 
 <section class="section alt" id="tic"><div class="container">
   <div class="sec-head rv"><div><span class="kicker">TOURIST INFORMATION</span><h2 data-i18n="info.ticT"></h2><p data-i18n="info.ticP"></p></div><a class="more" href="map.html?layer=tic"><span data-i18n="nav.map"></span></a></div>
-  <div class="grid-2" style="grid-template-columns:1.4fr 1fr">
+  <div class="grid-2 tic-grid">
     <table class="tic-table rv"><thead><tr><th data-i18n="info.ticName"></th><th data-i18n="info.ticTel"></th><th data-i18n="info.ticHours"></th></tr></thead><tbody id="tic-body"></tbody></table>
     <div class="rv d1"><div class="ci-box"><h3 data-i18n="info.hotT"></h3><ul class="prose" style="font-size:.95rem;max-width:100%" id="hotline"></ul></div></div>
   </div>
@@ -74,7 +74,7 @@ window.onPageRender=function(){
   const lg=getLang();
   document.getElementById("subtabs").innerHTML=[["books","info.booksT"],["flip","info.flipT"],["citytour","info.cityT"],["tic","info.ticT"],["transport","info.transT"]].map(([k,i])=>`<a href="#${k}">${t(i)}</a>`).join("");
   document.getElementById("book-grid").innerHTML=BOOKS.map((b,i)=>`<div class="book rv d${i%4}"><a class="cv" href="assets/docs/${b.file}" target="_blank" rel="noopener"><img src="assets/img/${b.cover}" alt="${L(b.n)}" loading="lazy"></a><div class="b"><h3>${L(b.n)}</h3><p>${L(b.d)}</p><div class="dl"><a class="btn btn-primary btn-sm" href="assets/docs/${b.file}" target="_blank" rel="noopener">${t("info.view")}</a><a class="btn btn-outline btn-sm" href="assets/docs/${b.file}" download>${t("common.download")}</a></div></div></div>`).join("");
-  document.getElementById("tic-body").innerHTML=TICS.map(x=>`<tr><td><b>${L(x.n)}</b></td><td>${x.tel?`<a href="tel:${x.tel}">${x.tel}</a>`:"—"}</td><td>${x.h}</td></tr>`).join("");
+  document.getElementById("tic-body").innerHTML=TICS.map(x=>`<tr><td class="tn"><b>${L(x.n)}</b></td><td class="tt">${x.tel?`<a href="tel:${x.tel}">${x.tel}</a>`:"—"}</td><td class="th">${x.h}</td></tr>`).join("");
   document.getElementById("hotline").innerHTML=(HOT[lg]||HOT.en).map(x=>`<li>${x}</li>`).join("");
   document.getElementById("trans").innerHTML=(TR[lg]||TR.en).map((s,i)=>`<div class="dir rv d${i}"><h3>${ICON[s.i]}${s.t}</h3><ul>${s.l.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
   document.getElementById("flip-thumbs").innerHTML=Array.from({length:N},(_,i)=>`<img src="assets/img/gb/p-${String(i+1).padStart(2,"0")}.jpg" loading="lazy" style="height:48px;border-radius:4px;cursor:pointer;flex:none" data-p="${i+1}">`).join("");
