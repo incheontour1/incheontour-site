@@ -539,3 +539,23 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{padding:14px 10px;font-size:.9rem;white-space:nowrap}
 html[lang="ru"] .brand img,html[lang="vi"] .brand img,html[lang="es"] .brand img{height:54px}
 @media (max-width:1250px){html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{font-size:.82rem;padding:14px 7px}}
+
+/* search overlay: never wider than viewport (mobile) */
+.search-ov{padding:10vh 12px}
+.search-box{min-width:0;max-width:100%;width:min(820px,100%)}
+.search-box form{min-width:0}
+.search-box input{min-width:0;width:100%}
+.search-res{overflow-x:hidden}
+.search-res a{min-width:0}
+.search-res a>div{min-width:0;flex:1}
+.search-res .t,.search-res .s{overflow-wrap:anywhere}
+@media (max-width:520px){
+  .search-ov{padding:6vh 8px}
+  .search-box{border-radius:16px}
+  .search-box form{padding:10px 12px;gap:8px}
+  .search-box input{font-size:1.05rem;padding:8px 2px}
+  .search-res a{padding:10px 8px;gap:10px}
+  .search-res img{width:64px;height:48px}
+  .search-res .tag{display:inline-block;margin:2px 0 0 0}
+}
+.search-box input::-webkit-search-cancel-button,.search-box input::-webkit-search-decoration{-webkit-appearance:none;display:none}
