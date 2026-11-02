@@ -126,7 +126,7 @@ function startHero(){clearInterval(timer);timer=setInterval(()=>showSlide(cur+1)
 document.getElementById("hero-dots").innerHTML=HERO.map((_,i)=>`<button aria-label="slide ${i+1}"></button>`).join("");
 document.querySelectorAll("#hero-dots button").forEach((b,i)=>b.onclick=()=>{showSlide(i);startHero();});
 
-const THEME_IMG={history:"gaehang_museum-hd.jpg",nature:"dumujin-hd.jpg",city:"tribowl_night-hd.jpg",family:"wolmi_themepark-hd.jpg",food:"sorae_market-hd.jpg",mice:"songdo_convensia-hd.jpg"};
+const THEME_IMG={history:"gaehang_museum-hd.jpg",nature:"dumujin-hd.jpg",city:"tribowl_night-hd.jpg",family:"wolmi_themepark-hd.jpg",food:"sorae_market2-hd.jpg",mice:"songdo_convensia-hd.jpg"};
 window.onPageRender=function(){
   document.getElementById("quick").innerHTML=[["travel.html","compass","quick.travel"],["map.html","map","quick.map"],["info.html#books","book","quick.guide"],["info.html#tic","info","quick.tic"],["collab.html","handshake","quick.collab"],["news.html","bell","quick.notice"]].map(([h,i,k])=>`<a href="${h}">${ICON[i]}<span data-i18n="${k}"></span></a>`).join("");
   document.querySelectorAll(".more-arrow,#more-arrow").forEach(e=>e.innerHTML=ICON.arrow);

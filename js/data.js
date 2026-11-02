@@ -108,7 +108,7 @@ window.PLACES = [
   n:{ko:"드림파크 야생화단지",en:"Dream Park Wildflower Complex",ja:"ドリームパーク野生花団地",zh:"梦想公园野花园"},
   d:{ko:"수도권매립지를 시민의 휴식 공간으로 바꾼 생태공원. 계절마다 야생화 군락이 펼쳐지며 가을 국화축제로 유명합니다.",en:"A landfill reborn as an ecological park — seasonal wildflower fields and an autumn chrysanthemum festival.",ja:"埋立地を再生した生態公園。秋の菊祭りが有名。",zh:"由填埋场再生的生态公园，秋季菊花节著名。"}},
  // ---- 남동구
- {id:"soraepogu",region:"namdong",themes:["food","nature"],img:"sorae_market-hd.jpg",lat:37.4038,lng:126.7359,addr:"남동구 장도로 86-17",tel:"+82-32-446-7536",
+ {id:"soraepogu",region:"namdong",themes:["food","nature"],img:"sorae_market2-hd.jpg",lat:37.4038,lng:126.7359,addr:"남동구 장도로 86-17",tel:"+82-32-446-7536",
   n:{ko:"소래포구 전통어시장",en:"Soraepogu Fish Market",ja:"蘇萊浦口伝統魚市場",zh:"苏莱浦口传统鱼市场"},
   d:{ko:"수도권 대표 수산시장. 꽃게·새우·젓갈 등 제철 해산물을 어민에게 직접 사서 즉석에서 맛볼 수 있고, 소래철교와 소래역사관(협궤열차)도 함께 둘러볼 수 있습니다.",en:"The capital region's best-known seafood market — buy blue crab, shrimp and salted seafood straight from fishers, then visit the narrow-gauge rail museum.",ja:"首都圏を代表する水産市場。旬の海産物をその場で。",zh:"首都圈代表性水产市场，现买现尝时令海鲜。"}},
  {id:"sorae_wetland",region:"namdong",themes:["nature","wellness"],img:"sorae_wetland-hd.jpg",lat:37.4133,lng:126.7437,addr:"남동구 논현동 1-55",tel:"+82-32-435-7076",
