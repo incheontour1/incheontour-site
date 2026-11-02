@@ -572,3 +572,16 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .org .row>.col{flex:1 1 100%}
   .org .col{width:100%}
 }
+
+/* collab cards: single column, horizontal layout on phones */
+@media (max-width:600px){
+  .collab-grid{grid-template-columns:1fr;gap:14px}
+  .collab{display:grid;grid-template-columns:52px 1fr;grid-template-areas:"ic h3" "ic p" "ic law";column-gap:14px;row-gap:6px;padding:18px 18px 18px 16px;align-items:start}
+  .collab .ic{grid-area:ic;width:52px;height:52px}
+  .collab h3{grid-area:h3;font-size:1.05rem;line-height:1.35}
+  .collab p{grid-area:p;font-size:.9rem;line-height:1.65}
+  .collab .law{grid-area:law;justify-self:start}
+  .collab-detail dl{grid-template-columns:1fr}
+  .collab-detail dt{margin-top:8px}
+  .pillars{grid-template-columns:1fr}
+}
