@@ -57,8 +57,8 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--c-line);transition:box-shadow .3s,height .3s}
 .header.scrolled{box-shadow:0 6px 24px rgba(15,42,98,.08)}
 .header .container{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);gap:20px}
-.brand{display:flex;align-items:center;height:var(--header-h)}
-.brand img{height:62px;width:auto;display:block}
+.header .brand{display:flex;align-items:center;height:var(--header-h)}
+.header .brand img{height:56px;width:auto;display:block}
 .nav{display:flex;align-items:center;gap:6px}
 .nav>li{position:relative}
 .nav>li>a{display:block;padding:14px 16px;font-weight:700;font-size:1.08rem;color:var(--c-ink);border-radius:10px;transition:color .2s,background .2s}
@@ -230,7 +230,8 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 .footer h4{color:#fff;font-size:.95rem;margin-bottom:12px}
 .footer li{margin:6px 0}
 .footer a:hover{color:#fff}
-.footer .brand img{height:44px;margin-bottom:14px}
+.footer .brand{display:block}
+.footer .brand img{height:44px;width:auto;margin-bottom:14px}
 .footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:22px;flex-wrap:wrap;font-size:.82rem;color:#8ea2cc}
 .footer .legal{display:flex;gap:16px}
 .footer select{background:#13306e;color:#fff;border:1px solid rgba(255,255,255,.2);padding:8px 12px;border-radius:8px}
@@ -496,7 +497,7 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
   .topbar{display:none}
   .nav,.header-tools .desktop-only{display:none}
   .burger{display:grid}
-  .brand img{height:44px}
+  .header .brand img{height:44px}
   .hero{height:78vh;min-height:480px}
   .hero .scroll-hint,.hero .caption{display:none}
   .quick{margin-top:-30px}
@@ -537,7 +538,7 @@ h1,h2,h3,h4{line-height:1.25;letter-spacing:-.02em;color:var(--c-ink)}
 
 /* long-label languages: tighter top nav */
 html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{padding:14px 10px;font-size:.9rem;white-space:nowrap}
-html[lang="ru"] .brand img,html[lang="vi"] .brand img,html[lang="es"] .brand img{height:54px}
+html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang="es"] .header .brand img{height:54px}
 @media (max-width:1250px){html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{font-size:.82rem;padding:14px 7px}}
 
 /* search overlay: never wider than viewport (mobile) */
