@@ -61,7 +61,7 @@ git push -u origin main
 | 발간물 추가 | PDF를 `assets/docs/`에, 표지를 `assets/img/cover_*.jpg`로 → `BOOKS` |
 | SNS 링크(인스타·페북) | `js/data.js` › `SITE.instagram`, `SITE.facebook` (빈 값이면 '준비중' 아이콘) |
 | 인사말·비전·윤리·CI·오시는 길 | `about.html` 내 `C` 객체 (4개 국어) |
-| 회장 사진 | `assets/img/chairman.jpg` 추가 후 `about.html` 인사말 이미지 경로 교체 |
+| 회장 사진 | `assets/img/chairman-v1.jpg` — 교체 시 새 파일명(예: chairman-v2.jpg)으로 저장 후 `about.html` 인사말 이미지 경로 변경 |
 | 관리자 비밀번호 | `js/admin-config.js` |
 
 ## 5. 확인 필요 사항 (`[확인 필요]` 표기)
