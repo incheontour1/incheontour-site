@@ -245,19 +245,32 @@ function renderOrg(o){
   g+=`<text x="40" y="620" font-size="12.5" fill="#6b7684">${o.note}</text>`;
   g+=`<line x1="1030" y1="-6" x2="1070" y2="-6" stroke="${P2}" stroke-width="2.5"/><text x="1078" y="-2" font-size="12.5" fill="#4a5a78">${o.lg1}</text><line x1="1190" y1="-6" x2="1230" y2="-6" stroke="#8fa3c7" stroke-width="2.5" stroke-dasharray="8 6"/><text x="1238" y="-2" font-size="12.5" fill="#4a5a78">${o.lg2}</text>`;
   const svg=`<svg class="orgsvg" viewBox="0 -24 ${W} ${H+24}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="organization chart" style="width:100%;height:auto;font-family:'Pretendard Variable',Pretendard,sans-serif">${g}</svg>`;
-  // ---- Mobile stacked ----
-  const n=(t,cls,sub)=>`<div class="onode ${cls||""}"><b>${t}</b>${sub?`<small>${sub}</small>`:""}</div>`;
-  const mob=`<div class="orgmob">
-    <div class="orow">${n(o.ga,"light")}<span class="dash">${o.audit}</span></div>
-    ${n(o.board,"light")}
-    <div class="orow">${n(o.chairT+" · "+o.chair,"dark")}</div>
-    <div class="oside"><span class="dash">${o.adv}</span><span class="dash">${o.sec} — ${o.secD}</span></div>
-    ${n(o.svp,"")}
-    ${n(o.steer,"steer",o.steerD)}
-    <div class="ogrp"><div class="ohead">${o.opsT}</div><div class="ocells">${o.ops.map(x=>`<div class="onode">${x}</div>`).join("")}</div></div>
-    <div class="ogrp"><div class="ohead">${o.bizT}</div>${o.biz.map(b=>`<div class="onode">${b[0]}</div><div class="onode green">${b[1]}</div>`).join("")}</div>
-    <p class="onote">${o.note}</p>
-    <p class="onote" style="margin-top:4px">— ${o.lg1} &nbsp;·&nbsp; - - ${o.lg2}</p></div>`;
+  // ---- Mobile portrait SVG (<=760px) ----
+  const MW=420,mcx=210,fo=(x,y,w,h,txt,fs,col)=>`<foreignObject x="${x}" y="${y}" width="${w}" height="${h}"><div xmlns="http://www.w3.org/1999/xhtml" style="font:500 ${fs}px/1.3 Pretendard,sans-serif;color:${col};text-align:center;display:flex;align-items:center;justify-content:center;height:${h}px;padding:0 4px;box-sizing:border-box;word-break:keep-all">${txt}</div></foreignObject>`;
+  const mb=(x,y,w,h,t,cls,fs)=>{const fill=cls==="dark"?N:cls==="mid"?P2:cls==="light"?L:cls==="green"?G:cls==="steer"?"#f4f7fb":"#fff";const stroke=cls==="green"?GB:cls==="dark"?N:cls==="mid"?P2:cls==="side"?"#8fa3c7":P;const tc=(cls==="dark"||cls==="mid")?"#fff":(cls==="green"?"#2b4a35":N);
+    return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${fill}" stroke="${stroke}" stroke-width="2"${cls==="side"?' stroke-dasharray="6 4"':""}/><text x="${x+w/2}" y="${y+h/2+5}" text-anchor="middle" font-size="${fs||14}" font-weight="700" fill="${tc}">${t}</text>`;};
+  let m="";
+  // spine + top nodes
+  m+=ln(mcx,54,mcx,110)+ln(mcx,154,mcx,240)+ln(mcx,306,mcx,328)+ln(mcx,372,mcx,394);
+  m+=mb(100,10,220,44,o.ga,"light");
+  m+=ln(mcx,80,330,80,1)+mb(330,64,80,32,o.audit,"side",13);
+  m+=mb(100,110,220,44,o.board,"light");
+  m+=ln(mcx,194,110,194,1)+mb(10,178,100,32,o.adv,"side",13);
+  m+=ln(mcx,194,300,194,1)+`<rect x="300" y="162" width="110" height="64" rx="8" fill="#fff" stroke="#8fa3c7" stroke-width="2" stroke-dasharray="6 4"/><text x="355" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="${N}">${o.sec}</text>`+fo(302,184,106,40,o.secD,9.5,"#4a5a78");
+  m+=`<rect x="100" y="240" width="220" height="66" rx="8" fill="${N}" stroke="${N}" stroke-width="2"/><text x="${mcx}" y="263" text-anchor="middle" font-size="13" font-weight="500" fill="#fff">${o.chairT}</text><text x="${mcx}" y="290" text-anchor="middle" font-size="21" font-weight="800" fill="#fff">${o.chair}</text>`;
+  m+=mb(100,328,220,44,o.svp,"");
+  m+=`<rect x="10" y="394" width="400" height="52" rx="10" fill="#f4f7fb" stroke="${P2}" stroke-width="2"/><text x="${mcx}" y="416" text-anchor="middle" font-size="15" font-weight="800" fill="${N}">${o.steer}</text><text x="${mcx}" y="435" text-anchor="middle" font-size="11" fill="#4a5a78">${o.steerD}</text>`;
+  // two columns
+  const lc=112.5,rc=307.5,cw=185;
+  m+=ln(mcx,446,mcx,460)+ln(lc,460,rc,460)+ln(lc,460,lc,472)+ln(rc,460,rc,472);
+  m+=ln(lc,516,lc,722)+ln(rc,516,rc,810);
+  m+=mb(20,472,cw,44,o.opsT,"mid")+mb(215,472,cw,44,o.bizT,"mid");
+  o.ops.forEach((x,i)=>{m+=mb(20,532+i*56,cw,44,x,"",13.5);});
+  o.biz.forEach((b,i)=>{const y=532+i*128;m+=mb(215,y,cw,44,b[0],"",13.5)+`<rect x="215" y="${y+50}" width="${cw}" height="64" rx="8" fill="${G}" stroke="${GB}" stroke-width="2"/>`+fo(217,y+52,cw-4,60,b[1],11.5,"#2b4a35");});
+  // note + legend
+  m+=`<foreignObject x="10" y="920" width="400" height="60"><div xmlns="http://www.w3.org/1999/xhtml" style="font:400 10.5px/1.35 Pretendard,sans-serif;color:#6b7684;word-break:keep-all">${o.note}</div></foreignObject>`;
+  m+=`<line x1="12" y1="996" x2="44" y2="996" stroke="${P2}" stroke-width="2.5"/><text x="52" y="1000" font-size="11.5" fill="#4a5a78">${o.lg1}</text><line x1="12" y1="1016" x2="44" y2="1016" stroke="#8fa3c7" stroke-width="2.5" stroke-dasharray="6 4"/><text x="52" y="1020" font-size="11.5" fill="#4a5a78">${o.lg2}</text>`;
+  const mob=`<svg class="orgmob" viewBox="0 0 ${MW} 1030" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="organization chart" style="width:100%;height:auto;font-family:'Pretendard Variable',Pretendard,sans-serif">${m}</svg>`;
   return svg+mob;
 }
 
@@ -273,9 +286,9 @@ window.onPageRender=function(){
   document.getElementById("orgchart").innerHTML=renderOrg(o);
   const c=C.ci[lg]||C.ci.en;
   document.getElementById("ci-body").innerHTML=`<div class="ci-sheet">
-    <div class="ci-box rv"><h3>${c.sym}</h3><div class="ci-preview"><img src="assets/img/logo-symbol.png" alt="symbol"></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.symD}</p>
+    <div class="ci-box rv"><h3>${c.sym}</h3><div class="ci-preview"><img src="assets/img/logo-symbol.png?v=3" alt="symbol"></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.symD}</p>
       <div class="swatches" style="margin-top:14px"><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol.png" style="height:60px"></div><div class="i"><b>${c.symA}</b></div></div><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol-gray.png" style="height:60px"></div><div class="i"><b>${c.symB}</b></div></div><div class="sw"><div class="c" style="background:#fff;display:grid;place-items:center"><img src="assets/img/logo-symbol-black.png" style="height:60px"></div><div class="i"><b>${c.symC}</b></div></div><div class="sw"><div class="c" style="background:#231916;display:grid;place-items:center"><img src="assets/img/logo-reverse.png" style="height:44px"></div><div class="i"><b>${c.symR}</b></div></div></div></div>
-    <div class="ci-box rv d1"><h3>${c.sig}</h3><div class="ci-preview"><img src="assets/img/logo-horizontal.png" alt="signature" style="max-height:90px"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px"><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical.png"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical-short.png"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-emblem-member.png" title="${c.member}"></div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.sigD}</p></div>
+    <div class="ci-box rv d1"><h3>${c.sig}</h3><div class="ci-preview"><img src="assets/img/logo-horizontal.png?v=3" alt="signature" style="max-height:90px"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px"><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical.png?v=3"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-vertical-short.png?v=3"></div><div class="ci-preview" style="min-height:140px"><img src="assets/img/logo-emblem-member.png?v=3" title="${c.member}"></div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted);line-height:1.7">${c.sigD}</p></div>
     <div class="ci-box rv"><h3>${c.col}</h3><div class="swatches">
       <div class="sw"><div class="c" style="background:#1d479c"></div><div class="i"><b>ITC Blue</b>#1D479C<br>C92 M72 Y0 K0<br>R29 G71 B156</div></div>
       <div class="sw"><div class="c" style="background:#3067b2"></div><div class="i"><b>ITC Blue 2</b>#3067B2<br>C82 M52 Y0 K0<br>R48 G103 B178</div></div>
@@ -283,7 +296,7 @@ window.onPageRender=function(){
       <div class="sw"><div class="c" style="background:#231916"></div><div class="i"><b>ITC Black</b>#231916<br>C0 M0 Y0 K100<br>R35 G25 B22</div></div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted)">${c.colD}</p></div>
     <div class="ci-box rv d1"><h3>${c.font}</h3><div style="padding:18px;background:#f4f7fb;border-radius:12px"><div style="font-size:1.8rem;font-weight:900;letter-spacing:-.03em">인천광역시관광협의회</div><div style="font-size:.8rem;color:var(--c-muted)">한글 : 이순신 돋음 B</div><div style="font-size:1.4rem;font-weight:800;margin-top:10px;letter-spacing:-.01em">INCHEON TOURISM COUNCIL</div><div style="font-size:.8rem;color:var(--c-muted)">English : Noto Sans Korean Bold</div><div style="font-size:1.1rem;font-weight:500;margin-top:10px">Pretendard — 본문·웹 기본 서체 Aa 가나다 123</div></div><p style="margin-top:14px;font-size:.93rem;color:var(--c-muted)">${c.fontD}</p></div>
     <div class="ci-box rv" style="grid-column:1/-1"><h3>${c.rule}</h3><ul class="prose" style="max-width:100%;font-size:.95rem">${c.rules.map(r=>`<li>${r}</li>`).join("")}</ul>
-      <div class="dl-row"><a class="btn btn-primary btn-sm" href="assets/img/logo-symbol.png" download>${c.dl} · PNG (Symbol)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-horizontal.png" download>PNG (Horizontal)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-vertical.png" download>PNG (Vertical)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-reverse.png" download>PNG (Reversed)</a><a class="btn btn-outline btn-sm" href="assets/docs/itc_logo_master.pdf" download>AI/PDF (Master)</a></div></div>
+      <div class="dl-row"><a class="btn btn-primary btn-sm" href="assets/img/logo-symbol.png?v=3" download>${c.dl} · PNG (Symbol)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-horizontal.png?v=3" download>PNG (Horizontal)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-vertical.png?v=3" download>PNG (Vertical)</a><a class="btn btn-outline btn-sm" href="assets/img/logo-reverse.png?v=3" download>PNG (Reversed)</a><a class="btn btn-outline btn-sm" href="assets/docs/itc_logo_master.pdf" download>AI/PDF (Master)</a></div></div>
   </div>`;
   const w=C.way[lg]||C.way.en;
   document.getElementById("way-body").innerHTML=`<div class="addr-card rv"><div><small>${w.addr}</small><b>${L(SITE.address)}</b></div><div><small>${w.tel}</small><b>${SITE.tel} · ${SITE.email}</b></div><div><small>${w.hours}</small><b>${w.hv}</b></div></div>

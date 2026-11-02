@@ -586,26 +586,12 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
   .pillars{grid-template-columns:1fr}
 }
 
-/* org chart v2 (SVG desktop / stacked mobile) */
+/* org chart v2 (SVG desktop / portrait SVG mobile) */
 .org{display:block}
-.orgsvg{display:block;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 10px 6px}
-.orgmob{display:none}
+.orgsvg,.orgmob{display:block;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 10px 6px;box-sizing:border-box}
+.orgmob{display:none;padding:12px 8px 8px}
 @media (max-width:760px){
   .orgsvg{display:none}
   .orgmob{display:block}
-  .onode{background:#fff;border:2px solid var(--c-primary);border-radius:10px;padding:10px 12px;text-align:center;font-weight:700;color:var(--c-navy);margin:8px auto;max-width:360px;position:relative}
-  .onode small{display:block;font-weight:500;font-size:.8rem;color:var(--c-muted);margin-top:2px}
-  .onode.light{background:#e8f0ff}
-  .onode.dark{background:var(--c-navy);color:#fff;border-color:var(--c-navy)}
-  .onode.steer{background:#f4f7fb;border-color:var(--c-primary-2)}
-  .onode.green{background:#e9f5ec;border-color:#9fcfae;color:#2b4a35;font-weight:500;font-size:.85rem;margin-top:-4px}
-  .orow{display:flex;flex-direction:column;align-items:stretch}
-  .orow .onode,.orgmob>.onode{width:100%;max-width:360px;box-sizing:border-box}
-  .oside{display:flex;flex-direction:column;gap:6px;margin:4px auto;max-width:360px}
-  .dash{display:block;border:2px dashed #8fa3c7;border-radius:10px;padding:8px 12px;text-align:center;font-size:.88rem;color:#4a5a78;background:#fff}
-  .ogrp{margin-top:14px}
-  .ohead{background:var(--c-primary-2);color:#fff;border-radius:10px;padding:10px;text-align:center;font-weight:800;max-width:360px;margin:0 auto 6px}
-  .ocells{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:360px;margin:0 auto}
-  .ocells .onode{margin:0;font-size:.9rem;padding:10px 6px}
-  .onote{font-size:.78rem;color:var(--c-muted);margin-top:12px;line-height:1.5}
+}
 }
