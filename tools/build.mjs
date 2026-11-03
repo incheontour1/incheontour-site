@@ -124,6 +124,7 @@ function rewriteStaticImgs(html) {
 function headBlock(key, extra = {}) {
   const lcp = extra.lcp || PAGES[key]?.lcp, a = lcp && srcsetAttrs(lcp, extra.lcpSizes || '100vw');
   const L = ['<!--seo:start-->',
+    '<script>document.documentElement.classList.add("js")</script>',
     '<meta name="geo.region" content="KR-28"><meta name="geo.placename" content="인천광역시, 대한민국">' + (extra.geo ? `<meta name="geo.position" content="${extra.geo}"><meta name="ICBM" content="${extra.geo.replace(';', ', ')}">` : ''),
     '<link rel="alternate" type="application/rss+xml" title="인천광역시관광협의회 알림마당" href="/rss.xml"><link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">',
     '<link rel="stylesheet" href="assets/fonts/pretendard/pretendardvariable-dynamic-subset.css">',
