@@ -10,3 +10,5 @@ User-agent: Daum
 Allow: /
 
 Sitemap: https://www.incheontour.or.kr/sitemap.xml
+
+#DaumWebMasterTool:555a89f39e8412439848151f7655cdf8cd9456a634a0485ca0f4a1bb93a498fd:e72ZaETHYmtl8bFrs60rSQ==
