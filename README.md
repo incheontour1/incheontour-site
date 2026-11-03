@@ -26,12 +26,11 @@
 ## 2. 관리자 모드
 
 - 주소: `/admin.html` (검색엔진 noindex)
-- **초기 계정**: ID `admin` / PW `IncheonTour2026!` → 운영 전 반드시 변경
-  - 변경 방법: 관리자 › 설정 › "해시 생성" → 출력된 줄을 `js/admin-config.js`에 붙여넣고 커밋
+- 로그인 아이디: `admin` · 비밀번호: Vercel 환경변수 `ADMIN_PASSWORD` (10장). 비밀번호는 이 문서에 적지 않습니다.
 - 저장 방식: 브라우저 `localStorage` (서버 없음). 다른 PC와 공유하려면
   1) 설정 › JSON 내보내기 → `js/data.js`의 `DEFAULT_POSTS`에 반영 후 커밋(권장, 영구), 또는
   2) Supabase/Vercel Postgres 연동 (2단계 고도화: `getPosts/savePosts`만 교체하면 됨)
-- 문의 폼: 제출 시 관리자 목록 저장 + 메일 앱(incheontour1@gmail.com) 자동 실행
+- 문의 폼: 서버 저장소에 접수 → 관리자 › 문의사항에서 확인. 접수 실패 시 이메일 보내기 버튼 안내
 
 ## 3. 배포 (GitHub + Vercel + 후이즈 DNS)
 
@@ -120,3 +119,20 @@ node tools/build.mjs               # 본문 사전 렌더링 · 명소 상세페
 
 - 빌드에는 Node.js와 Playwright(Chromium)가 필요합니다. `tools/`는 `.vercelignore`로 배포에서 제외됩니다.
 - CSS·JS 주소에 `?v=해시`가 자동으로 붙어, 1년 캐시를 써도 수정본이 바로 반영됩니다.
+
+## 10. 서버 저장소 — 공지·언론보도·문의 공유 (2026-11-03 도입)
+
+관리자 모드에서 고친 글과 방문자 문의를 **모든 기기가 함께 보도록** 서버에 저장합니다.
+
+| 구성 | 내용 |
+|---|---|
+| `api/store.js` | Vercel Function. 공지·언론보도 읽기(공개) / 쓰기(관리자), 문의 접수(공개) / 조회·처리(관리자) |
+| 저장소 | Upstash Redis (Vercel Marketplace, 무료 요금제) — 환경변수 `KV_REST_API_URL`, `KV_REST_API_TOKEN` 자동 등록 |
+| 관리자 인증 | Vercel 환경변수 `ADMIN_PASSWORD` (서버에서만 확인, 설정 전에는 서버 쓰기 거부) |
+| 문의 보호 | 필수값·이메일 형식 검사, 숨김 스팸 필드, IP당 10분 5건 제한, 최근 2,000건 보관 |
+
+설정 순서 (최초 1회)
+1. Vercel › 프로젝트 `incheontour-site` › **Storage** › Create Database › **Upstash for Redis** (Free) › 프로젝트에 연결
+2. Vercel › Settings › **Environment Variables** › `ADMIN_PASSWORD` = 새 비밀번호 (Production·Preview 체크)
+3. Deployments › 최신 배포 › **Redeploy** (환경변수는 새 배포부터 적용)
+4. `/admin` 로그인 → 상단에 🟢 "서버 저장 모드"가 보이면 완료

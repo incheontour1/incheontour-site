@@ -175,13 +175,24 @@
     document.querySelectorAll("[data-l]").forEach(el=>{try{el.innerHTML=L(JSON.parse(el.dataset.l));}catch(e){}});
   };
 
-  // ---------- Posts store (admin-editable, localStorage) ----------
+  // ---------- Posts store ----------
+  // Single source of truth = shared server store (/api/store: Vercel Function + Upstash Redis).
+  // Until the server store is connected, this browser's localStorage is used (legacy mode).
   const STORE_KEY="itc_posts_v1";
+  let REMOTE=null;
+  window.STORE={online:false};
   function loadStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"null");}catch(e){return null;}}
+  const pg_=(location.pathname.split("/").pop()||"").replace(".html","");
+  const needPosts=/^(|index|news|admin)$/.test(pg_);
+  window.postsReady=needPosts?fetch("/api/store?k=posts",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j){STORE.online=!!j.configured;if(j.data&&Array.isArray(j.data.notice))REMOTE=j.data;}}).catch(()=>{}):Promise.resolve();
+  window.setRemotePosts=d=>{REMOTE=d;};
+  const sortPosts=l=>l.slice().sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0)||(b.date||"").localeCompare(a.date||""));
   window.getPosts=function(type){
-    const s=loadStore();
-    const list=(s&&s[type])?s[type]:JSON.parse(JSON.stringify(DEFAULT_POSTS[type]||[]));
-    return list.slice().sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0)||(b.date||"").localeCompare(a.date||""));
+    let list=null;
+    if(type!=="inquiry"&&REMOTE&&REMOTE[type])list=REMOTE[type];
+    else if(!STORE.online||type==="inquiry"){const s=loadStore();if(s&&s[type])list=s[type];}
+    if(!list)list=DEFAULT_POSTS[type]||[];
+    return sortPosts(JSON.parse(JSON.stringify(list)));
   };
   window.savePosts=function(type,list){const s=loadStore()||{};s[type]=list;localStorage.setItem(STORE_KEY,JSON.stringify(s));};
   window.addPost=function(type,post){const s=loadStore()||{};const list=(s[type])?s[type]:JSON.parse(JSON.stringify(DEFAULT_POSTS[type]||[]));list.unshift(post);s[type]=list;localStorage.setItem(STORE_KEY,JSON.stringify(s));};
@@ -247,7 +258,8 @@
       applyI18n();initReveal();
     };
     // prerendered HTML (tools/build.mjs) is already complete → let the browser paint it first, then hydrate
-    if(document.querySelector("#site-header > *")) requestAnimationFrame(()=>setTimeout(boot,0)); else boot();
+    const go=()=>{if(document.querySelector("#site-header > *")) requestAnimationFrame(()=>setTimeout(boot,0)); else boot();};
+    Promise.race([window.postsReady,new Promise(r=>setTimeout(r,1500))]).then(go);
   });
   document.addEventListener("langchange",()=>{renderHeader();renderFooter();if(typeof window.onPageRender==="function")window.onPageRender();applyI18n();initReveal();});
 })();

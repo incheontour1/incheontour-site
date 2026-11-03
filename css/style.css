@@ -693,3 +693,23 @@ html[lang="ru"] .header .brand img,html[lang="vi"] .header .brand img,html[lang=
 .place-tip{margin-top:18px;padding:14px 16px;background:#eef3fb;border-radius:12px;font-size:.95rem;word-break:keep-all}
 .place-tip b{color:var(--c-primary)}
 .place-facts a{color:var(--c-primary);font-weight:600}
+
+/* 2026-11-03: inquiry page (mobile-first) + board cards on phones */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+.inq-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:start}
+.inq-grid .ci-box ul{word-break:keep-all;overflow-wrap:anywhere}
+@media (max-width:860px){
+  .inq-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .form{padding:22px 18px;gap:12px}
+  .form h2{font-size:1.25rem!important}
+  .form input,.form textarea,.form select{font-size:16px}
+  .form .btn{flex:1 1 100%;justify-content:center}
+  .board table,.board tbody{display:block;width:100%}
+  .board thead{display:none}
+  .board tr{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:14px 16px;border-bottom:1px solid var(--c-line)}
+  .board td{padding:0!important;border:0!important;text-align:left!important;width:auto!important}
+  .board td.t a{font-weight:700;word-break:keep-all}
+  .board td:nth-child(3){font-size:.84rem;color:var(--c-muted)}
+}

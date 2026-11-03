@@ -194,7 +194,7 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(res);
 }).listen(0);
 const port = server.address().port;
-const SKIP_IDS = new Set(['leafmap', 'papermap', 'map-side', 'flip-img']);
+const SKIP_IDS = new Set(['leafmap', 'papermap', 'map-side', 'flip-img', 'notice-list', 'rows', 'pager', 'cnt', 'post']); // posts come from the live server store → never bake stale copies
 const browser = await chromium.launch();
 let n = 0;
 for (const [f, h] of Object.entries(out)) {
