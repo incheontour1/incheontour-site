@@ -1,12 +1,36 @@
+# www.incheontour.or.kr — search engines and AI answer engines are welcome
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin.html
+Disallow: /tools/
 
+# Korean search engines
 User-agent: Yeti
 Allow: /
-
 User-agent: Daum
+Allow: /
+
+# AI answer engines (citation / search)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://www.incheontour.or.kr/sitemap.xml

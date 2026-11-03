@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="google-site-verification" content="MzTrt9qG_xzK9_w8tSPc8OJLMYNxUm7cUICqRJSrzIM" /><meta name="msvalidate.01" content="243AED19F2CAC54D5AA356044AF1CD59" /><meta name="naver-site-verification" content="6e290687eeb9df374ae49931595a30fe10176447" /><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<meta name="keywords" content="인천관광,인천여행,인천광역시관광협의회,Incheon Tourism Council,인천 관광안내소,개항장,송도,강화,영종,백령도,인천 가이드북">
+<meta name="author" content="인천광역시관광협의회">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="__URL__">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="인천광역시관광협의회">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESCRIPTION__">
+<meta property="og:image" content="__IMAGE__">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="__TITLE__">
+<meta name="twitter:description" content="__DESCRIPTION__">
+<meta name="twitter:image" content="__IMAGE__">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main class="section tight" style="padding-top:40px"><div class="container">
+  <nav class="pcrumb" aria-label="breadcrumb" id="pl-crumb"></nav>
+  <article class="place-article" id="place-main"></article>
+</div></main>
+<section class="section alt"><div class="container">
+  <div class="sec-head"><div><span class="kicker">NEARBY</span><h2 id="pl-near-t"></h2></div><a class="more" href="travel.html" id="pl-all"></a></div>
+  <div class="place-near" id="pl-near"></div>
+</div></section>
+<div id="site-footer"></div>
+<script src="js/i18n.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+const PID=(location.pathname.match(/place-([a-z0-9_-]+)/i)||[])[1]||new URLSearchParams(location.search).get("id");
+const PL={near:{ko:"같은 지역의 다른 명소",en:"More places nearby",ja:"近くのスポット",zh:"附近的景点"},all:{ko:"인천여행 전체 보기",en:"All places",ja:"すべて見る",zh:"查看全部"},region:{ko:"지역",en:"Area",ja:"地域",zh:"地区"},theme:{ko:"테마",en:"Themes",ja:"テーマ",zh:"主题"},coord:{ko:"좌표",en:"Coordinates",ja:"座標",zh:"坐标"}};
+window.onPageRender=function(){
+  const p=PLACES.find(x=>x.id===PID),main=document.getElementById("place-main");
+  if(!p){main.innerHTML=`<h1>${t("nav.travel")}</h1><p>${t("search.none")}</p>`;return;}
+  const r=REGIONS.find(x=>x.id===p.region);
+  const tic=TICS.map(x=>({x,d:Math.hypot(x.lat-p.lat,x.lng-p.lng)})).sort((a,b)=>a.d-b.d)[0].x;
+  document.title=`${L(p.n)} | ${t("nav.travel")} | ${t("org")}`;
+  document.getElementById("pl-crumb").innerHTML=`<a href="index.html">HOME</a><span>›</span><a href="travel.html">${t("nav.travel")}</a><span>›</span><a href="travel.html?region=${r.id}">${L(r.n)}</a><span>›</span><b>${L(p.n)}</b>`;
+  main.innerHTML=`<h1 class="place-title">${L(p.n)}</h1><p class="place-lead">${L(p.d)}</p>
+    <div class="place-hero">${pic(p.img,L(p.n),"(max-width:1180px) 100vw, 1140px",{eager:true,high:true})}</div>
+    ${p.tip?`<p class="place-tip"><b>${t("travel.tip")}</b> · ${L(p.tip)}</p>`:""}
+    <div class="place-facts">
+      <div><b>${L(PL.region)}</b>${L(r.n)} · ${L(r.s)}</div>
+      <div><b>${L(PL.theme)}</b>${p.themes.map(th=>t("travel.themes."+th)).join(" · ")}</div>
+      ${p.addr?`<div><b>${t("travel.address")}</b>${p.addr}</div>`:""}
+      ${p.tel?`<div><b>${t("travel.tel")}</b><a href="tel:${p.tel}">${p.tel}</a></div>`:""}
+      <div><b>${t("travel.nearby")}</b>${L(tic.n)}${tic.tel?` · <a href="tel:${tic.tel}">${tic.tel}</a>`:""}</div>
+      <div><b>${t("travel.route")}</b><a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}" target="_blank" rel="noopener">Google Maps</a> · <a href="https://map.naver.com/p/search/${encodeURIComponent(p.n.ko)}" target="_blank" rel="noopener">Naver Map</a> · ${L(PL.coord)} ${p.lat}, ${p.lng}</div>
+    </div>`;
+  const same=PLACES.filter(x=>x.id!==p.id&&x.region===p.region),pool=same.length>=3?same:[...same,...PLACES.filter(x=>x.id!==p.id&&x.region!==p.region).sort((a,b)=>Math.hypot(a.lat-p.lat,a.lng-p.lng)-Math.hypot(b.lat-p.lat,b.lng-p.lng))];
+  document.getElementById("pl-near-t").textContent=L(PL.near);
+  document.getElementById("pl-all").innerHTML=`${L(PL.all)} <span class="more-arrow">${ICON.arrow}</span>`;
+  document.getElementById("pl-near").innerHTML=pool.slice(0,3).map(x=>`<a class="card" href="place-${x.id}"><div class="ph">${pic(x.img,L(x.n),"(max-width:860px) 100vw, 380px")}</div><div class="body"><h3>${L(x.n)}</h3><p>${L(x.d)}</p></div></a>`).join("");
+};
+window.onPageInit=function(){onPageRender();};
+</script>
+</body>
+</html>

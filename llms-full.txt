@@ -1,0 +1,585 @@
+# 인천광역시관광협의회 (Incheon Tourism Council)
+
+> 사단법인 인천광역시관광협의회(I.T.C)는 관광진흥법 제48조의9와 「인천광역시 관광진흥 조례」에 근거해 2019년 4월 설립된 인천의 지역관광협의회입니다. 이 사이트는 인천 2군 9구의 명소 47곳, 관광안내소 11곳, 공식 관광 발간물 10종(PDF)과 여행 FAQ를 한국어 등 7개 언어로 제공합니다.
+
+## 핵심 사실
+- 공식 명칭: 사단법인 인천광역시관광협의회 / Incheon Tourism Council (I.T.C)
+- 설립: 2019-04-12 · 근거: 관광진흥법 제48조의9, 인천광역시 관광진흥 조례 · 목적: 정관 제2조
+- 회장: 김재오 · 주소: 인천광역시 남동구 구월남로 118 YMCA회관 501호 · 전화: +82-10-5238-5443 · 이메일: incheontour1@gmail.com
+- 실적: 2020~2023 인천시 관광안내소 10개소 수탁 운영, 여행업 리스타트 관광상품 지원사업(39개 업체·1,706명), 인천시 글로벌 K-POP(INK) 콘서트 홍보·모객 지원(2023·2025)
+- 여행 중 문의: 한국관광안내 1330 (해외 +82-2-1330)
+
+## 주요 페이지
+- [홈](https://www.incheontour.or.kr/): 인천 9경, 거점·테마별 여행, 통계, 발간물, FAQ
+- [협의회소개](https://www.incheontour.or.kr/about): 인사말·비전·연혁·윤리경영·조직도·CI·오시는 길
+- [인천여행](https://www.incheontour.or.kr/travel): 명소 47곳 (지역·테마 필터)
+- [여행정보](https://www.incheontour.or.kr/info): 발간물 10종 PDF, 가이드북 웹 열람, 시티투어, 관광안내소 11곳, 교통
+- [인천관광지도](https://www.incheontour.or.kr/map): 명소·안내소 인터랙티브 지도
+- [콜라보](https://www.incheontour.or.kr/collab): 8대 협업 분야와 제안 방법
+- [알림마당](https://www.incheontour.or.kr/news): 공지·언론보도·문의
+- [전체 본문 (llms-full.txt)](https://www.incheontour.or.kr/llms-full.txt)
+
+## 자주 묻는 질문
+### 인천광역시관광협의회는 어떤 단체인가요?
+사단법인 인천광역시관광협의회(Incheon Tourism Council, I.T.C)는 관광진흥법 제48조의9와 「인천광역시 관광진흥 조례」에 근거해 2019년 설립된 지역관광협의회입니다. 관광객 유치·홍보, 관광사업 진흥, 회원 공제·복리 증진, 지역 관광산업 발전을 목적으로 하며(정관 제2조), 2020~2023년 인천시 관광안내소 10개소를 수탁 운영했습니다.
+
+### 인천 관광안내소는 어디에 있고 몇 시까지 운영하나요?
+인천에는 인천종합관광안내소, 인천국제공항(제1터미널 동편·서편, 제2터미널), 월미도, 인천역, 인천버스터미널, 강화 마니산, 경인아라뱃길 정서진, 소래포구, 인천항 국제여객터미널 등 11곳의 관광안내소가 있습니다. 공항 안내소는 07:00~22:00 연중무휴, 그 밖의 안내소는 대체로 09:00~18:00(설·추석 휴무)에 운영합니다.
+
+### 여행 중 통역이 필요하거나 불편을 신고하려면 어디로 연락하나요?
+한국관광안내 전화 1330(해외에서는 +82-2-1330)으로 관광안내·통역·관광불편 신고를 할 수 있습니다. 한·영·일·중·러 안내는 24시간, 베트남어·태국어는 08:00~19:00에 운영합니다. 24시간 무료 전화통역은 bbb코리아(+82-1588-5644), 여행불편은 여행불편처리센터(+82-1588-8692)가 처리합니다.
+
+### 인천에서 꼭 가봐야 할 명소는 어디인가요?
+「2026 인천관광가이드북」(인천관광공사)은 인천 9경으로 개항장, 월미도, 소래포구, 계양아라온, 송도센트럴파크, 영종 씨사이드파크, 강화읍 원도심, 신·시·모도, 백령도를 꼽습니다. 인천여행 메뉴에서 2군 9구 47곳의 명소 정보를 지역·테마별로 볼 수 있습니다.
+
+### 인천 관광 가이드북과 지도는 어디서 받을 수 있나요?
+여행정보 › 발간물에서 인천관광가이드북 2026, 인천관광안내지도, 인천시티투어 2026, 인천섬 이야기(봄·여름·가을·겨울), 인천 웰니스·의료관광 가이드북, 테마북(계절로드·댕댕로드) 등 10종을 PDF로 무료 열람·다운로드할 수 있습니다.
+
+### 협의회 회원은 어떻게 가입하나요?
+회원은 정회원(전문위원)·일반회원·특별회원·명예회원으로 구분합니다(정관 제6조). 가입 문의는 알림마당 › 문의하기 또는 이메일 incheontour1@gmail.com, 전화 +82-10-5238-5443으로 하면 됩니다.
+
+### 협의회와 협업(콜라보)을 제안하려면 어떻게 하나요?
+협의회는 정관 제5조에 따라 관광상품·자원 기획, 관광정보 서비스, 페스티벌·이벤트, MICE, 관광전문가 교육, 해외 교류, 산업관광, 테마관광 인바운드 등 8개 분야에서 협업합니다. 콜라보 메뉴에서 분야를 확인한 뒤 알림마당 › 문의하기로 제안해 주세요.
+
+### 협의회 사무실 위치와 연락처는 어떻게 되나요?
+사무실은 인천광역시 남동구 구월남로 118 YMCA회관 501호이며, 평일 09:00~18:00(주말·공휴일 휴무)에 운영합니다. 전화 +82-10-5238-5443, 이메일 incheontour1@gmail.com으로 문의할 수 있습니다.
+
+## 지역별 명소
+### 제물포구 (Jemulpo-gu)
+- [월미도](https://www.incheontour.or.kr/place-wolmido): 바닷바람이 스치는 산책길과 놀이기구, 밤이면 불빛이 어우러지는 인천의 추억 명소. 월미테마파크의 대관람차에서 서해 노을을 한눈에 담고, 월미문화의거리에서 해양 조
+- [월미테마파크](https://www.incheontour.or.kr/place-wolmi_themepark): 다양한 놀이기구와 LED 조명이 어우러진 바다 옆 테마파크. 대관람차·바이킹·디스코팡팡이 명물로 데이트 코스로도 인기가 높습니다.
+- [월미바다열차](https://www.incheontour.or.kr/place-wolmi_seatrain): 인천 월미도를 순환하는 국내 최장 도심형 관광모노레일. 총 6.1km, 평균 시속 9km로 월미도·월미공원·한국이민사박물관을 잇는 하늘 길 위에서 서해와 항만을 
+- [인천 차이나타운](https://www.incheontour.or.kr/place-chinatown): 1883년 개항과 함께 형성된 한국 최초의 차이나타운. 붉은 등과 패루, 삼국지 벽화거리, 짜장면박물관이 있으며 짜장면의 발상지로 널리 알려져 있습니다.
+- [짜장면박물관](https://www.incheontour.or.kr/place-jjajang_museum): 1930년대 중국요릿집 '공화춘' 건물을 리모델링한 박물관. 짜장면의 유래와 변천, 당시 주방과 생활사를 체험형 전시로 보여줍니다.
+- [삼국지·초한지 벽화거리](https://www.incheontour.or.kr/place-samguk_mural): 차이나타운 중심 계단을 따라 삼국지와 초한지의 장면을 벽화로 재현한 거리. 도원결의부터 적벽대전까지 이야기와 함께 걷는 테마길입니다.
+- [차이나타운 황제의 계단](https://www.incheontour.or.kr/place-emperor_stairs): 차이나타운 언덕길에 조성된 테마 계단. 중국 전통 문양과 상징을 화려한 색감으로 표현해 포토존으로 인기가 높습니다.
+- [개항장 근대역사문화거리](https://www.incheontour.or.kr/place-gaehang): 1883년 개항의 기억이 남아 있는 거리. 인천개항박물관(구 일본제1은행), 근대건축전시관, 인천아트플랫폼, 대불호텔전시관이 걸어서 닿는 거리에 모여 있는 '인천
+- [인천개항박물관·근대건축전시관](https://www.incheontour.or.kr/place-gaehang_interior): 개항기 은행 건물을 전시관으로 활용해 인천의 근대 문물과 개항장 건축의 역사를 보여줍니다. 조명 아래 당시 금고와 장부가 그대로 남아 있습니다.
+
+### 영종구 (Yeongjong-gu)
+- [을왕리해수욕장](https://www.incheontour.or.kr/place-eurwangni): 초승달처럼 휘어진 백사장과 소나무 숲, 썰물 때 드러나는 갯벌과 서해 낙조로 유명한 인천 대표 해수욕장. 공항에서 차로 20분이면 닿는 환승관광 명소입니다.
+- [무의도 · 무의바다누리길](https://www.incheontour.or.kr/place-muui): 무의도 해안을 따라 이어진 2.5km 바다 위 탐방로. 조성 데크길을 따라 하나개해수욕장과 호룡곡산을 잇는 트레킹이 인기이며, 영종도에서 다리로 연결되어 접근이 
+- [무렁게티](https://www.incheontour.or.kr/place-mureonggeti): '무의도'와 아프리카 '세렝게티'를 합쳐 부르는 이름. 넓은 초원과 기암이 어우러져 이국적인 풍경을 만드는 무의도의 숨은 명소입니다.
+- [거잠포해변](https://www.incheontour.or.kr/place-geojampo): 영종도에서 무의도로 넘어가는 길목의 작은 해변. 샤크섬 사이로 지는 해가 '드롭 일출·일몰'로 유명해 사진작가들이 즐겨 찾습니다.
+
+### 연수구 (Yeonsu-gu)
+- [송도 센트럴파크](https://www.incheontour.or.kr/place-songdo_centralpark): 바닷물을 끌어와 조성한 국내 최초의 해수공원. 수상택시·문보트, 한옥마을, 산책로와 고층 빌딩의 스카이라인이 어우러져 낮과 밤 모두 사진 명소입니다.
+- [송도컨벤시아](https://www.incheontour.or.kr/place-songdo_convensia): 태백산맥을 형상화한 지붕이 인상적인 국제회의복합지구의 중심 시설. 다양한 박람회·국제회의가 열리며 송도의 MICE 관광을 이끄는 랜드마크입니다.
+- [트라이볼](https://www.incheontour.or.kr/place-tribowl): '하늘·바다·땅'을 상징하는 세 개의 그릇 형상 복합문화공간. 센트럴파크 수변에 떠 있는 듯한 야경이 송도국제도시를 대표하는 포토존입니다.
+- [IFEZ 홍보관 (G타워 전망대)](https://www.incheontour.or.kr/place-gtower): 33층 전망대에서 송도국제도시와 인천 앞바다가 한눈에. IFEZ(인천경제자유구역) 홍보관에서 미래 도시의 모습을 디지털 체험으로 만납니다.
+
+### 서해구 (Seohae-gu)
+- [정서진 · 노을종](https://www.incheontour.or.kr/place-jeongseojin): 광화문을 기준으로 정서(正西) 끝에 있는 나루터. 경인아라뱃길의 종점으로, 붉은 해가 바다 위로 지는 노을종 앞은 인천을 대표하는 해넘이 명소입니다.
+- [경인아라뱃길 여객터미널 · 아라타워](https://www.incheontour.or.kr/place-ara_tower): 23층 전망대에서 서해와 아라뱃길을 조망. 1층 홍보관에서 뱃길의 역사와 생태, 운하 이야기를 체험할 수 있습니다.
+- [아라마루 전망대](https://www.incheontour.or.kr/place-ara_maru): 아라뱃길 위에 세워진 원형 전망대. 수로를 따라 자전거·산책 코스가 이어지며 아라폭포와 함께 둘러보기 좋습니다.
+- [청라호수공원](https://www.incheontour.or.kr/place-cheongna_lake): 청라국제도시를 대표하는 친수공간. 저녁이면 호수 위 음악분수와 조명이 어우러진 야경이 펼쳐집니다. 2026년 개관한 청라 하늘대교 전망대 SKY184와 연계해 둘
+
+### 검단구 (Geomdan-gu)
+- [아라폭포](https://www.incheontour.or.kr/place-ara_falls): 계양산 협곡 지형을 활용해 조성한 인공폭포. 하얗게 떨어지는 물줄기와 함께 시원한 정취를 느낄 수 있어 여름철 무더위를 피해 찾는 이들의 발길이 이어집니다.
+- [드림파크 야생화단지](https://www.incheontour.or.kr/place-dreampark): 수도권매립지를 시민의 휴식 공간으로 바꾼 생태공원. 계절마다 야생화 군락이 펼쳐지며 가을 국화축제로 유명합니다.
+
+### 남동구 (Namdong-gu)
+- [소래포구 전통어시장](https://www.incheontour.or.kr/place-soraepogu): 수도권 대표 수산시장. 꽃게·새우·젓갈 등 제철 해산물을 어민에게 직접 사서 즉석에서 맛볼 수 있고, 소래철교와 소래역사관(협궤열차)도 함께 둘러볼 수 있습니다.
+- [소래습지생태공원](https://www.incheontour.or.kr/place-sorae_wetland): 옛 염전과 갯벌을 보존한 생태공원. 풍차와 갈대밭, 소금창고가 어우러진 풍경이 사계절 사진 명소이며 가을 억새가 특히 아름답습니다.
+- [인천대공원](https://www.incheontour.or.kr/place-incheon_grandpark): 관모산과 소래산 자락 266만㎡의 도심 속 자연공원. 봄 벚꽃과 튤립, 어린이동물원, 식물원, 호수가 있어 가족 나들이에 최적입니다.
+- [늘솔길공원](https://www.incheontour.or.kr/place-neulsol): 소나무 숲길을 따라 천천히 걷는 산책 공원. 주민들의 산림욕 명소로, 짧은 트레킹과 쉼이 어우러집니다.
+
+### 미추홀구 (Michuhol-gu)
+- [인천문학경기장](https://www.incheontour.or.kr/place-munhak): 2002 월드컵 경기장과 야구장이 함께 있는 종합경기장. 대형 콘서트와 스포츠 이벤트의 중심이며, 민선 9기 '제문부 프로젝트'에서 K-컬처 거점으로 조명받는 곳
+- [수봉공원 스카이워크](https://www.incheontour.or.kr/place-subong): 수봉산 정상부에 조성된 310m 스카이워크. 인천 도심 360도 조망과 밤이면 별빛축제 조명이 펼쳐지는 원도심의 새로운 전망 명소입니다.
+
+### 부평구 (Bupyeong-gu)
+- [부평시장 · 부평 문화의거리](https://www.incheontour.or.kr/place-bupyeong_market): 국내 최대 규모 지하상가와 이어지는 부평시장, 그리고 감각적인 카페가 모인 평리단길. 생활문화 거점으로 지정된 부평의 활기를 느껴보세요.
+- [평리단길](https://www.incheontour.or.kr/place-bupyeong_cafe): 부평지하상가에서 이어지는 골목에 감각적인 카페와 소품숍이 모인 거리. 젊은 감성의 로컬 문화를 즐기기 좋습니다.
+
+### 계양구 (Gyeyang-gu)
+- [계양산](https://www.incheontour.or.kr/place-gyeyangsan): 해발 395m, 인천의 상징 산. 능선길을 따라 오르면 한강과 경인아라뱃길, 서해까지 한눈에 담기는 도심 속 트레킹 명소입니다.
+- [계양꽃마루](https://www.incheontour.or.kr/place-gyeyang_flower): 계양 기슭에 조성된 대규모 초화단지. 봄에는 유채, 가을에는 코스모스가 장관을 이루며 산책로와 포토존이 잘 갖춰져 있습니다.
+- [계양아라온](https://www.incheontour.or.kr/place-gyeyang_araon): 경인아라뱃길 계양 구간에 마련된 수변문화공간. 전통정원을 중심으로 산책로와 수변무대가 있고, 달빛 조명이 켜진 밤 풍경이 아름답습니다.
+
+### 강화군 (Ganghwa-gun)
+- [전등사](https://www.incheontour.or.kr/place-jeondeungsa): 고구려 소수림왕 때 창건된 것으로 전하는 강화 대표 사찰. 정족산성 안에 자리해 숲길과 전각, 템플스테이로 깊은 휴식을 줍니다. 인천공항 환승투어 코스로도 운영됩
+- [강화 부근리 지석묘 (고인돌)](https://www.incheontour.or.kr/place-ganghwa_dolmen): 길이 7m, 무게 80톤에 이르는 국내 최대 규모의 탁자식 고인돌. 유네스코 세계문화유산으로 선사시대 사람들의 삶과 의식을 보여줍니다.
+- [강화평화전망대](https://www.incheontour.or.kr/place-ganghwa_peace): 북한과 가장 가까운 거리에서 마주하는 전망대. 망원경으로 황해도 송악산과 개성 시가지까지 관찰할 수 있어 분단의 현실과 평화의 가치를 되새기게 합니다.
+- [연미정](https://www.incheontour.or.kr/place-yeonmijeong): 임진강과 한강이 만나는 절벽 위에 자리한 정자. 수백 년 된 느티나무 아래에서 강 건너 풍경과 고요한 역사의 시간을 마주합니다.
+- [교동도 · 대룡시장](https://www.incheontour.or.kr/place-gyodong): 6·25 이후 실향민들이 고향 연백시장을 본떠 만든 전통시장. 1960~70년대 골목 풍경이 그대로 남아 레트로 감성이 가득하며, 고려 인종 5년 창건 교동향교와
+
+### 옹진군 (Ongjin-gun)
+- [백령도 두무진](https://www.incheontour.or.kr/place-baengnyeong): 오랜 시간 바다가 빚은 기암괴석의 절경. 유람선을 타면 두무진의 전경을 한눈에, 도보로 오르면 북한 땅이 눈앞에 펼쳐집니다. 사곶해변(천연비행장)과 콩돌해안도 백
+- [백령도 사곶해변](https://www.incheontour.or.kr/place-sagot): 세계적으로 드문 천연 모래 활주로. 밀물 때는 바다에 잠기고 썰물 때는 단단한 모래밭이 드러나 비행기가 착륙할 수 있을 정도입니다.
+- [대청도 옥죽동 모래사막](https://www.incheontour.or.kr/place-daecheong): 바람이 만든 한국의 사막. 해풍에 실려온 모래가 쌓인 언덕에 낙타 조형물이 있어 이국적인 사진을 남길 수 있고, 농여해변과 서풍받이 절벽도 함께 둘러보세요.
+- [덕적도](https://www.incheontour.or.kr/place-deokjeok): 인천항에서 쾌속선 1시간, 서포리해수욕장의 노송 숲과 비조봉 트레킹으로 '살아보기형' 여행에 어울리는 섬. 인근 소야도·굴업도 캠핑과 연계됩니다.
+- [굴업도](https://www.incheontour.or.kr/place-gureop): '한국의 갈라파고스'라 불리는 백패킹 성지. 개머리언덕의 초원 위 캠핑과 별빛, 해식 지형이 어우러진 섬입니다. 수용력이 작으므로 흔적 남기지 않기 원칙을 지켜주
+- [장봉도 · 옹암해수욕장](https://www.incheontour.or.kr/place-jangbong): 영종 삼목선착장에서 배로 40분. 갯티길 트레킹과 옹암·한들해수욕장, 가막머리 낙조대가 있어 당일 섬 여행에 알맞습니다.
+- [선재도 목섬 · 영흥도](https://www.incheontour.or.kr/place-seonjae): 썰물 때 바닷길이 열리는 목섬은 CNN이 선정한 '한국의 아름다운 섬'. 다리로 연결되어 자가용으로 갈 수 있는 영흥도의 해변·카페와 묶어 1박 2일 코스로 좋습
+- [연평도 평화공원](https://www.incheontour.or.kr/place-yeonpyeong): 연평해전에서 전사한 군인들의 희생을 기리는 공원. 안보교육장과 망향전망대에서 분단의 현실과 서해 최전선의 삶을 돌아봅니다.
+
+## 관광안내소 11곳
+- 인천종합관광안내소 — +82-32-832-3031 · 09:00~18:00 (설·추석 휴무)
+- 인천국제공항 관광안내소 (동편) — +82-32-743-0013 · 07:00~22:00 (연중무휴)
+- 인천국제공항 관광안내소 (서편) — +82-32-743-0011 · 07:00~22:00 (연중무휴)
+- 인천국제공항 관광안내소 (제2터미널) — +82-32-743-0030 · 07:00~22:00 (연중무휴)
+- 월미도 관광안내소 — +82-32-765-4169 · 09:00~18:00 (설·추석 휴무)
+- 인천역 관광안내소 — +82-32-777-1330 · 09:00~18:00 (설·추석 휴무)
+- 인천버스터미널 관광안내소 — +82-32-435-7257 · 09:00~18:00 (설·추석 휴무)
+- 강화 마니산 관광안내소 — +82-32-934-5565 · 09:00~18:00 (설·추석 휴무)
+- 경인아라뱃길 정서진 관광안내소 — +82-32-561-1339 · 09:00~18:00 (설·추석 휴무)
+- 소래포구 관광안내소 — +82-32-431-2213 · 09:00~18:00 (설·추석 휴무)
+- 인천항 국제여객터미널 관광안내소 — 전화 확인 필요 · 09:00~18:00 [확인 필요]
+
+## 공식 발간물 (PDF)
+- [인천관광가이드북 2026](https://www.incheontour.or.kr/assets/docs/incheon_guidebook_2026.pdf): 인천 9경, 지역별 명소, 섬 여행, 교통·숙박·안내소까지 한 권에 (2026.07)
+- [인천관광안내지도](https://www.incheontour.or.kr/assets/docs/incheon_tourist_map.pdf): 접이식 종합 안내지도 — 권역별 명소·관광안내소·긴급연락처 수록
+- [인천시티투어 2026](https://www.incheontour.or.kr/assets/docs/incheon_citytour_2026.pdf): 순환형 시티투어 노선도와 정류장 안내 (2026.01)
+- [인천 웰니스·의료관광 가이드북](https://www.incheontour.or.kr/assets/docs/incheon_wellness_medical_2025.pdf): 나를 돌보는 여행 — 웰니스 스폿과 의료관광 안내 (2025.09)
+- [인천섬 이야기 — 봄 (굴업도 특집)](https://www.incheontour.or.kr/assets/docs/incheon_islands_spring_2026.pdf): 폭풍의 언덕에서 히스클리프를 만나다. 섬 산행·백패킹 BEST 4 (2026.01)
+- [인천섬 이야기 — 여름 (승봉도 특집)](https://www.incheontour.or.kr/assets/docs/incheon_islands_summer_2026.pdf): 나는 승봉도이고 싶다. 섬 해변·포토스팟 BEST 4 (2026.01)
+- [인천섬 이야기 — 가을 (석모도 특집)](https://www.incheontour.or.kr/assets/docs/incheon_islands_autumn_2026.pdf): 지친 당신께 석모도를 처방합니다 (2026.01)
+- [인천섬 이야기 — 겨울 (문갑도 특집)](https://www.incheontour.or.kr/assets/docs/incheon_islands_winter_2026.pdf): 내 마음 지켜주는 고요한 방패 문갑도. 섬 가을 꽃 기행 BEST 4 (2026.01)
+- [테마북 — 계절로드](https://www.incheontour.or.kr/assets/docs/themebook_seasonroad_2024.pdf): 사계절 인천을 걷는 테마 여행 코스 (2024.10)
+- [테마북 — 댕댕로드](https://www.incheontour.or.kr/assets/docs/themebook_dogroad_2024.pdf): 반려견과 함께하는 인천 여행 코스 (2024.10)
+
+## 명소 상세 (47곳)
+
+### 월미도 (Wolmido)
+- 지역: 제물포구 · 테마: 도시·야경, 가족·체험
+- 주소: 제물포구 월미문화로 36-1 · 전화: +82-32-764-0842 · 좌표: 37.4727, 126.5976
+- URL: https://www.incheontour.or.kr/place-wolmido
+
+바닷바람이 스치는 산책길과 놀이기구, 밤이면 불빛이 어우러지는 인천의 추억 명소. 월미테마파크의 대관람차에서 서해 노을을 한눈에 담고, 월미문화의거리에서 해양 조형물과 공연을 즐길 수 있습니다.
+
+여행 팁: 월미바다열차(순환 6.1km, 42분)로 월미도 전체를 한 바퀴.
+
+Seaside promenade, amusement rides and night lights — Incheon's nostalgic playground. Catch the West Sea sunset from the Ferris wheel and enjoy street performances on Wolmi Culture Street.
+
+### 월미테마파크 (Wolmi Theme Park)
+- 지역: 제물포구 · 테마: 가족·체험, 도시·야경
+- 주소: 제물포구 월미문화로 81 · 전화: +82-32-764-0842 · 좌표: 37.4716, 126.5964
+- URL: https://www.incheontour.or.kr/place-wolmi_themepark
+
+다양한 놀이기구와 LED 조명이 어우러진 바다 옆 테마파크. 대관람차·바이킹·디스코팡팡이 명물로 데이트 코스로도 인기가 높습니다.
+
+Seaside theme park with rides and LED lights; the Ferris wheel, Viking and 'Disco Pang Pang' are local favorites.
+
+### 월미바다열차 (Wolmi Sea Train)
+- 지역: 제물포구 · 테마: 가족·체험, 도시·야경
+- 주소: 제물포구 월미로 6 · 전화: +82-32-450-7600 · 좌표: 37.4733, 126.615
+- URL: https://www.incheontour.or.kr/place-wolmi_seatrain
+
+인천 월미도를 순환하는 국내 최장 도심형 관광모노레일. 총 6.1km, 평균 시속 9km로 월미도·월미공원·한국이민사박물관을 잇는 하늘 길 위에서 서해와 항만을 조망합니다.
+
+Korea's longest urban tourist monorail circling Wolmido (6.1 km) with views of the port and the West Sea.
+
+### 인천 차이나타운 (Incheon Chinatown)
+- 지역: 제물포구 · 테마: 역사·문화, 미식·시장
+- 주소: 제물포구 차이나타운로 56-14 · 전화: +82-32-773-9812 · 좌표: 37.4752, 126.6177
+- URL: https://www.incheontour.or.kr/place-chinatown
+
+1883년 개항과 함께 형성된 한국 최초의 차이나타운. 붉은 등과 패루, 삼국지 벽화거리, 짜장면박물관이 있으며 짜장면의 발상지로 널리 알려져 있습니다.
+
+여행 팁: 짜장면박물관(구 공화춘)에서 100년 역사를 확인한 뒤 황제의 계단까지 걸어보세요.
+
+Korea's first Chinatown, formed with the 1883 port opening — red lanterns, paeru gates, the Three Kingdoms mural street and the birthplace of jjajangmyeon.
+
+### 짜장면박물관 (Jjajangmyeon Museum)
+- 지역: 제물포구 · 테마: 역사·문화, 미식·시장
+- 주소: 제물포구 차이나타운로 56-14 · 전화: +82-32-773-9812 · 좌표: 37.4757, 126.6173
+- URL: https://www.incheontour.or.kr/place-jjajang_museum
+
+1930년대 중국요릿집 '공화춘' 건물을 리모델링한 박물관. 짜장면의 유래와 변천, 당시 주방과 생활사를 체험형 전시로 보여줍니다.
+
+A museum in the 1930s 'Gonghwachun' restaurant building, tracing the origin and evolution of jjajangmyeon.
+
+### 삼국지·초한지 벽화거리 (Three Kingdoms Mural Street)
+- 지역: 제물포구 · 테마: 역사·문화
+- 주소: 제물포구 차이나타운로 일원 · 전화: - · 좌표: 37.4762, 126.6184
+- URL: https://www.incheontour.or.kr/place-samguk_mural
+
+차이나타운 중심 계단을 따라 삼국지와 초한지의 장면을 벽화로 재현한 거리. 도원결의부터 적벽대전까지 이야기와 함께 걷는 테마길입니다.
+
+Murals along the hillside stairs retelling the Three Kingdoms saga scene by scene.
+
+### 차이나타운 황제의 계단 (Emperor's Stairs)
+- 지역: 제물포구 · 테마: 역사·문화, 도시·야경
+- 주소: 제물포구 자유공원서로 10 일원 · 전화: - · 좌표: 37.4768, 126.6168
+- URL: https://www.incheontour.or.kr/place-emperor_stairs
+
+차이나타운 언덕길에 조성된 테마 계단. 중국 전통 문양과 상징을 화려한 색감으로 표현해 포토존으로 인기가 높습니다.
+
+A colorful themed stairway with traditional Chinese motifs — one of the most photographed spots in Chinatown.
+
+### 개항장 근대역사문화거리 (Open Port Modern History Street)
+- 지역: 제물포구 · 테마: 역사·문화, 도시·야경
+- 주소: 제물포구 신포로23번길 77 · 전화: +82-32-760-7508 · 좌표: 37.4728, 126.6212
+- URL: https://www.incheontour.or.kr/place-gaehang
+
+1883년 개항의 기억이 남아 있는 거리. 인천개항박물관(구 일본제1은행), 근대건축전시관, 인천아트플랫폼, 대불호텔전시관이 걸어서 닿는 거리에 모여 있는 '인천 개항장 스마트관광도시' 구역입니다.
+
+여행 팁: 개항장 전통차 투어와 야간 '빛의 거리'가 운영됩니다. 자유공원(한국 최초의 서구식 공원)과 함께 코스로.
+
+Where the memory of the 1883 opening lives on: Incheon Open Port Museum (former Dai-Ichi Bank), Modern Architecture Hall, Incheon Art Platform and Daibul Hotel Exhibition Hall, all within walking distance.
+
+### 인천개항박물관·근대건축전시관 (Open Port Museum & Modern Architecture Hall)
+- 지역: 제물포구 · 테마: 역사·문화
+- 주소: 제물포구 신포로23번길 89 · 전화: +82-32-760-7508 · 좌표: 37.4731, 126.6207
+- URL: https://www.incheontour.or.kr/place-gaehang_interior
+
+개항기 은행 건물을 전시관으로 활용해 인천의 근대 문물과 개항장 건축의 역사를 보여줍니다. 조명 아래 당시 금고와 장부가 그대로 남아 있습니다.
+
+Former bank buildings turned museums displaying the modern artifacts and architecture of the open-port era.
+
+### 송도 센트럴파크 (Songdo Central Park)
+- 지역: 연수구 · 테마: 도시·야경, 가족·체험, 웰니스·힐링
+- 주소: 연수구 컨벤시아대로 160 · 전화: +82-32-456-2860 · 좌표: 37.3927, 126.6391
+- URL: https://www.incheontour.or.kr/place-songdo_centralpark
+
+바닷물을 끌어와 조성한 국내 최초의 해수공원. 수상택시·문보트, 한옥마을, 산책로와 고층 빌딩의 스카이라인이 어우러져 낮과 밤 모두 사진 명소입니다.
+
+여행 팁: G타워 33층 전망대(무료)에서 송도국제도시 전경을 조망하세요.
+
+Korea's first seawater park — water taxis and moon boats, a hanok village and a skyline backdrop, beautiful day and night.
+
+### 송도컨벤시아 (Songdo Convensia)
+- 지역: 연수구 · 테마: MICE·비즈니스, 도시·야경
+- 주소: 연수구 센트럴로 123 · 전화: +82-32-210-1114 · 좌표: 37.3904, 126.6392
+- URL: https://www.incheontour.or.kr/place-songdo_convensia
+
+태백산맥을 형상화한 지붕이 인상적인 국제회의복합지구의 중심 시설. 다양한 박람회·국제회의가 열리며 송도의 MICE 관광을 이끄는 랜드마크입니다.
+
+Centerpiece of the International Meetings Complex with a roof inspired by the Taebaek Mountains; Incheon's MICE landmark.
+
+### 트라이볼 (Tri-Bowl)
+- 지역: 연수구 · 테마: 도시·야경, MICE·비즈니스
+- 주소: 연수구 인천타워대로 250 · 전화: +82-32-832-7995 · 좌표: 37.3936, 126.6367
+- URL: https://www.incheontour.or.kr/place-tribowl
+
+'하늘·바다·땅'을 상징하는 세 개의 그릇 형상 복합문화공간. 센트럴파크 수변에 떠 있는 듯한 야경이 송도국제도시를 대표하는 포토존입니다.
+
+A cultural venue shaped like three bowls symbolizing sky, sea and land — Songdo's signature night-view photo spot.
+
+### IFEZ 홍보관 (G타워 전망대) (IFEZ Promotion Center (G-Tower))
+- 지역: 연수구 · 테마: 도시·야경, MICE·비즈니스
+- 주소: 연수구 아트센터대로 175 · 전화: +82-32-453-7885 · 좌표: 37.395, 126.6356
+- URL: https://www.incheontour.or.kr/place-gtower
+
+33층 전망대에서 송도국제도시와 인천 앞바다가 한눈에. IFEZ(인천경제자유구역) 홍보관에서 미래 도시의 모습을 디지털 체험으로 만납니다.
+
+The 33F observatory overlooks Songdo and the sea; the IFEZ promotion center shows the future city through digital exhibits.
+
+### 을왕리해수욕장 (Eurwangni Beach)
+- 지역: 영종구 · 테마: 자연·섬, 가족·체험
+- 주소: 영종구 용유서로302번길 16-15 · 전화: - · 좌표: 37.4479, 126.3713
+- URL: https://www.incheontour.or.kr/place-eurwangni
+
+초승달처럼 휘어진 백사장과 소나무 숲, 썰물 때 드러나는 갯벌과 서해 낙조로 유명한 인천 대표 해수욕장. 공항에서 차로 20분이면 닿는 환승관광 명소입니다.
+
+여행 팁: 공항 환승 4~6시간이면 을왕리·마시안해변 노을 코스가 가능합니다.
+
+Crescent white-sand beach famed for pine woods, tidal flats and West Sea sunsets — 20 minutes from the airport, a perfect transit-tour stop.
+
+### 무의도 · 무의바다누리길 (Muuido & Sea Nuri Trail)
+- 지역: 영종구 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 영종구 무의동 1001 · 전화: - · 좌표: 37.3959, 126.4169
+- URL: https://www.incheontour.or.kr/place-muui
+
+무의도 해안을 따라 이어진 2.5km 바다 위 탐방로. 조성 데크길을 따라 하나개해수욕장과 호룡곡산을 잇는 트레킹이 인기이며, 영종도에서 다리로 연결되어 접근이 쉽습니다.
+
+A 2.5 km boardwalk hugging Muuido's shore, linked to Hanagae Beach and Horyonggoksan trails; reachable by bridge from Yeongjong.
+
+### 무렁게티 (Mureonggeti)
+- 지역: 영종구 · 테마: 자연·섬
+- 주소: 영종구 무의동 산349-2 · 전화: - · 좌표: 37.3905, 126.4101
+- URL: https://www.incheontour.or.kr/place-mureonggeti
+
+'무의도'와 아프리카 '세렝게티'를 합쳐 부르는 이름. 넓은 초원과 기암이 어우러져 이국적인 풍경을 만드는 무의도의 숨은 명소입니다.
+
+'Muuido' + 'Serengeti': a hidden grassland-and-rock landscape with an exotic feel.
+
+### 거잠포해변 (Geojampo Beach)
+- 지역: 영종구 · 테마: 자연·섬, 도시·야경
+- 주소: 영종구 잠진도길 11 · 전화: - · 좌표: 37.4087, 126.432
+- URL: https://www.incheontour.or.kr/place-geojampo
+
+영종도에서 무의도로 넘어가는 길목의 작은 해변. 샤크섬 사이로 지는 해가 '드롭 일출·일몰'로 유명해 사진작가들이 즐겨 찾습니다.
+
+A small beach on the way to Muuido, famed for the 'drop' sunrise and sunset framed by Shark Island.
+
+### 정서진 · 노을종 (Jeongseojin & Sunset Bell)
+- 지역: 서해구 · 테마: 자연·섬, 도시·야경
+- 주소: 서해구 정서진1로 41 · 전화: +82-1899-3650 · 좌표: 37.5666, 126.6054
+- URL: https://www.incheontour.or.kr/place-jeongseojin
+
+광화문을 기준으로 정서(正西) 끝에 있는 나루터. 경인아라뱃길의 종점으로, 붉은 해가 바다 위로 지는 노을종 앞은 인천을 대표하는 해넘이 명소입니다.
+
+The western terminus of the Ara Waterway, due west of Gwanghwamun — Incheon's iconic sunset spot by the Sunset Bell.
+
+### 경인아라뱃길 여객터미널 · 아라타워 (Ara Waterway Terminal & Ara Tower)
+- 지역: 서해구 · 테마: 도시·야경, 가족·체험
+- 주소: 서해구 정서진1로 41 · 전화: +82-1899-3650 · 좌표: 37.5651, 126.6072
+- URL: https://www.incheontour.or.kr/place-ara_tower
+
+23층 전망대에서 서해와 아라뱃길을 조망. 1층 홍보관에서 뱃길의 역사와 생태, 운하 이야기를 체험할 수 있습니다.
+
+A 23F observation deck over the West Sea and the waterway; the ground-floor hall tells the canal's story.
+
+### 아라마루 전망대 (Aramaru Observatory)
+- 지역: 서해구 · 테마: 자연·섬, 가족·체험
+- 주소: 계양구 상야동 일원 · 전화: - · 좌표: 37.58, 126.66
+- URL: https://www.incheontour.or.kr/place-ara_maru
+
+아라뱃길 위에 세워진 원형 전망대. 수로를 따라 자전거·산책 코스가 이어지며 아라폭포와 함께 둘러보기 좋습니다.
+
+A circular observatory above the waterway, linked to cycling paths and the nearby Ara Falls.
+
+### 청라호수공원 (Cheongna Lake Park)
+- 지역: 서해구 · 테마: 도시·야경, 웰니스·힐링
+- 주소: 서해구 크리스탈로 59 · 전화: - · 좌표: 37.5348, 126.642
+- URL: https://www.incheontour.or.kr/place-cheongna_lake
+
+청라국제도시를 대표하는 친수공간. 저녁이면 호수 위 음악분수와 조명이 어우러진 야경이 펼쳐집니다. 2026년 개관한 청라 하늘대교 전망대 SKY184와 연계해 둘러보세요.
+
+Cheongna's signature waterfront with a musical fountain and night lights; pair with SKY184, the sea observatory opened in 2026.
+
+### 아라폭포 (Ara Falls)
+- 지역: 검단구 · 테마: 자연·섬, 가족·체험
+- 주소: 계양구 목상동 26-12 · 전화: - · 좌표: 37.5901, 126.6771
+- URL: https://www.incheontour.or.kr/place-ara_falls
+
+계양산 협곡 지형을 활용해 조성한 인공폭포. 하얗게 떨어지는 물줄기와 함께 시원한 정취를 느낄 수 있어 여름철 무더위를 피해 찾는 이들의 발길이 이어집니다.
+
+An artificial waterfall built into a Gyeyangsan gorge beside the waterway — a cool summer escape.
+
+### 드림파크 야생화단지 (Dream Park Wildflower Complex)
+- 지역: 검단구 · 테마: 자연·섬, 가족·체험
+- 주소: 검단구 자원순환로 170 · 전화: - · 좌표: 37.5793, 126.6392
+- URL: https://www.incheontour.or.kr/place-dreampark
+
+수도권매립지를 시민의 휴식 공간으로 바꾼 생태공원. 계절마다 야생화 군락이 펼쳐지며 가을 국화축제로 유명합니다.
+
+A landfill reborn as an ecological park — seasonal wildflower fields and an autumn chrysanthemum festival.
+
+### 소래포구 전통어시장 (Soraepogu Fish Market)
+- 지역: 남동구 · 테마: 미식·시장, 자연·섬
+- 주소: 남동구 장도로 86-17 · 전화: +82-32-446-7536 · 좌표: 37.4038, 126.7359
+- URL: https://www.incheontour.or.kr/place-soraepogu
+
+수도권 대표 수산시장. 꽃게·새우·젓갈 등 제철 해산물을 어민에게 직접 사서 즉석에서 맛볼 수 있고, 소래철교와 소래역사관(협궤열차)도 함께 둘러볼 수 있습니다.
+
+The capital region's best-known seafood market — buy blue crab, shrimp and salted seafood straight from fishers, then visit the narrow-gauge rail museum.
+
+### 소래습지생태공원 (Sorae Wetland Ecological Park)
+- 지역: 남동구 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 남동구 논현동 1-55 · 전화: +82-32-435-7076 · 좌표: 37.4133, 126.7437
+- URL: https://www.incheontour.or.kr/place-sorae_wetland
+
+옛 염전과 갯벌을 보존한 생태공원. 풍차와 갈대밭, 소금창고가 어우러진 풍경이 사계절 사진 명소이며 가을 억새가 특히 아름답습니다.
+
+Preserved salt pans and tidal flats with windmills, reed beds and salt warehouses — stunning in autumn.
+
+### 인천대공원 (Incheon Grand Park)
+- 지역: 남동구 · 테마: 자연·섬, 가족·체험
+- 주소: 남동구 장수동 산 79 · 전화: +82-32-466-7282 · 좌표: 37.4406, 126.7596
+- URL: https://www.incheontour.or.kr/place-incheon_grandpark
+
+관모산과 소래산 자락 266만㎡의 도심 속 자연공원. 봄 벚꽃과 튤립, 어린이동물원, 식물원, 호수가 있어 가족 나들이에 최적입니다.
+
+A 2.66 km² natural park under Gwanmosan — cherry blossoms, tulips, a children's zoo and botanical garden.
+
+### 늘솔길공원 (Neulsolgil Park)
+- 지역: 남동구 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 남동구 앵고개로 783 · 전화: - · 좌표: 37.4121, 126.712
+- URL: https://www.incheontour.or.kr/place-neulsol
+
+소나무 숲길을 따라 천천히 걷는 산책 공원. 주민들의 산림욕 명소로, 짧은 트레킹과 쉼이 어우러집니다.
+
+A pine-forest walking park loved by locals for forest bathing.
+
+### 인천문학경기장 (Incheon Munhak Stadium)
+- 지역: 미추홀구 · 테마: 도시·야경, 가족·체험, MICE·비즈니스
+- 주소: 미추홀구 매소홀로 618 · 전화: - · 좌표: 37.435, 126.6894
+- URL: https://www.incheontour.or.kr/place-munhak
+
+2002 월드컵 경기장과 야구장이 함께 있는 종합경기장. 대형 콘서트와 스포츠 이벤트의 중심이며, 민선 9기 '제문부 프로젝트'에서 K-컬처 거점으로 조명받는 곳입니다.
+
+The 2002 World Cup stadium and ballpark complex — a hub for concerts and sports, designated as a K-culture hub in the city's 'Je-Mun-Bu' project.
+
+### 수봉공원 스카이워크 (Subong Park Skywalk)
+- 지역: 미추홀구 · 테마: 도시·야경, 자연·섬
+- 주소: 미추홀구 수봉로 45 · 전화: - · 좌표: 37.457, 126.665
+- URL: https://www.incheontour.or.kr/place-subong
+
+수봉산 정상부에 조성된 310m 스카이워크. 인천 도심 360도 조망과 밤이면 별빛축제 조명이 펼쳐지는 원도심의 새로운 전망 명소입니다.
+
+A 310 m skywalk atop Subongsan with 360° views of downtown Incheon and starlight festival lights at night.
+
+### 부평시장 · 부평 문화의거리 (Bupyeong Market & Culture Street)
+- 지역: 부평구 · 테마: 미식·시장, 도시·야경
+- 주소: 부평구 부평대로 일원 · 전화: - · 좌표: 37.4926, 126.7226
+- URL: https://www.incheontour.or.kr/place-bupyeong_market
+
+국내 최대 규모 지하상가와 이어지는 부평시장, 그리고 감각적인 카페가 모인 평리단길. 생활문화 거점으로 지정된 부평의 활기를 느껴보세요.
+
+Bupyeong Market, linked to Korea's largest underground mall, plus the café-lined 'Pyeongnidan-gil'.
+
+### 평리단길 (Pyeongnidan-gil)
+- 지역: 부평구 · 테마: 미식·시장, 도시·야경
+- 주소: 부평구 부평문화로 일원 · 전화: - · 좌표: 37.4885, 126.725
+- URL: https://www.incheontour.or.kr/place-bupyeong_cafe
+
+부평지하상가에서 이어지는 골목에 감각적인 카페와 소품숍이 모인 거리. 젊은 감성의 로컬 문화를 즐기기 좋습니다.
+
+A street of design cafés and small shops off Bupyeong underground mall.
+
+### 계양산 (Gyeyangsan)
+- 지역: 계양구 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 계양구 계산동 · 전화: - · 좌표: 37.5725, 126.729
+- URL: https://www.incheontour.or.kr/place-gyeyangsan
+
+해발 395m, 인천의 상징 산. 능선길을 따라 오르면 한강과 경인아라뱃길, 서해까지 한눈에 담기는 도심 속 트레킹 명소입니다.
+
+Incheon's symbolic 395 m peak with ridge trails overlooking the Han River, Ara Waterway and West Sea.
+
+### 계양꽃마루 (Gyeyang Flower Hill)
+- 지역: 계양구 · 테마: 자연·섬, 가족·체험
+- 주소: 계양구 서운동 106-1 · 전화: - · 좌표: 37.546, 126.712
+- URL: https://www.incheontour.or.kr/place-gyeyang_flower
+
+계양 기슭에 조성된 대규모 초화단지. 봄에는 유채, 가을에는 코스모스가 장관을 이루며 산책로와 포토존이 잘 갖춰져 있습니다.
+
+Large flower fields at the foot of Gyeyangsan — rapeseed in spring, cosmos in autumn.
+
+### 계양아라온 (Gyeyang Ara-on)
+- 지역: 계양구 · 테마: 도시·야경, 자연·섬
+- 주소: 계양구 장기동 109-1 · 전화: - · 좌표: 37.558, 126.68
+- URL: https://www.incheontour.or.kr/place-gyeyang_araon
+
+경인아라뱃길 계양 구간에 마련된 수변문화공간. 전통정원을 중심으로 산책로와 수변무대가 있고, 달빛 조명이 켜진 밤 풍경이 아름답습니다.
+
+A waterside cultural space on the Gyeyang stretch of the waterway with a traditional garden and moonlit night scenery.
+
+### 전등사 (Jeondeungsa Temple)
+- 지역: 강화군 · 테마: 역사·문화, 웰니스·힐링
+- 주소: 강화군 길상면 온수리 635 · 전화: +82-32-937-0125 · 좌표: 37.632, 126.4855
+- URL: https://www.incheontour.or.kr/place-jeondeungsa
+
+고구려 소수림왕 때 창건된 것으로 전하는 강화 대표 사찰. 정족산성 안에 자리해 숲길과 전각, 템플스테이로 깊은 휴식을 줍니다. 인천공항 환승투어 코스로도 운영됩니다.
+
+Ganghwa's representative temple inside Jeongjoksanseong fortress — forest paths, temple stay, and a stop on airport transit tours.
+
+### 강화 부근리 지석묘 (고인돌) (Ganghwa Bugeun-ri Dolmen)
+- 지역: 강화군 · 테마: 역사·문화
+- 주소: 강화군 하점면 부근리 317 · 전화: - · 좌표: 37.7643, 126.4366
+- URL: https://www.incheontour.or.kr/place-ganghwa_dolmen
+
+길이 7m, 무게 80톤에 이르는 국내 최대 규모의 탁자식 고인돌. 유네스코 세계문화유산으로 선사시대 사람들의 삶과 의식을 보여줍니다.
+
+Korea's largest table-type dolmen (7 m, 80 t), a UNESCO World Heritage site from the prehistoric era.
+
+### 강화평화전망대 (Ganghwa Peace Observatory)
+- 지역: 강화군 · 테마: 역사·문화, 자연·섬
+- 주소: 강화군 양사면 전망대로 797 · 전화: +82-32-930-7062 · 좌표: 37.7849, 126.4367
+- URL: https://www.incheontour.or.kr/place-ganghwa_peace
+
+북한과 가장 가까운 거리에서 마주하는 전망대. 망원경으로 황해도 송악산과 개성 시가지까지 관찰할 수 있어 분단의 현실과 평화의 가치를 되새기게 합니다.
+
+The observatory closest to North Korea — view Songaksan and Kaesong across the river.
+
+### 연미정 (Yeonmijeong Pavilion)
+- 지역: 강화군 · 테마: 역사·문화, 자연·섬
+- 주소: 강화군 강화읍 월곶리 242 · 전화: - · 좌표: 37.771, 126.511
+- URL: https://www.incheontour.or.kr/place-yeonmijeong
+
+임진강과 한강이 만나는 절벽 위에 자리한 정자. 수백 년 된 느티나무 아래에서 강 건너 풍경과 고요한 역사의 시간을 마주합니다.
+
+A pavilion on the cliff where the Imjin and Han rivers meet, under centuries-old zelkova trees.
+
+### 교동도 · 대룡시장 (Gyodongdo & Daeryong Market)
+- 지역: 강화군 · 테마: 역사·문화, 미식·시장
+- 주소: 강화군 교동면 교동남로 35 · 전화: - · 좌표: 37.784, 126.282
+- URL: https://www.incheontour.or.kr/place-gyodong
+
+6·25 이후 실향민들이 고향 연백시장을 본떠 만든 전통시장. 1960~70년대 골목 풍경이 그대로 남아 레트로 감성이 가득하며, 고려 인종 5년 창건 교동향교와 망향대도 함께 둘러보세요.
+
+A market built by displaced Northerners after the war, preserving 1960s–70s alleys; visit Gyodong Hyanggyo and the Manghyangdae lookout.
+
+### 백령도 두무진 (Baengnyeongdo Dumujin)
+- 지역: 옹진군 · 테마: 자연·섬, 역사·문화
+- 주소: 옹진군 백령면 연화리 산256-1 · 전화: - · 좌표: 37.9933, 124.6267
+- URL: https://www.incheontour.or.kr/place-baengnyeong
+
+오랜 시간 바다가 빚은 기암괴석의 절경. 유람선을 타면 두무진의 전경을 한눈에, 도보로 오르면 북한 땅이 눈앞에 펼쳐집니다. 사곶해변(천연비행장)과 콩돌해안도 백령도의 명소.
+
+Sea-carved rock pinnacles best seen by boat; Sagot Beach (a natural runway) and Kongdol pebble beach are nearby.
+
+### 백령도 사곶해변 (Sagot Beach)
+- 지역: 옹진군 · 테마: 자연·섬
+- 주소: 옹진군 백령면 사곶로 139 · 전화: - · 좌표: 37.95, 124.715
+- URL: https://www.incheontour.or.kr/place-sagot
+
+세계적으로 드문 천연 모래 활주로. 밀물 때는 바다에 잠기고 썰물 때는 단단한 모래밭이 드러나 비행기가 착륙할 수 있을 정도입니다.
+
+One of the world's rare natural sand runways — firm enough for aircraft at low tide.
+
+### 대청도 옥죽동 모래사막 (Daecheongdo Okjuk-dong Dunes)
+- 지역: 옹진군 · 테마: 자연·섬
+- 주소: 옹진군 대청면 대청리 산16-1 · 전화: - · 좌표: 37.828, 124.709
+- URL: https://www.incheontour.or.kr/place-daecheong
+
+바람이 만든 한국의 사막. 해풍에 실려온 모래가 쌓인 언덕에 낙타 조형물이 있어 이국적인 사진을 남길 수 있고, 농여해변과 서풍받이 절벽도 함께 둘러보세요.
+
+Korea's 'desert' of wind-blown dunes with camel statues; see Nongyeo Beach and the Seopungbaji cliffs too.
+
+### 덕적도 (Deokjeokdo)
+- 지역: 옹진군 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 옹진군 덕적면 · 전화: - · 좌표: 37.225, 126.15
+- URL: https://www.incheontour.or.kr/place-deokjeok
+
+인천항에서 쾌속선 1시간, 서포리해수욕장의 노송 숲과 비조봉 트레킹으로 '살아보기형' 여행에 어울리는 섬. 인근 소야도·굴업도 캠핑과 연계됩니다.
+
+One hour by fast ferry from Incheon — pine-backed Seopori Beach and Bijobong trails; link with Soyado and Gureopdo camping.
+
+### 굴업도 (Gureopdo)
+- 지역: 옹진군 · 테마: 자연·섬, 웰니스·힐링
+- 주소: 옹진군 덕적면 굴업리 · 전화: - · 좌표: 37.195, 125.995
+- URL: https://www.incheontour.or.kr/place-gureop
+
+'한국의 갈라파고스'라 불리는 백패킹 성지. 개머리언덕의 초원 위 캠핑과 별빛, 해식 지형이 어우러진 섬입니다. 수용력이 작으므로 흔적 남기지 않기 원칙을 지켜주세요.
+
+The 'Galapagos of Korea' — a backpacking mecca with grassland camping and starry skies. Please leave no trace.
+
+### 장봉도 · 옹암해수욕장 (Jangbongdo & Ongam Beach)
+- 지역: 옹진군 · 테마: 자연·섬, 가족·체험
+- 주소: 옹진군 북도면 장봉리 · 전화: - · 좌표: 37.528, 126.325
+- URL: https://www.incheontour.or.kr/place-jangbong
+
+영종 삼목선착장에서 배로 40분. 갯티길 트레킹과 옹암·한들해수욕장, 가막머리 낙조대가 있어 당일 섬 여행에 알맞습니다.
+
+40 minutes by ferry from Yeongjong — Gaetti trail, Ongam and Handeul beaches, and the Gamakmeori sunset point: ideal for a day trip.
+
+### 선재도 목섬 · 영흥도 (Seonjaedo Mokseom & Yeongheungdo)
+- 지역: 옹진군 · 테마: 자연·섬, 미식·시장
+- 주소: 옹진군 영흥면 선재리 · 전화: - · 좌표: 37.242, 126.504
+- URL: https://www.incheontour.or.kr/place-seonjae
+
+썰물 때 바닷길이 열리는 목섬은 CNN이 선정한 '한국의 아름다운 섬'. 다리로 연결되어 자가용으로 갈 수 있는 영흥도의 해변·카페와 묶어 1박 2일 코스로 좋습니다.
+
+Mokseom's tidal causeway (named a beautiful island by CNN) and car-accessible Yeongheungdo beaches and cafés — a perfect 2-day route.
+
+### 연평도 평화공원 (Yeonpyeongdo Peace Park)
+- 지역: 옹진군 · 테마: 역사·문화, 자연·섬
+- 주소: 옹진군 연평면 연평로 682번길 75-5 · 전화: - · 좌표: 37.665, 125.7
+- URL: https://www.incheontour.or.kr/place-yeonpyeong
+
+연평해전에서 전사한 군인들의 희생을 기리는 공원. 안보교육장과 망향전망대에서 분단의 현실과 서해 최전선의 삶을 돌아봅니다.
+
+A memorial park honoring sailors lost in the Yeonpyeong battles, with a security education hall and a lookout over the frontline sea.
+
+## 협업 분야 (정관 제5조)
+- 관광상품·자원 기획: 거점별 자원을 상품으로 전환합니다. 관심(검색)×이동(유동인구)×소비(카드) 데이터로 수요를 검증하고, 체류·객단가를 높이는 코스를 설계합니다.
+- 관광정보 및 서비스: 관광안내소 운영 노하우(2020~2023 10개소 수탁, 민간위탁 평가 '우수', 만족도 95.6점)를 바탕으로 안내·통역·수용태세 개선 서비스를 제공합니다.
+- 페스티벌 및 이벤트 기획: 인천 글로벌 K-POP(INK) 콘서트 홍보·모객(2023·2025, 약 2만5천 명), 관광활성화 낭독콘테스트, 관광기념품 공모전 등 행사 기획·운영 경험을 보유합니다.
+- MICE 사업: 송도 국제회의복합지구(ICCA 2025 국내 3위)의 회의 참가자를 인천 체류·관광으로 전환하는 Pre/Post 투어, 유니크베뉴 연계를 기획합니다.
+- 관광전문가 육성 및 교육: 관광종사원 교육·사후관리(정관 제5조 6호)와 웰니스 문화관광 교육프로그램 운영 경험을 바탕으로 가이드·안내 인력과 관광 전문가를 양성합니다.
+- 해외 교류 사업: 한중 문화예술 교류전(2021~2024)을 비롯해 해외 관광기관·도시와의 교류, 공동 마케팅, 팸투어를 기획합니다.
+- 산업관광 기획: 공항·항만·바이오·반도체·로봇 등 인천의 산업 자산을 방문 프로그램으로 설계합니다. 남동산단 등 산업단지의 방문객 유치·안내·경험 관리를 담당합니다.
+- 테마관광 인바운드: 환승관광(연 804.6만 환승객), 의료·웰니스, 섬·해양, 역사(개항장·강화) 등 테마별 인바운드 상품을 기획해 서울과 보완 관계로 인천 체류를 만듭니다.

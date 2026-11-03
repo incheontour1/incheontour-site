@@ -319,3 +319,31 @@ window.DEFAULT_POSTS = {
  ],
  inquiry:[]
 };
+
+/* FAQ — answer-first Q&A for AEO/GEO (facts only from this site's own data) */
+window.FAQ = [
+ {q:{ko:"인천광역시관광협의회는 어떤 단체인가요?",en:"What is the Incheon Tourism Council?"},
+  a:{ko:"사단법인 인천광역시관광협의회(Incheon Tourism Council, I.T.C)는 관광진흥법 제48조의9와 「인천광역시 관광진흥 조례」에 근거해 2019년 설립된 지역관광협의회입니다. 관광객 유치·홍보, 관광사업 진흥, 회원 공제·복리 증진, 지역 관광산업 발전을 목적으로 하며(정관 제2조), 2020~2023년 인천시 관광안내소 10개소를 수탁 운영했습니다.",
+     en:"The Incheon Tourism Council (I.T.C) is an incorporated regional tourism association founded in 2019 under Article 48-9 of the Tourism Promotion Act and the Incheon Tourism Promotion Ordinance. It promotes visitor attraction and marketing, develops the tourism industry and supports its members (Articles, Art. 2), and operated 10 Incheon tourist information centers on consignment in 2020–2023."}},
+ {q:{ko:"인천 관광안내소는 어디에 있고 몇 시까지 운영하나요?",en:"Where are Incheon's tourist information centers and when are they open?"},
+  a:{ko:"인천에는 인천종합관광안내소, 인천국제공항(제1터미널 동편·서편, 제2터미널), 월미도, 인천역, 인천버스터미널, 강화 마니산, 경인아라뱃길 정서진, 소래포구, 인천항 국제여객터미널 등 11곳의 관광안내소가 있습니다. 공항 안내소는 07:00~22:00 연중무휴, 그 밖의 안내소는 대체로 09:00~18:00(설·추석 휴무)에 운영합니다.",
+     en:"Incheon has 11 tourist information centers: the Incheon General TIC, Incheon Airport (Terminal 1 east and west, Terminal 2), Wolmido, Incheon Station, Incheon Bus Terminal, Ganghwa Manisan, Gyeongin Ara Waterway Jeongseojin, Soraepogu and the Incheon Port International Passenger Terminal. Airport centers open 07:00–22:00 every day; most others open 09:00–18:00 (closed on Seollal and Chuseok)."}},
+ {q:{ko:"여행 중 통역이 필요하거나 불편을 신고하려면 어디로 연락하나요?",en:"Who do I call for interpretation or to report a travel problem?"},
+  a:{ko:"한국관광안내 전화 1330(해외에서는 +82-2-1330)으로 관광안내·통역·관광불편 신고를 할 수 있습니다. 한·영·일·중·러 안내는 24시간, 베트남어·태국어는 08:00~19:00에 운영합니다. 24시간 무료 전화통역은 bbb코리아(+82-1588-5644), 여행불편은 여행불편처리센터(+82-1588-8692)가 처리합니다.",
+     en:"Call the Korea Travel Hotline 1330 (+82-2-1330 from abroad) for travel information, interpretation and complaints; Korean, English, Japanese, Chinese and Russian run 24 hours, Vietnamese and Thai 08:00–19:00. BBB Korea (+82-1588-5644) offers free 24-hour phone interpretation, and the Travel Complaint Center (+82-1588-8692) handles complaints."}},
+ {q:{ko:"인천에서 꼭 가봐야 할 명소는 어디인가요?",en:"What are the must-see places in Incheon?"},
+  a:{ko:"「2026 인천관광가이드북」(인천관광공사)은 인천 9경으로 개항장, 월미도, 소래포구, 계양아라온, 송도센트럴파크, 영종 씨사이드파크, 강화읍 원도심, 신·시·모도, 백령도를 꼽습니다. 인천여행 메뉴에서 2군 9구 47곳의 명소 정보를 지역·테마별로 볼 수 있습니다.",
+     en:"The 2026 Incheon Travel Guidebook (Incheon Tourism Organization) names nine scenic spots: the Open Port, Wolmido, Soraepogu, Gyeyang Ara-on, Songdo Central Park, Yeongjong Seaside Park, Ganghwa old town, Sin·Si·Modo and Baengnyeongdo. The Travel menu covers 47 places across Incheon's 2 counties and 9 districts."}},
+ {q:{ko:"인천 관광 가이드북과 지도는 어디서 받을 수 있나요?",en:"Where can I get Incheon guidebooks and maps?"},
+  a:{ko:"여행정보 › 발간물에서 인천관광가이드북 2026, 인천관광안내지도, 인천시티투어 2026, 인천섬 이야기(봄·여름·가을·겨울), 인천 웰니스·의료관광 가이드북, 테마북(계절로드·댕댕로드) 등 10종을 PDF로 무료 열람·다운로드할 수 있습니다.",
+     en:"Travel Info › Publications offers 10 free PDFs: the Incheon Travel Guidebook 2026, the Incheon Tourist Map, Incheon City Tour 2026, the four seasonal Incheon Island Stories, the Wellness & Medical Tourism Guidebook and the Season Road and Dog Road theme books."}},
+ {q:{ko:"협의회 회원은 어떻게 가입하나요?",en:"How do I become a member?"},
+  a:{ko:"회원은 정회원(전문위원)·일반회원·특별회원·명예회원으로 구분합니다(정관 제6조). 가입 문의는 알림마당 › 문의하기 또는 이메일 incheontour1@gmail.com, 전화 +82-10-5238-5443으로 하면 됩니다.",
+     en:"Membership has four types: Regular (Expert Member), General, Special and Honorary (Articles, Art. 6). Apply via News › Inquiry, email incheontour1@gmail.com or call +82-10-5238-5443."}},
+ {q:{ko:"협의회와 협업(콜라보)을 제안하려면 어떻게 하나요?",en:"How can I propose a collaboration?"},
+  a:{ko:"협의회는 정관 제5조에 따라 관광상품·자원 기획, 관광정보 서비스, 페스티벌·이벤트, MICE, 관광전문가 교육, 해외 교류, 산업관광, 테마관광 인바운드 등 8개 분야에서 협업합니다. 콜라보 메뉴에서 분야를 확인한 뒤 알림마당 › 문의하기로 제안해 주세요.",
+     en:"Under Article 5 of its Articles, the Council collaborates in eight areas: tourism products, tourism information services, festivals and events, MICE, tourism expert training, international exchange, industrial tourism and themed inbound tourism. Check the Collab menu, then send a proposal via News › Inquiry."}},
+ {q:{ko:"협의회 사무실 위치와 연락처는 어떻게 되나요?",en:"Where is the Council's office and how do I contact it?"},
+  a:{ko:"사무실은 인천광역시 남동구 구월남로 118 YMCA회관 501호이며, 평일 09:00~18:00(주말·공휴일 휴무)에 운영합니다. 전화 +82-10-5238-5443, 이메일 incheontour1@gmail.com으로 문의할 수 있습니다.",
+     en:"The office is at Room 501, YMCA Building, 118 Guwolnam-ro, Namdong-gu, Incheon, open weekdays 09:00–18:00 (closed weekends and holidays). Phone +82-10-5238-5443, email incheontour1@gmail.com."}}
+];

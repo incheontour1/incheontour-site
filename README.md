@@ -56,7 +56,7 @@ git push -u origin main
 
 | 하고 싶은 일 | 수정 위치 |
 |---|---|
-| 관광지 추가/수정 | `js/data.js` › `PLACES` (사진은 `assets/img/`에 추가, 위경도 입력) |
+| 관광지 추가/수정 | `js/data.js` › `PLACES` (사진은 `assets/img/`에 추가, 위경도 입력) → **9장 빌드 실행** |
 | 지역·테마 문구 | `js/data.js` › `REGIONS`, `js/i18n.js` › `travel.themes` |
 | 발간물 추가 | PDF를 `assets/docs/`에, 표지를 `assets/img/cover_*.jpg`로 → `BOOKS` |
 | SNS 링크(인스타·페북) | `js/data.js` › `SITE.instagram`, `SITE.facebook` (빈 값이면 '준비중' 아이콘) |
@@ -99,3 +99,24 @@ git push -u origin main
 
 - 위 메타 태그 3줄과 robots.txt의 Daum 줄은 **삭제 금지** (지우면 소유확인이 풀림)
 - 새 페이지를 추가하면 `sitemap.xml`에 `<url>` 추가 후 각 도구에서 수집 요청
+
+## 9. 빌드 — SEO·GEO·AEO·속도 최적화 (2026-11-03 도입)
+
+콘텐츠(`js/data.js`, `js/i18n.js`, 각 페이지 HTML)나 사진을 바꾼 뒤에는 **반드시 아래 2줄을 실행한 다음 커밋**합니다.
+
+```bash
+python3 tools/optimize_images.py   # 사진 → 화면 크기별 WebP(400~2000px) + js/img-manifest.js
+node tools/build.mjs               # 본문 사전 렌더링 · 명소 상세페이지 47개 · JSON-LD · sitemap · robots · llms.txt
+```
+
+| 산출물 | 역할 |
+|---|---|
+| HTML 안의 `<!--pr--> … <!--/pr-->` | JS가 그리던 한국어 본문을 미리 넣은 부분. JS를 실행하지 않는 AI 크롤러도 읽음. 직접 수정 금지(빌드가 덮어씀) |
+| `<!--seo:start--> … <!--seo:end-->` | 페이지별 JSON-LD, 폰트, 대표 이미지 미리 불러오기. 직접 수정 금지 |
+| `place-<id>.html` (47개) | 명소 상세페이지. 원본 틀은 `tools/place.template.html` |
+| `assets/img/opt/`, `assets/img/gb/opt/` | 자동 생성 WebP. 원본 JPG는 다운로드·확대용으로 유지 |
+| `assets/fonts/pretendard/` | Pretendard 자체 호스팅(외부 CDN 연쇄 로딩 제거) |
+| `llms.txt`, `llms-full.txt` | AI 답변엔진용 사이트 요약·전체 본문 |
+
+- 빌드에는 Node.js와 Playwright(Chromium)가 필요합니다. `tools/`는 `.vercelignore`로 배포에서 제외됩니다.
+- CSS·JS 주소에 `?v=해시`가 자동으로 붙어, 1년 캐시를 써도 수정본이 바로 반영됩니다.
