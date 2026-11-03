@@ -87,3 +87,15 @@ git push -u origin main
 - Pretendard(국문·기본) + Noto Sans JP/SC(일·중 보조) — CDN
 - Leaflet 1.9.4 (지도), Google Maps Embed (오시는 길)
 - 반응형 브레이크포인트: 1100px / 860px / 520px
+
+## 8. 검색엔진 등록 (2026-11-03 완료)
+
+| 검색엔진 | 소유확인 방식 | 위치 | 비고 |
+|---|---|---|---|
+| Google Search Console | `google-site-verification` 메타 태그 | 모든 HTML `<head>` | 사이트맵 제출 성공 (8페이지) |
+| Bing Webmaster Tools | `msvalidate.01` 메타 태그 | 모든 HTML `<head>` | |
+| 네이버 서치어드바이저 | `naver-site-verification` 메타 태그 | 모든 HTML `<head>` | 사이트맵·RSS 제출 |
+| 다음 웹마스터도구 | `#DaumWebMasterTool:` 주석 줄 | `robots.txt` 맨 아래 | PIN은 협의회 내부 보관 |
+
+- 위 메타 태그 3줄과 robots.txt의 Daum 줄은 **삭제 금지** (지우면 소유확인이 풀림)
+- 새 페이지를 추가하면 `sitemap.xml`에 `<url>` 추가 후 각 도구에서 수집 요청
