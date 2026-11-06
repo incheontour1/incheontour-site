@@ -33,7 +33,7 @@
 
   function isAuthed(){try{const s=JSON.parse(sessionStorage.getItem(SESSION)||"null");return s&&s.exp>Date.now();}catch(e){return false;}}
   function login(){
-    $("#admin-root").innerHTML=`<div class="admin-login"><img src="assets/img/logo-horizontal.png" alt=""><h2 style="font-size:1.2rem;text-align:center;margin-bottom:18px">관리자 로그인</h2>
+    $("#admin-root").innerHTML=`<div class="admin-login"><img src="assets/img/logo-horizontal.png?v=4" alt=""><h2 style="font-size:1.2rem;text-align:center;margin-bottom:18px">관리자 로그인</h2>
       <form class="form" style="box-shadow:none;padding:0" id="lf"><div><label>아이디</label><input name="id" autocomplete="username" required></div><div><label>비밀번호</label><input name="pw" type="password" autocomplete="current-password" required></div><button class="btn btn-primary" type="submit">로그인</button><p style="font-size:.78rem;color:var(--c-muted)">초기 계정은 README 참조 후 반드시 변경하세요. 로그인 세션은 2시간 유지됩니다.</p></form></div>`;
     $("#lf").onsubmit=async e=>{e.preventDefault();const f=e.target;const pw=f.pw.value;const exp=Date.now()+2*3600e3;
       if(STORE.online){let st=0;try{st=(await fetch("/api/store?k=auth",{method:"POST",headers:{"x-admin-key":pw}})).status;}catch(err){}

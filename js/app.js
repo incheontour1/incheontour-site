@@ -74,7 +74,7 @@
       <div class="lang-dd" id="lang-dd"><button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">${ICON.globe}<span class="lang-cur">${(LANGS.find(l=>l[0]===lang)||LANGS[0])[2]}</span>${ICON.caret}</button><ul class="lang-menu" role="listbox">${LANGS.map(l=>`<li><button type="button" role="option" data-lang="${l[0]}" lang="${htmlLang[l[0]]}" class="${l[0]===lang?"active":""}">${l[2]}</button></li>`).join("")}</ul></div>
     </div></div>
     <header class="header" id="hdr"><div class="container">
-      <a class="brand" href="index.html" aria-label="${t("org")}"><img src="assets/img/logo-horizontal-v3.png" alt="${t("orgFull")}" width="1259" height="232"></a>
+      <a class="brand" href="index.html" aria-label="${t("org")}"><img src="assets/img/logo-horizontal-v3.png?v=4" alt="${t("orgFull")}" width="1259" height="232"></a>
       <nav><ul class="nav">${NAV.map(n=>`<li class="${page===n.id?"active":""}"><a href="${n.href}" data-i18n="nav.${n.id}">${t("nav."+n.id)}${n.soon?`<span class="badge" data-i18n="soon">${t("soon")}</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}</ul></nav>
       <div class="header-tools">
         <button class="icon-btn" id="btn-search" aria-label="${t("search.btn")}">${ICON.search}</button>
@@ -83,7 +83,7 @@
       </div>
     </div></header>
     <div class="drawer" id="drawer"><div class="dim"></div><div class="panel">
-      <div class="d-head"><img src="assets/img/logo-horizontal-v3.png" alt="" width="1259" height="232"><button class="icon-btn" id="btn-menu-close" aria-label="${t("common.close")}">${ICON.close}</button></div>
+      <div class="d-head"><img src="assets/img/logo-horizontal-v3.png?v=4" alt="" width="1259" height="232"><button class="icon-btn" id="btn-menu-close" aria-label="${t("common.close")}">${ICON.close}</button></div>
       <label class="d-lang">${ICON.globe}<select id="d-lang-sel" aria-label="Language">${LANGS.map(l=>`<option value="${l[0]}" ${l[0]===lang?"selected":""}>${l[2]}</option>`).join("")}</select>${ICON.caret}</label>
       <ul class="d-nav">${NAV.map(n=>`<li><a href="${n.href}" data-i18n="nav.${n.id}" ${n.sub?`data-toggle`:""}>${t("nav."+n.id)}${n.sub?`<span>+</span>`:""}</a>${n.sub?`<div class="sub">${n.sub.map(s=>`<a href="${subHref(n,s)}" data-i18n="sub.${s}">${t("sub."+s)}</a>`).join("")}</div>`:""}</li>`).join("")}
       <li><a href="admin.html" data-i18n="nav.admin">${t("nav.admin")}</a></li></ul>
@@ -136,7 +136,7 @@
     const el=document.getElementById("site-footer"); if(!el) return;
     el.innerHTML=`<footer class="footer"><div class="container">
       <div class="top">
-        <div class="brand"><img src="assets/img/logo-white-v3.png" alt="${t("orgFull")}" width="1259" height="232" loading="lazy">
+        <div class="brand"><img src="assets/img/logo-white-v3.png?v=4" alt="${t("orgFull")}" width="1259" height="232" loading="lazy">
           <ul><li data-i18n="footer.addr">${t("footer.addr")}</li><li data-i18n="footer.tel">${t("footer.tel")}</li><li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li data-i18n="footer.cpo">${t("footer.cpo")}</li></ul>
           <div class="sns" style="margin-top:16px">${snsHtml()}</div></div>
         <div><h4 data-i18n="footer.links">${t("footer.links")}</h4><ul>${NAV.map(n=>`<li><a href="${n.href}" data-i18n="nav.${n.id}">${t("nav."+n.id)}</a></li>`).join("")}</ul></div>

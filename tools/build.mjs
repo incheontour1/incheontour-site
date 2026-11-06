@@ -50,7 +50,7 @@ const PAGES = {
 // ---------- JSON-LD ----------
 const ORG = {
   '@type': 'Organization', '@id': `${SITE}/#org`, name: '인천광역시관광협의회',
-  alternateName: ['사단법인 인천광역시관광협의회', 'Incheon Tourism Council', 'I.T.C', 'INCHEON TOURISM ASSOCIATION'],
+  alternateName: ['사단법인 인천광역시관광협의회', 'Incheon Tourism Council', 'I.T.C', 'INCHEON TOURISM COUNCIL'],
   url: `${SITE}/`, logo: `${SITE}/assets/img/logo-symbol.png`, image: imgUrl('hero_islands-hd.jpg'),
   description: '관광진흥법 제48조의9와 「인천광역시 관광진흥 조례」에 근거해 2019년 설립된 인천의 지역관광협의회. 관광객 유치·홍보, 관광사업 진흥, 회원 공제·복리 증진을 수행한다.',
   foundingDate: '2019-04-12', email: S.email, telephone: S.tel,

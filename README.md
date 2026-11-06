@@ -68,7 +68,7 @@ git push -u origin main
 - 오시는 길의 지하철역·버스·주차 정보 — 현장 기준 검증 필요
 - 인천항 국제여객터미널 관광안내소 전화번호 (지도 인쇄면에서 잘림)
 - 2026.7.1 행정구역 개편 후 청라·아라뱃길·정서진의 소속구(서해구로 가정)
-- 로고타입 영문 "INCHEON TOURISM ASSOCIATION" vs 정관 영문명 "Incheon Tourism Council (I.T.C)" 불일치 — 정관 또는 로고 개정으로 통일 권장
+- 영문명: 정관 제1조 "Incheon Tourism Council(약자 I.T.C)". 2026-11 로고타입 PNG 5종 영문을 INCHEON TOURISM COUNCIL로 재조판(tools/fix_logotype.py, Noto Sans KR Bold). 벡터 마스터(assets/docs/itc_logo_master.pdf)는 구 표기(ASSOCIATION)라 다운로드 버튼 숨김 — 디자이너 AI 원본 개정 후 교체
 - 언론보도 기본 글의 매체명·원문 URL
 
 ## 6. 사진·자료 출처
