@@ -17,8 +17,9 @@ function envPair() {
   const e = process.env;
   if (e.KV_REST_API_URL && e.KV_REST_API_TOKEN) return [e.KV_REST_API_URL, e.KV_REST_API_TOKEN];
   if (e.UPSTASH_REDIS_REST_URL && e.UPSTASH_REDIS_REST_TOKEN) return [e.UPSTASH_REDIS_REST_URL, e.UPSTASH_REDIS_REST_TOKEN];
-  const k = Object.keys(e).find(x => /_KV_REST_API_URL$/.test(x) || /_UPSTASH_REDIS_REST_URL$/.test(x));
-  if (k) { const t = k.replace(/URL$/, 'TOKEN'); if (e[t]) return [e[k], e[t]]; }
+  // any custom prefix from the Vercel integration: <PREFIX>_KV_REST_API_URL, <PREFIX>_REST_API_URL, <PREFIX>_UPSTASH_REDIS_REST_URL …
+  const k = Object.keys(e).find(x => /REST_API_URL$/.test(x) || /UPSTASH_REDIS_REST_URL$/.test(x));
+  if (k) { const t = k.replace(/URL$/, 'TOKEN'); if (e[t] && /^https:\/\//.test(e[k])) return [e[k], e[t]]; }
   return null;
 }
 async function redis(cmd) {
