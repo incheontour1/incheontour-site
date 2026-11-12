@@ -133,7 +133,7 @@ function render(){
   const id=q.get("id");const posts=getPosts(tab);
   if(id){const p=posts.find(x=>x.id===id);if(p){vp.style.display="";document.getElementById("post").innerHTML=postHTML(p);countView(p.id).then(n=>{const el=document.getElementById("pv-n");if(n!=null&&el)el.textContent=(+p.views||0)+n;});document.getElementById("back-btn").onclick=e=>{e.preventDefault();q.delete("id");const u=new URL(location);u.searchParams.delete("id");history.replaceState(null,"",u);render();};return;}}
   vl.style.display="";
-  document.getElementById("th3").textContent=tab==="press"?t("news.src"):t("news.date");
+  {const th3=document.getElementById("th3"),k=tab==="press"?"news.src":"news.date";th3.dataset.i18n=k;th3.textContent=t(k);th3.style.width=tab==="press"?"160px":"120px";}
   const list=posts.filter(p=>!query||(postTitle(p)+" "+postBody(p)+" "+(p.src||"")).toLowerCase().includes(query.toLowerCase()));
   document.getElementById("cnt").textContent=`${list.length} ${t("search.count")}`;
   const pages=Math.max(1,Math.ceil(list.length/PER));pageNo=Math.min(pageNo,pages);
