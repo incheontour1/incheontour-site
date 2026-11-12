@@ -23,7 +23,8 @@ const strip = s => String(s ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').
 // ---------- data ----------
 const ctx = { window: {} }; ctx.window = ctx; vm.createContext(ctx);
 for (const f of ['js/i18n.js', 'js/data.js', 'js/img-manifest.js']) vm.runInContext(rd(f), ctx);
-const { I18N, PLACES, REGIONS, TICS, BOOKS, COLLAB, FAQ, IMGM, SITE: S } = ctx;
+const { I18N, PLACES, REGIONS, TICS, BOOKS, COLLAB, FAQ, IMGM, SITE: S, MEDIA } = ctx;
+const VIDS = (MEDIA && MEDIA.videos) || [];
 const KO = I18N.ko;
 const tk = k => k.split('.').reduce((o, x) => (o && o[x] !== undefined ? o[x] : undefined), KO);
 const ko = o => (o && typeof o === 'object' ? (o.ko ?? o.en) : o) ?? '';
@@ -42,6 +43,7 @@ const PAGES = {
   travel:  { url: '/travel', name: '인천여행', lcp: 'sagot_beach-hd.jpg', desc: '인천 2군 9구 명소 47곳을 지역·테마별로 소개합니다. 개항장·월미도·송도·영종·강화·옹진 섬까지 주소, 연락처, 가까운 관광안내소와 길찾기를 제공합니다.' },
   info:    { url: '/info', name: '여행정보', lcp: 'ganghwa_hero-hd.jpg', desc: '인천관광가이드북 2026 등 발간물 10종 무료 다운로드, 가이드북 웹 열람, 인천시티투어, 관광안내소 11곳의 연락처·운영시간, 1330 관광통역 안내를 제공합니다.' },
   map:     { url: '/map', name: '인천관광지도', lcp: 'incheon9.jpg', desc: '인천 명소 47곳과 관광안내소 11곳을 인터랙티브 지도로 찾고, 공식 인천관광안내지도를 확대해 볼 수 있습니다.' },
+  contents: { url: '/contents', name: '콘텐츠', lcp: 'wolmido_hero-hd.jpg', desc: `인천광역시관광협의회 공식 유튜브 채널 ‘줌인천(@zoomincheon)’의 영상 ${VIDS.length}편(풀영상 ${VIDS.filter(v => v.type !== 'short').length} · 쇼츠 ${VIDS.filter(v => v.type === 'short').length})을 모았습니다. 인천 맛집, 부평·영종도 자전거 클린관광, 청라호수공원 영상을 바로 재생할 수 있습니다.` },
   collab:  { url: '/collab', name: '콜라보', lcp: 'songdo_convensia-hd.jpg', desc: '인천광역시관광협의회와 협업할 수 있는 8대 분야(관광상품 기획, 관광정보 서비스, 페스티벌, MICE, 전문가 교육, 해외 교류, 산업관광, 테마관광 인바운드)와 제안 방법을 안내합니다.' },
   news:    { url: '/news', name: '알림마당', lcp: 'tribowl_night-hd.jpg', desc: '인천광역시관광협의회 공지사항과 언론보도, 회원가입·협업 문의를 접수하는 알림마당입니다.' },
   members: { url: '/members', name: '회원사', lcp: 'songdo_centralpark-hd.jpg', desc: '인천광역시관광협의회 회원 종류(정회원(전문위원)·일반회원·특별회원·명예회원)와 회원사를 안내합니다.' },
@@ -75,6 +77,7 @@ const attraction = p => {
     touristType: p.themes.includes('family') ? '가족여행' : undefined };
 };
 const tic = x => ({ '@type': 'TouristInformationCenter', name: ko(x.n), alternateName: en(x.n), telephone: x.tel || undefined, description: `운영시간 ${x.h}`, geo: { '@type': 'GeoCoordinates', latitude: x.lat, longitude: x.lng }, address: { '@type': 'PostalAddress', addressRegion: '인천광역시', addressCountry: 'KR' } });
+const videoLD = v => ({ '@type': 'VideoObject', '@id': `${SITE}/contents#v-${v.id}`, name: v.t, description: v.d || v.t, thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`, `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`], uploadDate: v.at, duration: v.dur, embedUrl: `https://www.youtube-nocookie.com/embed/${v.id}`, contentUrl: v.type === 'short' ? `https://www.youtube.com/shorts/${v.id}` : `https://www.youtube.com/watch?v=${v.id}`, inLanguage: 'ko', publisher: { '@id': `${SITE}/#org` }, isFamilyFriendly: true });
 const faqLD = () => ({ '@type': 'FAQPage', '@id': `${SITE}/#faq`, mainEntity: FAQ.map(f => ({ '@type': 'Question', name: ko(f.q), acceptedAnswer: { '@type': 'Answer', text: ko(f.a) } })) });
 function graphFor(key) {
   const g = [ORG, WEBSITE];
@@ -86,6 +89,7 @@ function graphFor(key) {
     { '@type': 'ItemList', name: '인천 관광안내소 11곳', numberOfItems: TICS.length, itemListElement: TICS.map((x, i) => ({ '@type': 'ListItem', position: i + 1, item: tic(x) })) },
     { '@type': 'ItemList', name: '인천 관광 발간물 10종 (PDF)', numberOfItems: BOOKS.length, itemListElement: BOOKS.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'DigitalDocument', name: ko(b.n), description: strip(ko(b.d)), url: `${SITE}/assets/docs/${b.file}`, encodingFormat: 'application/pdf', image: imgUrl(b.cover, 400) } })) });
   if (key === 'collab') g.push(webpage('collab'), crumbs([home, ['콜라보', '/collab']]), { '@type': 'ItemList', name: '협의회 8대 협업 분야', itemListElement: COLLAB.map((c, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Service', name: ko(c.n), description: strip(ko(c.d)), provider: { '@id': `${SITE}/#org` }, areaServed: '인천광역시' } })) });
+  if (key === 'contents') g.push(webpage('contents', 'CollectionPage'), crumbs([home, ['콘텐츠', '/contents']]), { '@type': 'ItemList', name: '인천광역시관광협의회 공식 유튜브 영상', numberOfItems: VIDS.length, itemListElement: VIDS.map((v, i) => ({ '@type': 'ListItem', position: i + 1, item: videoLD(v) })) });
   if (key === 'news') g.push(webpage('news'), crumbs([home, ['알림마당', '/news']]));
   if (key === 'members') g.push(webpage('members'), crumbs([home, ['회원사', '/members']]));
   if (key === 'map') g.push(webpage('map'), crumbs([home, ['인천관광지도', '/map']]));
@@ -224,7 +228,7 @@ console.log(`prerendered ${n} pages`);
 
 // ---------- 4: sitemap / robots / llms ----------
 const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'];
-const pri = { index: '1.0', travel: '0.9', about: '0.9', info: '0.9', map: '0.8', collab: '0.7', news: '0.7', members: '0.5' };
+const pri = { index: '1.0', travel: '0.9', about: '0.9', info: '0.9', map: '0.8', contents: '0.7', collab: '0.7', news: '0.7', members: '0.5' };
 for (const key of PAGE_FILES) sm.push(`<url><loc>${SITE}${PAGES[key].url}</loc><lastmod>${TODAY}</lastmod><changefreq>${key === 'news' ? 'weekly' : 'monthly'}</changefreq><priority>${pri[key]}</priority><image:image><image:loc>${imgUrl(PAGES[key].lcp)}</image:loc></image:image></url>`);
 for (const p of PLACES) sm.push(`<url><loc>${SITE}/place-${p.id}</loc><lastmod>${TODAY}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>${imgUrl(p.img)}</image:loc><image:title>${esc(ko(p.n))}</image:title></image:image></url>`);
 sm.push('</urlset>'); wr('sitemap.xml', sm.join('\n') + '\n');
@@ -286,6 +290,7 @@ const llms = `# 인천광역시관광협의회 (Incheon Tourism Council)
 - [인천여행](${SITE}/travel): 명소 47곳 (지역·테마 필터)
 - [여행정보](${SITE}/info): 발간물 10종 PDF, 가이드북 웹 열람, 시티투어, 관광안내소 11곳, 교통
 - [인천관광지도](${SITE}/map): 명소·안내소 인터랙티브 지도
+- [콘텐츠](${SITE}/contents): 공식 유튜브 ‘줌인천’ 영상 ${VIDS.length}편 (풀영상·쇼츠)
 - [콜라보](${SITE}/collab): 8대 협업 분야와 제안 방법
 - [알림마당](${SITE}/news): 공지·언론보도·문의
 - [전체 본문 (llms-full.txt)](${SITE}/llms-full.txt)
@@ -298,6 +303,9 @@ ${byRegion.map(({ r, ps }) => `### ${ko(r.n)} (${en(r.n)})\n${ps.map(p => `- [${
 
 ## 관광안내소 11곳
 ${TICS.map(x => `- ${ko(x.n)} — ${x.tel || '전화 확인 필요'} · ${x.h}`).join('\n')}
+
+## 공식 유튜브 영상 (줌인천 @zoomincheon)
+${VIDS.map(v => `- [${v.t}](${v.type === 'short' ? `https://www.youtube.com/shorts/${v.id}` : `https://www.youtube.com/watch?v=${v.id}`}) — ${v.type === 'short' ? '쇼츠' : '영상'} · ${v.at.slice(0, 10)}: ${v.d || ''}`).join('\n')}
 
 ## 공식 발간물 (PDF)
 ${BOOKS.map(b => `- [${ko(b.n)}](${SITE}/assets/docs/${b.file}): ${strip(ko(b.d))}`).join('\n')}

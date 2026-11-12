@@ -12,6 +12,7 @@
 | `travel.html` | 인천여행 — 2군 9구(2026.7 개편) 지역별·테마별 필터, 장소 상세 모달 (46곳) |
 | `info.html` | 여행정보 — 발간물 10종 다운로드, 가이드북 웹 열람(43p), 시티투어, 관광안내소 11곳, 교통 |
 | `map.html` | 인천관광지도 — Leaflet 인터랙티브 지도(명소·안내소 필터) + 공식 안내지도 앞/뒷면 줌 뷰어 |
+| `contents.html` | 콘텐츠 — 공식 유튜브 ‘줌인천’ 영상(풀영상·쇼츠) 탭·페이지 내 재생 팝업, 이미지 갤러리(데이터 추가 시 표시) |
 | `collab.html` | 콜라보 — 정관 제5조 기반 8대 협업 트랙 상세 + 제안 CTA |
 | `news.html` | 알림마당 — 공지사항·언론보도 게시판, 문의 폼 |
 | `admin.html` | 관리자 모드 — 공지/언론보도 CRUD(4개 국어), 문의 관리, JSON 백업 |
@@ -58,6 +59,8 @@ git push -u origin main
 | 관광지 추가/수정 | `js/data.js` › `PLACES` (사진은 `assets/img/`에 추가, 위경도 입력) → **9장 빌드 실행** |
 | 지역·테마 문구 | `js/data.js` › `REGIONS`, `js/i18n.js` › `travel.themes` |
 | 발간물 추가 | PDF를 `assets/docs/`에, 표지를 `assets/img/cover_*.jpg`로 → `BOOKS` |
+| 콘텐츠 › 유튜브 영상 추가 | `js/data.js` › `MEDIA.videos` 맨 앞에 `{id, type:"video"|"short", at, dur, t, d}` 한 줄 추가 (id=유튜브 영상 ID, 제목은 원문 그대로) → **9장 빌드 실행** |
+| 콘텐츠 › 이미지 추가 | 사진을 `assets/img/`에 넣고 `MEDIA.images`에 `{file, t:{ko,en}, d:{ko,en}}` 추가 → 빌드 (비어 있으면 이미지 섹션·탭 자동 숨김) |
 | SNS 링크(인스타·페북) | `js/data.js` › `SITE.instagram`, `SITE.facebook` (빈 값이면 '준비중' 아이콘) |
 | 인사말·비전·윤리·CI·오시는 길 | `about.html` 내 `C` 객체 (4개 국어) |
 | 회장 사진 | `assets/img/chairman-v1.jpg` — 교체 시 새 파일명(예: chairman-v2.jpg)으로 저장 후 `about.html` 인사말 이미지 경로 변경 |
