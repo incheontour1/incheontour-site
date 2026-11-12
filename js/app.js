@@ -180,13 +180,19 @@
   // Single source of truth = shared server store (/api/store: Vercel Function + Upstash Redis).
   // Until the server store is connected, this browser's localStorage is used (legacy mode).
   const STORE_KEY="itc_posts_v1";
-  let REMOTE=null;
+  let REMOTE=null,VIEWS={};
   window.STORE={online:false};
   function loadStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"null");}catch(e){return null;}}
   const pg_=(location.pathname.split("/").pop()||"").replace(".html","");
   const needPosts=/^(|index|news|admin)$/.test(pg_);
-  window.postsReady=needPosts?fetch("/api/store?k=posts",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j){STORE.online=!!j.configured;if(j.data&&Array.isArray(j.data.notice))REMOTE=j.data;}}).catch(()=>{}):Promise.resolve();
+  window.postsReady=needPosts?fetch("/api/store?k=posts",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{if(j){STORE.online=!!j.configured;if(j.data&&Array.isArray(j.data.notice))REMOTE=j.data;if(j.views&&typeof j.views==="object")VIEWS=j.views;}}).catch(()=>{}):Promise.resolve();
   window.setRemotePosts=d=>{REMOTE=d;};
+  /* 조회수 = 글에 저장된 기본값(p.views) + 서버 카운터 — 관리자 저장값과 섞이지 않게 표시할 때만 합산 */
+  window.viewsOf=p=>(+p.views||0)+(+VIEWS[p.id]||0);
+  window.countView=async id=>{const sk="itc_viewed_"+id;try{if(sessionStorage.getItem(sk))return null;}catch(e){}
+    if(!STORE.online)return null;
+    try{const r=await fetch("/api/store?k=view&id="+encodeURIComponent(id),{method:"POST"});const j=await r.json();if(j&&j.ok){VIEWS[id]=j.views;try{sessionStorage.setItem(sk,"1");}catch(e){}return j.views;}}catch(e){}
+    return null;};
   const sortPosts=l=>l.slice().sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0)||(b.date||"").localeCompare(a.date||""));
   window.getPosts=function(type){
     let list=null;

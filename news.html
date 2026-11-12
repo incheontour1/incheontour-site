@@ -106,7 +106,7 @@
       </div>
       <div class="bottom"><div class="legal"><a href="#" onclick="return showPolicy()" data-i18n="footer.privacy">개인정보처리방침</a><a href="#" onclick="return showPolicy()" data-i18n="footer.terms">이용약관</a></div><div data-i18n="footer.copy">© 2026 Incheon Tourism Council. All rights reserved.</div></div>
     </div></footer><!--/pr--></div>
-<script src="js/i18n.js?v=68bbdb9c"></script><script src="js/data.js?v=d9043d86"></script><script src="js/img-manifest.js?v=cfdb032d"></script><script src="js/app.js?v=504cfcb7"></script>
+<script src="js/i18n.js?v=68bbdb9c"></script><script src="js/data.js?v=d9043d86"></script><script src="js/img-manifest.js?v=cfdb032d"></script><script src="js/app.js?v=eed6d6cb"></script>
 <script>
 const q=new URLSearchParams(location.search);
 let tab=q.get("tab")||"notice",pageNo=1,query="";const PER=10;
@@ -116,11 +116,11 @@ const okUrl=v=>/^https?:\/\//i.test(v||"")?v:"";
 function postHTML(p){
   const cat=`<span class="cat ${tab}" style="font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#e8f0ff;color:var(--c-primary)">${t("sub."+tab)}</span>`;
   const url=okUrl(p.url), img=okUrl(p.img), src=escH(p.src||"");
-  if(tab!=="press"||!url) return `${cat}<h2 style="margin-top:10px">${postTitle(p)}</h2><div class="pm"><span>${p.date}</span>${src?`<span>${t("news.src")}: ${src}</span>`:""}${url?`<a href="${escH(url)}" target="_blank" rel="noopener noreferrer" style="color:var(--c-primary);font-weight:700">${t("common.open")} ↗</a>`:""}</div><div class="cont">${postBody(p)}</div>`;
+  if(tab!=="press"||!url) return `${cat}<h2 style="margin-top:10px">${postTitle(p)}</h2><div class="pm"><span>${p.date}</span>${src?`<span>${t("news.src")}: ${src}</span>`:""}<span>${t("news.views")} <b id="pv-n">${viewsOf(p)}</b></span>${url?`<a href="${escH(url)}" target="_blank" rel="noopener noreferrer" style="color:var(--c-primary);font-weight:700">${t("common.open")} ↗</a>`:""}</div><div class="cont">${postBody(p)}</div>`;
   const ko=getLang()!=="ko"&&!(p.title&&p.title[getLang()]);
   const fig=img?`<img src="${escH(img)}" alt="" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('noimg');this.remove()">`:"";
   return `${cat}<article class="press-card"><a class="pc-img${img?"":" noimg"}" href="${escH(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escH(t("news.readOriginal"))}">${fig}<span class="pc-logo">${src||"NEWS"}</span></a>
-  <div class="pc-body"><div class="pc-meta">${src?`<b>${src}</b>`:""}<span>${p.date}</span>${ko?`<span class="pc-ko">${t("news.koOnly")}</span>`:""}</div><h2>${postTitle(p)}</h2>${postBody(p)?`<div class="cont pc-sum">${postBody(p)}</div>`:""}
+  <div class="pc-body"><div class="pc-meta">${src?`<b>${src}</b>`:""}<span>${p.date}</span><span>${t("news.views")} <b id="pv-n">${viewsOf(p)}</b></span>${ko?`<span class="pc-ko">${t("news.koOnly")}</span>`:""}</div><h2>${postTitle(p)}</h2>${postBody(p)?`<div class="cont pc-sum">${postBody(p)}</div>`:""}
   <a class="btn btn-primary pc-go" href="${escH(url)}" target="_blank" rel="noopener noreferrer">${t("news.readOriginal")} ↗</a><p class="pc-note">${t("news.copyright")}</p></div></article>`;
 }
 function render(){
@@ -131,14 +131,14 @@ function render(){
   vl.style.display=vp.style.display=vi.style.display="none";
   if(tab==="inquiry"){vi.style.display="";const sel=document.getElementById("inq-type");sel.innerHTML=I18N[lg].news.types.map((x,i)=>`<option value="${i}">${x}</option>`).join("");if(q.get("type"))sel.value=q.get("type");if(q.get("track")&&!document.getElementById("inq-subject").value){document.getElementById("inq-subject").value=`[${q.get("track")}] `;}return;}
   const id=q.get("id");const posts=getPosts(tab);
-  if(id){const p=posts.find(x=>x.id===id);if(p){p.views=(p.views||0);vp.style.display="";document.getElementById("post").innerHTML=postHTML(p);document.getElementById("back-btn").onclick=e=>{e.preventDefault();q.delete("id");const u=new URL(location);u.searchParams.delete("id");history.replaceState(null,"",u);render();};return;}}
+  if(id){const p=posts.find(x=>x.id===id);if(p){vp.style.display="";document.getElementById("post").innerHTML=postHTML(p);countView(p.id).then(n=>{const el=document.getElementById("pv-n");if(n!=null&&el)el.textContent=(+p.views||0)+n;});document.getElementById("back-btn").onclick=e=>{e.preventDefault();q.delete("id");const u=new URL(location);u.searchParams.delete("id");history.replaceState(null,"",u);render();};return;}}
   vl.style.display="";
   document.getElementById("th3").textContent=tab==="press"?t("news.src"):t("news.date");
   const list=posts.filter(p=>!query||(postTitle(p)+" "+postBody(p)+" "+(p.src||"")).toLowerCase().includes(query.toLowerCase()));
   document.getElementById("cnt").textContent=`${list.length} ${t("search.count")}`;
   const pages=Math.max(1,Math.ceil(list.length/PER));pageNo=Math.min(pageNo,pages);
   const slice=list.slice((pageNo-1)*PER,pageNo*PER);
-  document.getElementById("rows").innerHTML=slice.map((p,i)=>`<tr><td>${p.pinned?`<span class="pin">NOTICE</span>`:list.length-((pageNo-1)*PER)-i}</td><td class="t">${tab==="press"?`<a class="pl-t" href="?tab=${tab}&id=${p.id}">${okUrl(p.img)?`<img class="pthumb" src="${escH(p.img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:""}<span>${postTitle(p)}<small>${p.date}</small></span></a>`:`<a href="?tab=${tab}&id=${p.id}">${postTitle(p)}</a>`}</td><td>${tab==="press"?(escH(p.src)||"—"):p.date}</td><td>${p.views||0}</td></tr>`).join("")||`<tr><td colspan="4" class="empty">${t("news.empty")}</td></tr>`;
+  document.getElementById("rows").innerHTML=slice.map((p,i)=>`<tr><td>${p.pinned?`<span class="pin">NOTICE</span>`:list.length-((pageNo-1)*PER)-i}</td><td class="t">${tab==="press"?`<a class="pl-t" href="?tab=${tab}&id=${p.id}">${okUrl(p.img)?`<img class="pthumb" src="${escH(p.img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:""}<span>${postTitle(p)}<small>${p.date}</small></span></a>`:`<a href="?tab=${tab}&id=${p.id}">${postTitle(p)}</a>`}</td><td>${tab==="press"?(escH(p.src)||"—"):p.date}</td><td>${viewsOf(p)}</td></tr>`).join("")||`<tr><td colspan="4" class="empty">${t("news.empty")}</td></tr>`;
   document.getElementById("pager").innerHTML=Array.from({length:pages},(_,i)=>`<button class="${i+1===pageNo?"active":""}" data-p="${i+1}">${i+1}</button>`).join("");
   document.querySelectorAll("#pager button").forEach(b=>b.onclick=()=>{pageNo=+b.dataset.p;render();});
 }
@@ -146,7 +146,7 @@ window.onPageRender=render;
 window.onPageInit=function(){render();
   document.getElementById("q").addEventListener("input",e=>{query=e.target.value;pageNo=1;render();});
   document.getElementById("inq-form").addEventListener("submit",async e=>{e.preventDefault();const f=e.target;if(!f.agree.checked){toast(t("news.needAgree"));return;}
-    const lg=getLang();const post={id:"q"+Date.now(),date:new Date().toISOString().slice(0,10),name:f.name.value,email:f.email.value,phone:f.phone.value,type:I18N[lg].news.types[+f.type.value],subject:f.subject.value,msg:f.msg.value,status:"new",lang:lg};
+    const lg=getLang();const post={id:"q"+Date.now(),date:new Date(Date.now()+9*3600e3).toISOString().slice(0,10),name:f.name.value,email:f.email.value,phone:f.phone.value,type:I18N[lg].news.types[+f.type.value],subject:f.subject.value,msg:f.msg.value,status:"new",lang:lg};
     const btn=f.querySelector('button[type="submit"]');btn.disabled=true;
     let server=false;
     try{const r=await fetch("/api/store?k=inquiry",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...post,agree:true,website:f.website.value})});server=r.ok;}catch(err){}

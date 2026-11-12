@@ -4,7 +4,8 @@
      env: KV_REST_API_URL + KV_REST_API_TOKEN  (or UPSTASH_REDIS_REST_URL/_TOKEN, or <PREFIX>_KV_REST_API_URL/_TOKEN)
    Admin writes: env ADMIN_PASSWORD (header x-admin-key). Writes are refused until it is set.
 
-   GET  /api/store?k=posts     public  → { configured, data:{notice,press}|null }
+   GET  /api/store?k=posts     public  → { configured, data:{notice,press}|null, views:{id:n} }
+   POST /api/store?k=view&id=  public  → { ok, views }  (조회수 +1, 같은 IP·글 30분 1회)
    PUT  /api/store?k=posts     admin   ← { notice:[…], press:[…] }
    POST /api/store?k=inquiry   public  ← { name,email,phone,type,subject,msg,lang,agree, website(honeypot) }
    GET  /api/store?k=inquiry   admin   → { data:[…] }
@@ -30,7 +31,8 @@ async function redis(cmd) {
   if (!r.ok || j.error) throw Object.assign(new Error(j.error || 'storage error'), { code: 502 });
   return j.result;
 }
-const KEY = { posts: 'itc:posts:v1', inq: 'itc:inquiries:v1' };
+const KEY = { posts: 'itc:posts:v1', inq: 'itc:inquiries:v1', views: 'itc:views:v1' };
+const flatToObj = a => { const o = {}; if (Array.isArray(a)) for (let i = 0; i + 1 < a.length; i += 2) o[a[i]] = +a[i + 1] || 0; else if (a && typeof a === 'object') for (const k in a) o[k] = +a[k] || 0; return o; };
 const sha = s => crypto.createHash('sha256').update(String(s)).digest();
 function isAdmin(req) {
   const pw = process.env.ADMIN_PASSWORD; const given = req.headers['x-admin-key'];
@@ -141,9 +143,22 @@ module.exports = async (req, res) => {
       catch (e) { return send(200, { ok: false, reason: e.code === 400 ? 'invalid url' : 'unreachable' }); }
     }
     if (k === 'posts' && req.method === 'GET') {
-      if (!configured) return send(200, { configured: false, data: null });
-      const raw = await redis(['GET', KEY.posts]);
-      return send(200, { configured: true, data: raw ? JSON.parse(raw) : null });
+      if (!configured) return send(200, { configured: false, data: null, views: {} });
+      const [raw, vflat] = await Promise.all([redis(['GET', KEY.posts]), redis(['HGETALL', KEY.views]).catch(() => [])]);
+      return send(200, { configured: true, data: raw ? JSON.parse(raw) : null, views: flatToObj(vflat) });
+    }
+    if (k === 'view' && req.method === 'POST') {
+      // public view counter: +1 per visitor (IP) per post per 30 min
+      if (!configured) return send(200, { ok: false, reason: 'storage not configured' });
+      const id = String((req.query && req.query.id) || new URL(req.url, 'http://x').searchParams.get('id') || '');
+      if (!/^[A-Za-z0-9_-]{1,40}$/.test(id)) return send(400, { ok: false });
+      const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'na';
+      const dk = 'itc:vw:' + crypto.createHash('sha1').update(ip + '|' + id).digest('hex').slice(0, 20);
+      const fresh = await redis(['SET', dk, '1', 'NX', 'EX', 1800]);
+      let views;
+      if (fresh && (await redis(['HLEN', KEY.views])) < 5000) views = await redis(['HINCRBY', KEY.views, id, 1]);
+      else views = +(await redis(['HGET', KEY.views, id])) || 0;
+      return send(200, { ok: true, id, views: +views, counted: !!fresh });
     }
     if (k === 'posts' && req.method === 'PUT') {
       if (!isAdmin(req)) return send(401, { ok: false });

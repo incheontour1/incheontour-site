@@ -10,6 +10,7 @@
   async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");}
   const SESSION="itc_admin_session";
   let section="dash",editing=null,INQ=null;
+  const todayKST=()=>new Date(Date.now()+9*3600e3).toISOString().slice(0,10); // 한국 시간 기준 오늘
   const escH=v=>String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   const escA=v=>escH(v).replace(/"/g,"&quot;");
   const sess=()=>{try{return JSON.parse(sessionStorage.getItem(SESSION)||"null");}catch(e){return null;}};
@@ -66,8 +67,8 @@
   function board(type){
     const list=gp(type);
     $("#am").innerHTML=`${modeNote()}<h2>${type==="notice"?"공지사항":"언론보도"} <button class="btn btn-primary btn-sm" id="new">+ 새 글</button></h2>
-      <table><thead><tr><th style="width:110px">등록일</th><th>제목 (KO)</th>${type==="press"?"<th>매체</th>":"<th style='width:70px'>고정</th>"}<th style="width:150px">관리</th></tr></thead><tbody>
-      ${list.map(p=>`<tr><td>${p.date}</td><td>${p.title.ko||p.title.en||""}</td><td>${type==="press"?(p.src||""):(p.pinned?"📌":"")}</td><td class="act"><button data-e="${p.id}">수정</button><button data-up="${p.id}">위로</button><button class="del" data-d="${p.id}">삭제</button></td></tr>`).join("")||`<tr><td colspan="4" style="color:var(--c-muted)">등록된 글이 없습니다.</td></tr>`}</tbody></table><div id="editor"></div>`;
+      <table><thead><tr><th style="width:110px">등록일</th><th>제목 (KO)</th>${type==="press"?"<th>매체</th>":"<th style='width:70px'>고정</th>"}<th style="width:64px">조회</th><th style="width:150px">관리</th></tr></thead><tbody>
+      ${list.map(p=>`<tr><td>${p.date}</td><td>${p.title.ko||p.title.en||""}</td><td>${type==="press"?(p.src||""):(p.pinned?"📌":"")}</td><td>${viewsOf(p)}</td><td class="act"><button data-e="${p.id}">수정</button><button data-up="${p.id}">위로</button><button class="del" data-d="${p.id}">삭제</button></td></tr>`).join("")||`<tr><td colspan="5" style="color:var(--c-muted)">등록된 글이 없습니다.</td></tr>`}</tbody></table><div id="editor"></div>`;
     $("#new").onclick=()=>editor(type,null);
     document.querySelectorAll("[data-e]").forEach(b=>b.onclick=()=>editor(type,list.find(x=>x.id===b.dataset.e)));
     document.querySelectorAll("[data-up]").forEach(b=>b.onclick=()=>{const l=gp(type);const i=l.findIndex(x=>x.id===b.dataset.up);if(i>0){const [it]=l.splice(i,1);l.splice(i-1,0,it);it.date=l[i]?.date>it.date?l[i].date:it.date;persist(type,l,"순서를 바꿨습니다",()=>board(type));}});
@@ -75,7 +76,7 @@
     if(editing)editor(type,editing);
   }
   function editor(type,p){
-    editing=p;const isNew=!p;p=p||{id:(type[0])+Date.now(),date:new Date().toISOString().slice(0,10),pinned:false,views:0,src:"",url:"",title:{},body:{}};
+    editing=p;const isNew=!p;p=p||{id:(type[0])+Date.now(),date:todayKST(),pinned:false,views:0,src:"",url:"",title:{},body:{}};
     $("#editor").innerHTML=`<div class="editor"><h3 style="font-size:1rem">${isNew?"새 글 작성":"글 수정"}</h3>
       ${type==="press"?`<div class="og-box"><label>① 기사 링크(원문 URL) 붙여넣기 → ② 불러오기 → ③ 확인 후 저장</label><div class="og-row"><input id="e-url" value="${escA(p.url)}" placeholder="https://뉴스 기사 주소"><button type="button" class="btn btn-primary btn-sm" id="og-btn">불러오기</button></div><div class="og-msg" id="og-msg">${online()?"제목·매체·날짜·대표 사진·요약을 자동으로 채웁니다. 일부 언론사는 막혀 있을 수 있으니, 그때는 아래 칸을 직접 입력하세요.":"🟠 임시 모드에서는 자동 불러오기가 되지 않습니다. 서버 저장 모드(🟢)로 로그인하거나 아래 칸을 직접 입력하세요."}</div><div class="og-prev" id="og-prev"></div></div>`:""}
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"><div><label>등록일</label><input id="e-date" type="date" value="${p.date}"></div>${type==="press"?`<div><label>매체명</label><input id="e-src" value="${escA(p.src)}"></div><div><label>대표 이미지 URL (선택)</label><input id="e-img" value="${escA(p.img)}" placeholder="https://"></div>`:`<div><label>상단 고정</label><select id="e-pin"><option value="0" ${!p.pinned?"selected":""}>아니오</option><option value="1" ${p.pinned?"selected":""}>예</option></select></div><div></div>`}</div>
@@ -100,10 +101,10 @@
           if(r.title)$("#t-ko").value=r.title.replace(/[<>]/g,"");
           if(r.desc)$("#b-ko").value=escH(r.desc);
           if(r.site)$("#e-src").value=r.site.replace(/[<>]/g,"");
-          if(r.date)$("#e-date").value=r.date;
+          
           $("#e-img").value=https(r.image);
-          const miss=[!r.title&&"제목",!r.site&&"매체명",!r.desc&&"요약",!r.image&&"대표 사진",!r.date&&"날짜"].filter(Boolean);
-          msg.textContent="✅ 불러왔습니다. 내용을 확인한 뒤 [저장]을 누르세요."+(miss.length?` (비어 있는 항목: ${miss.join("·")} — 직접 입력)`:"");
+          const miss=[!r.title&&"제목",!r.site&&"매체명",!r.desc&&"요약",!r.image&&"대표 사진"].filter(Boolean);
+          msg.textContent="✅ 불러왔습니다. 내용을 확인한 뒤 [저장]을 누르세요."+(r.date?` (기사 게시일 ${r.date} — 등록일은 작성일 그대로)`:"")+(miss.length?` (비어 있는 항목: ${miss.join("·")} — 직접 입력)`:"");
           prev();
         }catch(err){msg.textContent="⚠️ 불러오기 실패: "+err.message+" — 직접 입력하세요.";}
         finally{btn.disabled=false;btn.textContent="불러오기";}
