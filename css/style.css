@@ -799,3 +799,29 @@ a:hover>.vthumb .pl,.vthumb:hover .pl{transform:scale(1.08)}
   html[lang="en"] .nav>li>a,html[lang="ru"] .nav>li>a,html[lang="vi"] .nav>li>a,html[lang="es"] .nav>li>a{padding:12px 6px;font-size:.8rem}
   .header .brand img{max-height:44px}
 }
+
+/* ---------- 언론보도 뉴스 카드 (news.html?tab=press&id=…) ---------- */
+.press-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:34px;align-items:start;margin-top:16px}
+.pc-img{position:relative;display:block;aspect-ratio:1.91/1;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#0d2a5c,#1d5fd0);box-shadow:var(--shadow)}
+.pc-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pc-img:hover img{transform:scale(1.04)}
+.pc-logo{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:#fff;font-weight:800;font-size:clamp(1.1rem,2.4vw,1.6rem);letter-spacing:.02em}
+.pc-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.86rem;color:var(--c-muted)}
+.pc-meta b{color:var(--c-primary)}
+.pc-ko{background:#fff4e0;color:#a35200;font-weight:700;padding:2px 9px;border-radius:999px;font-size:.74rem}
+.press-card h2{font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:800;line-height:1.42;margin:10px 0 12px;word-break:keep-all}
+.press-card .pc-sum{color:var(--c-ink-2,#3b4658);line-height:1.75}
+.pc-go{margin-top:20px}
+.pc-note{font-size:.78rem;color:var(--c-muted);margin-top:12px}
+.board .t .pl-t{display:flex;gap:12px;align-items:center}
+.board .t .pl-t small{display:block;font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:2px}
+.pthumb{width:76px;height:50px;object-fit:cover;border-radius:8px;flex:none;background:var(--c-bg)}
+@media (max-width:860px){.press-card{grid-template-columns:1fr;gap:18px}}
+@media (max-width:520px){.pthumb{width:64px;height:44px}}
+/* admin: link import */
+.admin .og-box{background:#f4f7fc;border:1.5px dashed #c9d6ee;border-radius:12px;padding:14px}
+.admin .og-row{display:flex;gap:8px}.admin .og-row input{flex:1}
+.admin .og-msg{font-size:.8rem;color:var(--c-muted);margin-top:8px}
+.admin .og-card{display:flex;gap:12px;align-items:center;margin-top:10px;background:#fff;border-radius:10px;padding:10px;border:1px solid var(--c-line)}
+.admin .og-card img{width:120px;height:63px;object-fit:cover;border-radius:8px;flex:none}
+.admin .og-card b{display:block;font-size:.9rem}.admin .og-card span{font-size:.78rem;color:var(--c-muted)}

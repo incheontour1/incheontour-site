@@ -10,6 +10,8 @@
   async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");}
   const SESSION="itc_admin_session";
   let section="dash",editing=null,INQ=null;
+  const escH=v=>String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const escA=v=>escH(v).replace(/"/g,"&quot;");
   const sess=()=>{try{return JSON.parse(sessionStorage.getItem(SESSION)||"null");}catch(e){return null;}};
   const online=()=>!!(STORE.online&&sess()&&sess().key);
   async function api(method,k,body){const r=await fetch(`/api/store?k=${k}`,{method,headers:{"Content-Type":"application/json","x-admin-key":(sess()||{}).key||""},body:body?JSON.stringify(body):undefined});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(r.status===401?"인증이 만료되었습니다. 다시 로그인하세요.":(j.reason||("오류 "+r.status)));return j;}
@@ -75,15 +77,41 @@
   function editor(type,p){
     editing=p;const isNew=!p;p=p||{id:(type[0])+Date.now(),date:new Date().toISOString().slice(0,10),pinned:false,views:0,src:"",url:"",title:{},body:{}};
     $("#editor").innerHTML=`<div class="editor"><h3 style="font-size:1rem">${isNew?"새 글 작성":"글 수정"}</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"><div><label>등록일</label><input id="e-date" type="date" value="${p.date}"></div>${type==="press"?`<div><label>매체명</label><input id="e-src" value="${p.src||""}"></div><div><label>원문 URL</label><input id="e-url" value="${p.url||""}" placeholder="https://"></div>`:`<div><label>상단 고정</label><select id="e-pin"><option value="0" ${!p.pinned?"selected":""}>아니오</option><option value="1" ${p.pinned?"selected":""}>예</option></select></div><div></div>`}</div>
+      ${type==="press"?`<div class="og-box"><label>① 기사 링크(원문 URL) 붙여넣기 → ② 불러오기 → ③ 확인 후 저장</label><div class="og-row"><input id="e-url" value="${escA(p.url)}" placeholder="https://뉴스 기사 주소"><button type="button" class="btn btn-primary btn-sm" id="og-btn">불러오기</button></div><div class="og-msg" id="og-msg">${online()?"제목·매체·날짜·대표 사진·요약을 자동으로 채웁니다. 일부 언론사는 막혀 있을 수 있으니, 그때는 아래 칸을 직접 입력하세요.":"🟠 임시 모드에서는 자동 불러오기가 되지 않습니다. 서버 저장 모드(🟢)로 로그인하거나 아래 칸을 직접 입력하세요."}</div><div class="og-prev" id="og-prev"></div></div>`:""}
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"><div><label>등록일</label><input id="e-date" type="date" value="${p.date}"></div>${type==="press"?`<div><label>매체명</label><input id="e-src" value="${escA(p.src)}"></div><div><label>대표 이미지 URL (선택)</label><input id="e-img" value="${escA(p.img)}" placeholder="https://"></div>`:`<div><label>상단 고정</label><select id="e-pin"><option value="0" ${!p.pinned?"selected":""}>아니오</option><option value="1" ${p.pinned?"selected":""}>예</option></select></div><div></div>`}</div>
       <div style="display:flex;gap:6px" id="lt">${LANGS.map((l,i)=>`<button type="button" class="btn ${i?"btn-outline":"btn-primary"} btn-sm" data-l="${l}">${l.toUpperCase()}</button>`).join("")}<span style="font-size:.78rem;color:var(--c-muted);align-self:center;margin-left:8px">언어별 제목·본문 입력 (비어 있으면 KO → EN 순으로 대체 표시)</span></div>
-      ${LANGS.map((l,i)=>`<div data-pane="${l}" style="${i?"display:none":""}"><label>제목 (${l.toUpperCase()})</label><input id="t-${l}" value="${(p.title[l]||"").replace(/"/g,"&quot;")}"><label style="margin-top:8px">본문 (${l.toUpperCase()}) — 줄바꿈 유지, 링크는 &lt;a href&gt; 사용 가능</label><textarea id="b-${l}">${p.body[l]||""}</textarea></div>`).join("")}
+      ${LANGS.map((l,i)=>`<div data-pane="${l}" style="${i?"display:none":""}"><label>제목 (${l.toUpperCase()})</label><input id="t-${l}" value="${(p.title[l]||"").replace(/"/g,"&quot;")}"><label style="margin-top:8px">${type==="press"?`요약 (${l.toUpperCase()}) — 기사 전문이 아닌 요약만 (저작권)`:`본문 (${l.toUpperCase()}) — 줄바꿈 유지, 링크는 &lt;a href&gt; 사용 가능`}</label><textarea id="b-${l}">${p.body[l]||""}</textarea></div>`).join("")}
       <div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" id="save">저장</button><button class="btn btn-outline btn-sm" id="cancel">취소</button></div></div>`;
     document.querySelectorAll("#lt [data-l]").forEach(b=>b.onclick=()=>{document.querySelectorAll("#lt [data-l]").forEach(x=>x.className="btn btn-outline btn-sm");b.className="btn btn-primary btn-sm";document.querySelectorAll("[data-pane]").forEach(pn=>pn.style.display=pn.dataset.pane===b.dataset.l?"":"none");});
     $("#cancel").onclick=()=>{editing=null;$("#editor").innerHTML="";};
+    if(type==="press"){
+      const prev=()=>{const im=$("#e-img").value.trim(),tt=$("#t-ko").value.trim(),sr=$("#e-src").value.trim(),dt=$("#e-date").value;$("#og-prev").innerHTML=(im||tt)?`<div class="og-card">${im?`<img src="${escA(im)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`:""}<div><b>${escH(tt)}</b><span>${escH(sr)}${sr&&dt?" · ":""}${escH(dt)}</span></div></div>`:"";};
+      prev();["e-img","t-ko","e-src","e-date"].forEach(id=>$("#"+id).addEventListener("input",prev));
+      $("#og-btn").onclick=async()=>{
+        const url=$("#e-url").value.trim(),msg=$("#og-msg");
+        if(!/^https?:\/\//i.test(url)){msg.textContent="⚠️ https:// 로 시작하는 기사 주소를 붙여넣어 주세요.";$("#e-url").focus();return;}
+        if(!online()){msg.textContent="🟠 임시 모드에서는 자동 불러오기가 되지 않습니다. 아래 칸을 직접 입력하세요.";return;}
+        const btn=$("#og-btn");btn.disabled=true;btn.textContent="불러오는 중…";msg.textContent="기사 정보를 가져오고 있습니다…";
+        try{
+          const r=await api("GET","og&url="+encodeURIComponent(url));
+          if(!r.ok){msg.textContent="⚠️ 이 언론사는 자동 불러오기를 막고 있습니다. 제목·매체명·요약을 직접 입력하세요.";return;}
+          const https=v=>String(v||"").replace(/^http:\/\//i,"https://");
+          if(r.url)$("#e-url").value=r.url;
+          if(r.title)$("#t-ko").value=r.title.replace(/[<>]/g,"");
+          if(r.desc)$("#b-ko").value=escH(r.desc);
+          if(r.site)$("#e-src").value=r.site.replace(/[<>]/g,"");
+          if(r.date)$("#e-date").value=r.date;
+          $("#e-img").value=https(r.image);
+          const miss=[!r.title&&"제목",!r.site&&"매체명",!r.desc&&"요약",!r.image&&"대표 사진",!r.date&&"날짜"].filter(Boolean);
+          msg.textContent="✅ 불러왔습니다. 내용을 확인한 뒤 [저장]을 누르세요."+(miss.length?` (비어 있는 항목: ${miss.join("·")} — 직접 입력)`:"");
+          prev();
+        }catch(err){msg.textContent="⚠️ 불러오기 실패: "+err.message+" — 직접 입력하세요.";}
+        finally{btn.disabled=false;btn.textContent="불러오기";}
+      };
+    }
     $("#save").onclick=()=>{const title={},body={};LANGS.forEach(l=>{const tv=$("#t-"+l).value.trim(),bv=$("#b-"+l).value.trim();if(tv)title[l]=tv;if(bv)body[l]=bv;});
       if(!title.ko&&!title.en){toast("제목(KO 또는 EN)은 필수입니다.");return;}
-      const np={...p,date:$("#e-date").value,title,body};if(type==="press"){np.src=$("#e-src").value;np.url=$("#e-url").value;}else{np.pinned=$("#e-pin").value==="1";}
+      const np={...p,date:$("#e-date").value,title,body};if(type==="press"){np.src=$("#e-src").value.trim();np.url=$("#e-url").value.trim();np.img=$("#e-img").value.trim();if(np.url&&!/^https?:\/\//i.test(np.url)){toast("원문 URL은 https:// 로 시작해야 합니다.");return;}if(np.img&&!/^https?:\/\//i.test(np.img))np.img="";}else{np.pinned=$("#e-pin").value==="1";}
       const l=gp(type);const i=l.findIndex(x=>x.id===np.id);if(i>=0)l[i]=np;else l.unshift(np);persist(type,l,"저장되었습니다",()=>{editing=null;board(type);});};
     $("#editor").scrollIntoView({behavior:"smooth"});
   }
